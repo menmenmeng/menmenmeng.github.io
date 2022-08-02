@@ -17,7 +17,7 @@
 
 # Language of your content in 2-letter code, e.g.: en, de.
 # You may also provide a location, e.g.: en-us, de_AT.
-lang:                  en
+lang:                  ko
 
 # The title of your blog. Used in the sidebar and the browser tab.
 title:                 Starter Kit
@@ -81,7 +81,7 @@ paginate_path:         /:num/
 # ---------------------------------------------------------------------------------------
 
 theme: jekyll-theme-hydejack
-# remote_theme: hydecorp/hydejack@v9
+remote_theme: hydecorp/hydejack@v9
 
 
 # Customizaton
