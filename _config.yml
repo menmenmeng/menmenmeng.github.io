@@ -46,6 +46,11 @@ author:
   email:               franksmh0409@gmail.com
   # Used by `jekyll-seo-tag`:
   twitter:             menmenmeng
+  github:              menmenmeng
+
+# if not working, delete this part
+social:
+  username: menmenmeng
 
 # Add links to the sidebar.
 menu:
