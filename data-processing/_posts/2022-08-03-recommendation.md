@@ -3,9 +3,11 @@ layout: post
 title : Recommendation System
 description: >
     Basic knowledge of recommendation system.
+sitemap: false
 ---
 
 유저의 선호도, 과거 행동 데이터를 바탕으로 개인에 맞는 관심사를 제공한다.
+{:.lead}
 
 
 ## 추천 시스템의 유형
