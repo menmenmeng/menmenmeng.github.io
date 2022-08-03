@@ -1,12 +1,11 @@
 ---
 layout: post
-title : Recommendation
+title : Recommendation System
+description: >
+    Basic knowledge of recommendation system.
 ---
 
-# **추천 시스템**
-
-
-## **추천 시스템의 유형**
+## 추천 시스템의 유형
 - 콘텐츠 기반 필터링
 
 - 협업 필터링
@@ -21,7 +20,7 @@ title : Recommendation
 
 ---
 
-### **콘텐츠 기반 필터링**
+## 콘텐츠 기반 필터링
 
 - a가 A 아이템을 선호하는 경우, A 아이템과 비슷한 정보(콘텐츠)를 가진 B 아이템을 추천
 
@@ -30,7 +29,7 @@ title : Recommendation
 ---
 
 
-### **협업 필터링**
+## 협업 필터링
 
 - 취향이 비슷한 친구들에게 영화를 추천받는 것처럼 추천하는 알고리즘.
 
@@ -46,7 +45,7 @@ title : Recommendation
 
 ---
 
-#### **최근접 이웃 협업 필터링**
+## 최근접 이웃 협업 필터링
 
 - Memory 협업 필터링이라고도 함, 사용자 기반/아이템 기반으로 나뉨
 
@@ -80,7 +79,7 @@ title : Recommendation
 
 ---
 
-#### **코사인 유사도**
+## 코사인 유사도
 - 유사도를 측정하는 방법으로 유클리드 거리를 재는 방법, 코사인 유사도 등이 있음.
 
     - 유클리드 거리 : 점과 점이 얼마나 가까운지를 평가
@@ -91,7 +90,7 @@ title : Recommendation
 
 ---
 
-#### **잠재 요인 협업 필터링**
+## 잠재 요인 협업 필터링
 
 - 사용자-아이템 평점 행렬 데이터만으로, '잠재 요인'을 끄집어 내는 것.
 
@@ -115,7 +114,7 @@ title : Recommendation
 - 다차원의 매트릭스를 저차원 매트릭스로 분해하는 기법을 행렬 분해(Matrix Factorization)이라고 한다.
 
 
-##### **행렬 분해의 이해**
+## 행렬 분해의 이해
 
 - SVD(Singular Vector Decomposition), NMF(Non-Negative Matrix Factorization) 등이 있다.
 
@@ -134,7 +133,7 @@ title : Recommendation
 
 ---
  
-##### **확률적 경사 하강법 행렬 분해**
+## 확률적 경사 하강법을 이용한 행렬 분해
 
 - P, Q로 계산된 예측 R행렬 값이 실제 R행렬 값과 가장 최소의 오류를 가질 수 있도록 반복적인 비용 함수 최적화
 
