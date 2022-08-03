@@ -20,7 +20,7 @@ baseurl:               ''
 lang:                  ko-kr
 
 # The title of your blog. Used in the sidebar and the browser tab.
-title:                 Meng
+title:                 meng blog
 
 # A short description (~150 chars) of the page used for the meta description tag.
 # Can use markdown, but no more than one paragraph (enforced by `>`)
@@ -29,7 +29,7 @@ description:           >
   with a focus on personal sites that are meant to impress.
 
 # A shorter description for the sidebar.
-tagline:               Tags
+tagline:               Meng.son의 데이터블로그
 
 # A list of keywords for your blog
 keywords:              []
@@ -43,9 +43,9 @@ logo:                  /assets/img/logo.png
 author:
   # Used by `jekyll-feed`:
   name:                Myeonghyeon Son
-  email:               franksmh0409@gmail.com
+  email:               franksmh0409@naver.com
   # Used by `jekyll-seo-tag`:
-  twitter:             menmenmeng
+  # twitter:             menmenmeng
   github:              menmenmeng
 
 # Add links to the sidebar.
@@ -99,15 +99,18 @@ theme_color:           rgb(25,55,71)
 
 # The string encoding which fonts to fetch from Google Fonts.
 # See: <https://hydejack.com/docs/configuration/>
-google_fonts:          Roboto+Slab:700|Noto+Sans:400,400i,700,700i
+google_fonts:          Noto+Sans+Mono:400,700|Noto+Serif+KR:400,700
+        # <default> Roboto+Slab:700|Noto+Sans:400,400i,700,700i
 
 # The text font. Expects a string that is a valid CSS font-family value.
 # To change font-weight, see _sass/variables.scss
-font:                  Noto Sans, Helvetica, Arial, sans-serif
+font:                  Noto Sans Mono, monospace, Noto Serif KR, serif
+        # <default> Noto Sans, Helvetica, Arial, sans-serif
 
 # The font used for headings. Expects a string that is a valid CSS font-family value.
 # To change font-weight, see _sass/variables.scss
-font_heading:          Roboto Slab, Helvetica, Arial, sans-serif
+font_heading:          Noto Sans Mono, Noto Serif KR
+        # <default> Roboto Slab, Helvetica, Arial, sans-serif
 
 # The font used for code blocks. Expects a string that is a valid CSS font-family value.
 font_code:             Fira Code, Menlo, Monaco, Consolas, monospace;
