@@ -48,10 +48,6 @@ author:
   twitter:             menmenmeng
   github:              menmenmeng
 
-# if not working, delete this part
-social:
-  username: menmenmeng
-
 # Add links to the sidebar.
 menu:
   - title:             Example
