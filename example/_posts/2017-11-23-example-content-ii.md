@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: page
 title: Example Content II
 description: >
   A page showing how regular markdown content is styled in Hydejack.
