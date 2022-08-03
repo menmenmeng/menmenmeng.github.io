@@ -52,7 +52,7 @@ author:
 menu:
   - title:             Data Processing
     url:               /data-processing/
-  - title:             ML
+  - title:             Machine Learning
     url:               /machine-learning/
   - title:             Example
     url:               /example/
