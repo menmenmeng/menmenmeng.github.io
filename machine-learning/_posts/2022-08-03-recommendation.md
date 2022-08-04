@@ -25,7 +25,7 @@ sitemap: false
 
 협업 필터링은 **최근접 이웃 협업 필터링**과 **잠재 요인 협업 필터링**의 두 가지 알고리즘으로 다시 나뉘는데, 최근에는 행렬 분해 기법을 이용한 잠재 요인 협업 필터링을 추천 시스템에 사용하는 게 더 효과가 좋아 트렌드라고 한다.
 
-![image](http://drive.google.com/uc?export=view&id=1qpX4BB3KZSNnNfo5zKo-B07dYbNYQMux){.:lead loading="lazy"}
+![image](https://drive.google.com/uc?export=view&id=1qpX4BB3KZSNnNfo5zKo-B07dYbNYQMux){:.lead loading="lazy"}
 
 ### 콘텐츠 기반 필터링
 
