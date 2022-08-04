@@ -6,9 +6,12 @@ description: >
 sitemap: false
 ---
 
+0. this unordered seed list will be replaced by toc as unordered list
+{:toc}
+
+
 유저의 선호도, 과거 행동 데이터를 바탕으로 개인에 맞는 관심사를 제공하는 머신러닝 기법
 {:.lead}
-
 
 
 ## 추천 시스템의 유형
@@ -26,7 +29,7 @@ sitemap: false
 
 ---
 
-## 콘텐츠 기반 필터링
+### 콘텐츠 기반 필터링
 
 - a가 A 아이템을 선호하는 경우, A 아이템과 비슷한 정보(콘텐츠)를 가진 B 아이템을 추천
 
@@ -35,7 +38,7 @@ sitemap: false
 ---
 
 
-## 협업 필터링
+### 협업 필터링
 
 - 취향이 비슷한 친구들에게 영화를 추천받는 것처럼 추천하는 알고리즘.
 
