@@ -27,7 +27,7 @@ sitemap: false
 
 ![Full-width image](https://drive.google.com/uc?export=view&id=1qpX4BB3KZSNnNfo5zKo-B07dYbNYQMux){:.lead loading="lazy"}
 ref : https://velog.io/@ijune97/RecommendationAlgorithm
-{:.figcaption}
+{:.figure}
 
 ### 콘텐츠 기반 필터링
 
@@ -113,9 +113,9 @@ Memory 협업 필터링이라고도 하며 또 다시, 사용자 기반, 그리�
 
 참고로 유사도 측정 방법엔 여러 가지가 있는데, 그 중 가장 많이 쓰이는 것이 유클리드 유사도와 코사인 유사도이다.
 
-![Full-width image](https://drive.google.com/uc?export=view&id=1BWAG4hEu1dUnzHMCvlR_wPmaAmyCl_rW)
+![Full-width image](https://drive.google.com/uc?export=view&id=1BWAG4hEu1dUnzHMCvlR_wPmaAmyCl_rW){:.lead loading="lazy"}
 왼쪽이 유클리드 유사도, 오른쪽이 코사인 유사도
-{:.figcaption}
+{:.figure}
 
 - 유클리드 거리 : 점과 점이 얼마나 가까운지를 평가
 
