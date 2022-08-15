@@ -13,8 +13,11 @@ numpy와 pandas에서 기본적으로 사용되는 method와 인스턴스 변수
 0. Table of Contents
 {:toc}
 
+## numpy
 
-## ndarray의 속성값들
+다양한 기능을 담은 메소드들이 정말 많지만, 여기서는 정말 자주 사용하고 꼭 필요한 메소드들만 모았다.
+
+### ndarray의 속성값들
 
 데이터가 어떤 모양인지를 개괄적으로 파악하기 위해 사용하기 좋은 메소드 또는 인스턴스 변수들.
 ~~~python
@@ -29,7 +32,7 @@ type(a)     # <class 'numpy.ndarray'>
 ~~~
 
 
-## ndarray의 생성
+### ndarray의 생성
 
 데이터(리스트)를 직접적으로 넣어주어 만드는 방법도 있지만, 지정한 모양에 랜덤한 값(또는 초기화된 값)을 채워넣어 생성하는 메소드도 존재한다. 아래의 코드 블럭은 ndim과 shape를 정해두고 그 정해진 모양대로 ndarray를 만드는 방법이다.
 ~~~python
@@ -44,11 +47,26 @@ np.arange(10, 30, 5)    # params : first, last, period. [first, last) 안에서 
 np.linspace(0, 4, 5)    # params : first, last, size. [first, last] 안에서 5개의 숫자를 만들어냄
 ~~~
 
+지금 가지고 있는 ndarray와 똑같은 shape를 가진 초기화된 ndarray를 생성하고 싶다면, 다음과 같은 메소드를 사용할 수 있다.
+~~~python
+a = np.array(15).reshape(3, 5)
+np.zeros_like(a)    # a의 shape와 동일한 shape를 가지며 0으로 초기화된 ndarray 반환
+np.ones_like(a)     # a의 shape와 동일한 shape를 가지며 1로 초기화된 ndarray 반환
+~~~
 
-## 
 
 
-## ndarray의 shape 변경
+
+### ndarray의 여러 연산 메소드들
+
+일반적인 연산, 예를 들어 특정 숫자 더하기나 빼기, 또는 log를 취하거나 제곱을 하거나 루트를 취하는 등... 대부분의 연산은 element wise로 이루어진다. 각 위치의 요소들은 다른 위치의 요소에 영향을 주지 않고, 그 위치에서만 연산된다는 것.
+집계함수(sum, min, max 등)는 위와는 다르다. 통계를 낸다는 관점에서 사용되는 연산이다.
+집계함수가 받는 parameter중 axis는 매우 매우 중요하니 잘 이해해야 한다.
+
+(설명 더 넣어야)
+
+
+### ndarray의 shape 변경
 
 ndarray.reshape(d0, d1, d2, ...)에 대해서는 확실히 기억해 놓아야 한다. ndarray의 shape를 (d0, d1, d2, ...)의 형태로 바꾸어 주는 메소드이다. 데이터 값 누락 없이 차원을 변경하고자 할 때 꼭 필요하며 자주 쓰인다. 여기서 d0, d1, d2 등의 값에 -1을 넣으면 나머지 정해진 차원을 가지고 알아서 계산해서 차원을 만들어 준다. 이를 이용한 특이한 사용 용례만 따로 소개한다.
 ~~~python
@@ -82,7 +100,8 @@ a.reshape(-1, 1, 1) # (15, 1, 1) # 이거까지는 잘 안 썼던 듯
 a.T                 # Transpose된 array를 반환한다.
 ~~~
 
-## 소수 제거 연산(반올림, 내림, 올림)
+### 소수 제거 연산(반올림, 내림, 올림)
+
 내림, 올림, 반올림, 그리고 그저 소수부분 제거만 하는 연산을 제공해준다. 주의할 점은 np.round(반올림)은 소수점 이하 몇 번째 자리에서 반올림할 것인지에 대한 parameter를 accept하지만, 내림, 올림, 소수부분 제거 연산은 받지 않는다. 원한다면 custom method를 만들어야 한다.
 ~~~python
 np.floor([1.53, 1.48, -1.53, -1.48])        # 내림
