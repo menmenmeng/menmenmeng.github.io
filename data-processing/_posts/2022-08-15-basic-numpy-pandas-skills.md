@@ -2,24 +2,26 @@
 layout: post
 title: "[Data] Basic numpy, pandas skills"
 description: >
-  Basic data processing methods of numpy and pandas library.
+  Basic data processing methods and attributes of numpy and pandas library.
 sitemap: false
 ---
 
-numpy와 pandas에서 기본적으로 사용되는 method와 인스턴스 변수들
+numpy와 pandas에서 기본적으로 사용되는 method와 attributes
 {:.lead}
-정해진 주제 없이, 전반적으로 자주 쓰이는 numpy와 pandas의 메소드들을 정리했다.
+정해진 주제는 없고 전반적으로 자주 쓰이는 numpy와 pandas의 메소드 및 속성을 정리했다(사실 내가 자꾸 까먹어서 기록해 두려고 함).
+
+쓸만한 메소드나 속성을 발견할 때마다 추가될 예정
 
 0. Table of Contents
 {:toc}
 
 ## numpy
 
-다양한 기능을 담은 메소드들이 정말 많지만, 여기서는 정말 자주 사용하고 꼭 필요한 메소드들만 모았다.
+자주 사용하며 꼭 필요한 것들만 모았다.
 
 ### ndarray의 속성값들
 
-데이터가 어떤 모양인지를 개괄적으로 파악하기 위해 사용하기 좋은 메소드 또는 인스턴스 변수들.
+데이터가 어떤 모양인지를 개괄적으로 파악하기 위해 사용하기 좋은 것들
 ~~~python
 a = np.array(15).reshape(3, 5)
 
@@ -34,24 +36,24 @@ type(a)     # <class 'numpy.ndarray'>
 
 ### ndarray의 생성
 
-데이터(리스트)를 직접적으로 넣어주어 만드는 방법도 있지만, 지정한 모양에 랜덤한 값(또는 초기화된 값)을 채워넣어 생성하는 메소드도 존재한다. 아래의 코드 블럭은 ndim과 shape를 정해두고 그 정해진 모양대로 ndarray를 만드는 방법이다.
+데이터(리스트)를 직접적으로 넣어주어 ndarray를 만들 수도 있지만, shape를 지정하고 임의의 값을 채워넣어 ndarray를 생성할 수도 있다. 아래의 코드 블럭은 ndim과 shape를 지정하여 그 모양의 ndarray를 만드는 방법이다. 어떤 값들로 채워지는지에 따라 메소드가 구분되어 있다.
 ~~~python
 np.empty((d0, d1, ...))     # 초기화되지 않은 값으로 채우기. (!= random)
-np.zeros((d0, d1, ...))     # 0으로 채우기
-np.ones((d0, d1, ...))      # 1로 채우기
+np.zeros((d0, d1, ...))     # 값을 0으로 채우기
+np.ones((d0, d1, ...))      # 값을 1로 채우기
 ~~~
 
-데이터를 등간격으로 생성하고 싶을 때 사용하는 메소드도 있다. 지금까지 봐왔던 사용처는 그래프 그릴 때 x축에 해당되는 index값들을 생성할 때 사용하는 것 정도..?
+아래는 등간격의 데이터를 ndarray로 생성하고 싶을 때 사용하는 메소드이다. 그래프의 x축에 해당되는 데이터를 만들 때 주로 사용했었고, 실제로 데이터 분석을 위해서는 잘 사용하지 않는 것 같다.
 ~~~python
 np.arange(10, 30, 5)    # params : first, last, period. [first, last) 안에서 5의 간격으로 올라감
 np.linspace(0, 4, 5)    # params : first, last, size. [first, last] 안에서 5개의 숫자를 만들어냄
 ~~~
 
-지금 가지고 있는 ndarray와 똑같은 shape를 가진 초기화된 ndarray를 생성하고 싶다면, 다음과 같은 메소드를 사용할 수 있다.
+특정 ndarray와 같은 shape를 가진 임의의 ndarray를 생성하고 싶다면, 다음과 같은 메소드를 사용할 수 있다.
 ~~~python
 a = np.array(15).reshape(3, 5)
-np.zeros_like(a)    # a의 shape와 동일한 shape를 가지며 0으로 초기화된 ndarray 반환
-np.ones_like(a)     # a의 shape와 동일한 shape를 가지며 1로 초기화된 ndarray 반환
+np.zeros_like(a)    # a의 shape와 동일한 shape를 가지며 값이 0으로 초기화된 ndarray 반환
+np.ones_like(a)     # a의 shape와 동일한 shape를 가지며 값이 1로 초기화된 ndarray 반환
 ~~~
 
 
@@ -60,15 +62,18 @@ np.ones_like(a)     # a의 shape와 동일한 shape를 가지며 1로 초기화�
 ### ndarray의 여러 연산 메소드들
 
 일반적인 연산, 예를 들어 특정 숫자 더하기나 빼기, 또는 log를 취하거나 제곱을 하거나 루트를 취하는 등... 대부분의 연산은 element wise로 이루어진다. 각 위치의 요소들은 다른 위치의 요소에 영향을 주지 않고, 그 위치에서만 연산된다는 것.
+(주로 사용하는 연산들 가지고 오기.)
+
 
 집계함수(sum, min, max 등)는 위와는 다르다. 통계를 낸다는 관점에서 사용되는 연산이다. 여기서 집계함수가 받는 parameter중 **axis**는 매우 매우 중요하니 잘 이해해야 한다.
+(주로 사용하는 집계함수들 가지고 오기)
 
-(그림이나 설명 더 넣어야)
+(axis에 대한 그림이나 설명 더 넣어야 함.)
 
 
 ### ndarray의 shape 변경
 
-ndarray.reshape(d0, d1, d2, ...)에 대해서는 확실히 기억해 놓아야 한다. ndarray의 shape를 (d0, d1, d2, ...)의 형태로 바꾸어 주는 메소드이다. 데이터 값 누락 없이 차원을 변경하고자 할 때 꼭 필요하며 자주 쓰인다. 여기서 d0, d1, d2 등의 값에 -1을 넣으면 나머지 정해진 차원을 가지고 알아서 계산해서 차원을 만들어 준다. 이를 이용한 특이한 사용 용례만 따로 소개한다.
+ndarray.reshape(d0, d1, d2, ...)에 대해서는 확실히 기억해 놓아야 한다. ndarray의 shape를 (d0, d1, d2, ...)의 형태로 바꾸어 주는 메소드이다. ndarray의 차원을 변경하고자 할 때 꼭 필요하며 자주 쓰인다. 여기서 d0, d1, d2 등의 값에 -1을 넣으면 나머지의 지정된 차원을 가지고 알아서 계산해서 차원을 만들어 준다. 이를 이용한 특이한 사용 용례만 따로 소개한다.
 ~~~python
 a = np.array(15).reshape(3, 5)
 
@@ -96,6 +101,8 @@ a.reshape(-1, 1, 1) # (15, 1, 1) # 이거까지는 잘 안 썼던 듯
  [14]]
 '''
 ~~~
+
+아래는 transpose된 ndarray를 반환하는 방법이다.
 ~~~python
 a.T                 # Transpose된 array를 반환한다.
 ~~~
