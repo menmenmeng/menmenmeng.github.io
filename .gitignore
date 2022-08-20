@@ -49,6 +49,7 @@ _zip
 /stats.json
 /dist
 /build
+/assets
 
 /assets/js/*hydejack-*
 /_sass/*/__*__/*
