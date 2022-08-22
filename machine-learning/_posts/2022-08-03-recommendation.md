@@ -25,7 +25,7 @@ sitemap: false
 
 협업 필터링은 **최근접 이웃 협업 필터링**과 **잠재 요인 협업 필터링**의 두 가지 알고리즘으로 다시 나뉘는데, 최근에는 행렬 분해 기법을 이용한 잠재 요인 협업 필터링을 추천 시스템에 사용하는 게 더 효과가 좋아 트렌드라고 한다.
 
-![Full-width image](./assets/img/myown/추천시스템필터링.png){:.lead loading="lazy"}
+![Full-width image](https://github.com/menmenmeng/menmenmeng.github.io/blob/main/assets/img/myown/%EC%B6%94%EC%B2%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%ED%95%84%ED%84%B0%EB%A7%81.png){:.lead loading="lazy"}
 ref : https://velog.io/@ijune97/RecommendationAlgorithm
 {:.figure}
 
@@ -113,7 +113,7 @@ Memory 협업 필터링이라고도 하며 또 다시, 사용자 기반, 그리�
 
 참고로 유사도 측정 방법엔 여러 가지가 있는데, 그 중 가장 많이 쓰이는 것이 유클리드 유사도와 코사인 유사도이다.
 
-![Full-width image](./assets/img/myown/유사도.png){:.lead loading="lazy"}
+![Full-width image](https://github.com/menmenmeng/menmenmeng.github.io/blob/main/assets/img/myown/%EC%9C%A0%EC%82%AC%EB%8F%84.png?raw=true){:.lead loading="lazy"}
 왼쪽이 유클리드 유사도, 오른쪽이 코사인 유사도
 {:.figure}
 
