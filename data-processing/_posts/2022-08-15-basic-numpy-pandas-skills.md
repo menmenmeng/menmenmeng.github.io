@@ -180,7 +180,9 @@ pandas에서 지원하는 두 가지 객체.
 - Series : 1차원 데이터 및 각 데이터의 위치정보를 담는 index로 구성
 - DataFrame : 2차원 데이터와 각 데이터의 위치정보를 담는 index, column으로 구성
 
-아래와 같이 객체를 선언할 때, Series와 DataFrame의 모습을 그림으로 표현하면 다음 그림과 비슷하게 표현할 수 있다.
+Series는 같은 종류의 데이터를 담는 1차원 데이터이며, DataFrame은 Series를 여러 개 가진 2차원 데이터라고 표현할 수도 있다.
+
+아래와 같이 객체를 선언할 때, Series와 DataFrame의 모습을 그림으로 표현하면 다음 그림과 같다.
 
 ~~~python
 series = pd.Series([1, 3, 5, np.nan, 6, 8])
@@ -189,7 +191,38 @@ dataframe = pd.DataFrame([[1, 2, 3], [4, 5, 6]])
 
 ![image](/assets/img/myown/pandas_instances.jpg){:.lead loading="lazy"}
 
+딕셔너리 형식을 이용해서 DataFrame을 만들 수 있다. 이 때, 딕셔너리의 Key가 DataFrame에서의 column이 된다.
 
+~~~python
+df2 = pd.DataFrame({'A':1.,
+                    'B':pd.Timestamp('20130102'),
+                    'C':pd.Series(1, index=list(range(4)), dtype='float32'),
+                    'D':np.array([3]*4, dtype='int32'),
+                    'E':pd.Categorical(["test", "train", "test", "train"]),
+                    'F':'foo'})
+
+# output
+#      A          B    C  D      E    F
+# 0  1.0 2013-01-02  1.0  3   test  foo
+# 1  1.0 2013-01-02  1.0  3  train  foo
+# 2  1.0 2013-01-02  1.0  3   test  foo
+# 3  1.0 2013-01-02  1.0  3  train  foo
+~~~
+
+만들어진 DataFrame df2에 대해 df2.dtypes라는 코드를 실행하면, 각 column이 어떤 데이터타입의 데이터를 가지고 있는지를 알 수 있다. **DataFrame은 서로 다른 데이터타입을 가진 Series의 모음이다.** 하나의 컬럼 내에 두 개의 데이터타입(ex. integer와 string)
+
+~~~python
+df2.dtypes
+
+# output
+# A           float64
+# B    datetime64[ns]
+# C           float32
+# D             int32
+# E          category
+# F            object
+# dtype: object
+~~~
 
 
 

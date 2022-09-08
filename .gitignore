@@ -53,3 +53,6 @@ _zip
 
 /assets/js/*hydejack-*
 /_sass/*/__*__/*
+
+# Etc
+python_test_file.ipynb
