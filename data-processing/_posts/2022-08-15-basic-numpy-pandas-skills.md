@@ -17,7 +17,7 @@ numpy와 pandas에서 기본적으로 사용되는 method와 attributes
 
 ## numpy
 
-자주 사용하며 꼭 필요한 것들만 모았다.
+자주 사용하며 꼭 필요한 것들만 모았다.{:.lead}
 
 ### ndarray의 속성값들
 
@@ -123,6 +123,8 @@ a.reshape(-1, 1, 1) # (15, 1, 1) # 이거까지는 잘 안 썼던 듯
 '''
 ~~~
 
+ndarray.T:
+
 아래는 transpose된 ndarray를 반환하는 방법이다.
 ~~~python
 a.T                 # Transpose된 array를 반환한다.
@@ -148,6 +150,26 @@ np.trunc([1.53, 1.48, -1.53, -1.48])        # 소수부 제거
 '''
 ~~~
 
+그 외 resize(), ravel()과 같은 함수도 있지만 대부분 reshape 선에서 정리됨.
+
+
+### 데이터 쌓기(concatenate)
+
+np.vstack(), np.hstack()을 통해 두 개 데이터를 concat할 수 있다.
+- np.vstack() : axis=0기준으로 쌓음. vertical stack, 즉 위 아래로 합친다. -> axis=0
+- np.hstack() : axis=1기준으로 쌓음. horizontal stack.
+
+두 메소드 모두 numpy array로 이루어진 튜플 형태, 즉 (arr1, arr2, ..., arr_n)의 input을 받아서 array를 방향에 맞게 합쳐 준다. vsplit(), hsplit() 메소드(이름에서 드러나듯이 stack 함수의 역연산)도 있지만 이 메소드들은 slicing으로 충분히 커버가 가능하니 굳이 알아둘 필요는 없을 듯.
+
+
+### 그 외
+브로드캐스팅, 인덱싱, boolean mask를 이용한 인덱싱은 계속해서 리마인드
+
+
+
+## pandas
+
+index, column으로 이루어진, 비정형 데이터를 python상에서 저장하고 다루기에 가장 편리한 라이브러리{:.lead}
 
 
 
