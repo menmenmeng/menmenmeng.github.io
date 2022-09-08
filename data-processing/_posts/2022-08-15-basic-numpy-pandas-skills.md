@@ -68,6 +68,7 @@ np.ones_like(a)     # a의 shape와 동일한 shape를 가지며 값이 1로 초
 집계함수(sum, min, max 등)는 위와는 다르다. 통계를 낸다는 관점에서 사용되는 연산이다. 여기서 집계함수가 받는 parameter중 **axis**는 매우 매우 중요하니 잘 이해해야 한다.
 
 주로 사용하는 2차원 array에 대해, axis=0, axis=1은 다음과 같이 정해진다.
+
 ![Image](/assets/img/myown/numpy_axis_0.jpg){:.lead loading="lazy"}
 axis의 기준을 그림으로 나타낸 것
 {:.figure}
@@ -78,7 +79,8 @@ np.sum을 예시로 들면, axis에 따른 함수의 결과값은 다음과 같�
 
 numpy의 집계함수 안에 들어가는 axis파라미터는 아래와 같이 생각하면 조금 이해가 쉽다.
 
-> np.aggr(axis=n) : axis=n의 index가 ‘의미 없어질 수 있는’ 연산.
+> np.aggr(axis=n) : axis=n의 index를 변형시키는 연산.
+> 즉 axis=n을 제외한 다른 axis에는 아무런 변화를 주지 않는 연산.
 
 
 
