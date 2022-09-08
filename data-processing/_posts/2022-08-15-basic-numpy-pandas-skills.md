@@ -209,7 +209,7 @@ df2 = pd.DataFrame({'A':1.,
 # 3  1.0 2013-01-02  1.0  3  train  foo
 ~~~
 
-만들어진 DataFrame df2에 대해 df2.dtypes라는 코드를 실행하면, 각 column이 어떤 데이터타입의 데이터를 가지고 있는지를 알 수 있다. **DataFrame은 서로 다른 데이터타입을 가진 Series의 모음이다.** 하나의 컬럼 내에 두 개의 데이터타입(ex. integer와 string)
+만들어진 DataFrame df2에 대해 df2.dtypes라는 코드를 실행하면, 각 column이 어떤 데이터타입의 데이터를 가지고 있는지를 알 수 있다. **DataFrame은 서로 다른 데이터타입을 가진 Series(column)의 모음이다.** 하나의 컬럼 내에 두 개의 데이터타입(ex. integer와 string)이 있을 수는 없다. 생각보다 많은 사람이 간과하는데 헷갈리지 않기를..
 
 ~~~python
 df2.dtypes
