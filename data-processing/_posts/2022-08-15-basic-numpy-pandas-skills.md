@@ -187,7 +187,7 @@ series = pd.Series([1, 3, 5, np.nan, 6, 8])
 dataframe = pd.DataFrame([[1, 2, 3], [4, 5, 6]])
 ~~~
 
-![image](assets/img/myown/pands instances.jpg){:.lead loading="lazy"}
+![image](/assets/img/myown/pandas instances.jpg){:.lead loading="lazy"}
 
 
 
