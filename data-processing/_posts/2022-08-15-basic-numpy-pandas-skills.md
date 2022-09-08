@@ -75,8 +75,7 @@ axis 번호의 기준
 {:.figure}
 
 np.sum을 예시로 들면, axis에 따른 함수의 결과값은 다음과 같이 나타난다.
-![Image](/assets/img/myown/numpy_axis_2.jpg)
-{:.lead width="400" loading="lazy"}
+![Image](/assets/img/myown/numpy_axis_2.jpg){:.lead width="400" loading="lazy"}
 
 
 numpy의 집계함수 안에 들어가는 axis파라미터는 아래와 같이 생각하면 조금 이해가 쉽다.
@@ -173,6 +172,23 @@ np.vstack(), np.hstack()을 통해 두 개 데이터를 concat할 수 있다.
 
 index, column으로 이루어진, 비정형 데이터를 python상에서 저장하고 다루기에 가장 편리한 라이브러리
 {:.lead}
+
+### Series, DataFrame
+
+pandas에서 지원하는 두 가지 객체.
+
+- Series : 1차원 데이터 및 각 데이터의 위치정보를 담는 index로 구성
+- DataFrame : 2차원 데이터와 각 데이터의 위치정보를 담는 index, column으로 구성
+
+아래와 같이 객체를 선언할 때, Series와 DataFrame의 모습을 그림으로 표현하면 다음 그림과 비슷하게 표현할 수 있다.
+
+~~~python
+series = pd.Series([1, 3, 5, np.nan, 6, 8])
+dataframe = pd.DataFrame([[1, 2, 3], [4, 5, 6]])
+~~~
+
+![image](assets/img/myown/pands instances.jpg){:.lead loading="lazy"}
+
 
 
 
