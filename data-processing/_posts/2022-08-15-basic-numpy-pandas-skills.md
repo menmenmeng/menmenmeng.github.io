@@ -17,7 +17,8 @@ numpy와 pandas에서 기본적으로 사용되는 method와 attributes
 
 ## numpy
 
-자주 사용하며 꼭 필요한 것들만 모았다.{:.lead}
+자주 사용하며 꼭 필요한 것들만 모았다.
+{:.lead}
 
 ### ndarray의 속성값들
 
@@ -74,7 +75,8 @@ axis 번호의 기준
 {:.figure}
 
 np.sum을 예시로 들면, axis에 따른 함수의 결과값은 다음과 같이 나타난다.
-![Image](/assets/img/myown/numpy_axis_2.jpg){:.lead width="400" loading="lazy"}
+![Image](/assets/img/myown/numpy_axis_2.jpg)
+{:.lead width="400" loading="lazy"}
 
 
 numpy의 집계함수 안에 들어가는 axis파라미터는 아래와 같이 생각하면 조금 이해가 쉽다.
@@ -169,7 +171,8 @@ np.vstack(), np.hstack()을 통해 두 개 데이터를 concat할 수 있다.
 
 ## pandas
 
-index, column으로 이루어진, 비정형 데이터를 python상에서 저장하고 다루기에 가장 편리한 라이브러리{:.lead}
+index, column으로 이루어진, 비정형 데이터를 python상에서 저장하고 다루기에 가장 편리한 라이브러리
+{:.lead}
 
 
 
