@@ -66,9 +66,10 @@ np.ones_like(a)     # a의 shape와 동일한 shape를 가지며 값이 1로 초
 
 
 집계함수(sum, min, max 등)는 위와는 다르다. 통계를 낸다는 관점에서 사용되는 연산이다. 여기서 집계함수가 받는 parameter중 **axis**는 매우 매우 중요하니 잘 이해해야 한다.
-(주로 사용하는 집계함수들 가지고 오기)
 
-(axis에 대한 그림이나 설명 더 넣어야 함.)
+주로 사용하는 2차원 array에 대해, axis=0, axis=1은 다음과 같이 정해진다.
+![Full-width image](https://github.com/menmenmeng/menmenmeng.github.io/blob/main/assets/img/myown/numpy_axis_0.jpg?raw=true){:.lead loading="lazy"}
+![Full-width image](https://github.com/menmenmeng/menmenmeng.github.io/blob/main/assets/img/myown/numpy_axis_1.jpg?raw=true){:.lead loading="lazy"}
 
 
 ### ndarray의 shape 변경
@@ -126,3 +127,4 @@ np.trunc([1.53, 1.48, -1.53, -1.48])        # 소수부 제거
 [ 1.  1. -1. -1.]
 '''
 ~~~
+
