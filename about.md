@@ -9,7 +9,7 @@ redirect_from:
   - /download/
 ---
 
-# 손명현의 포트폴리오
+# 데이터 분석가 손명현의 포트폴리오
 
 <!--author-->
 
