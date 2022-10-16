@@ -15,8 +15,30 @@ redirect_from:
 
 ## About Me
 
-이름, 나이, 학력
-전화번호, 메일
+Name
+{:.lead}
+손명현 Son Myeonghyeon
+
+Birth
+{:.lead} 
+1995\. 04\. 09
+
+Education
+{:.lead}
+Yonsei University
+_Industrial Engineering_
+- Bachelor of Science
+- 2014.03 ~ 2022.08
+- Cumulative GPA 3.79/4.3
+
+Tel
+{:.lead}
+010-8776-9308
+
+E-mail
+{:.lead}
+franksmh0409@gmail.com
+franksmh0409@naver.com
 
 ### 1. ~~ 한 사람 # 리더십과 인간관계, 공부의욕
 {:.lead}
