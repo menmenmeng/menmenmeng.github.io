@@ -111,11 +111,11 @@ __Python(tensorflow, pytorch)__
 
 ## Projects
 
-__스타트업 투자 유치 요인 분석(학부)__[Detail](machine-learning/_posts/2022-08-03-recommendation.md)
+__스타트업 투자 유치 요인 분석(학부)__ [&rarr;Detail](machine-learning/_posts/2022-08-03-recommendation.md)
 {:.lead}
 
 
-__코로나 팬데믹 이후 품목별 소비 예측(학부)__[Detail]
+__코로나 팬데믹 이후 품목별 소비 예측(학부)__ [&rarr;Detail]
 {:.lead}
 
 
