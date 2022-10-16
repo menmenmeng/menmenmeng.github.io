@@ -9,11 +9,14 @@ redirect_from:
   - /download/
 ---
 
-# Portfolio
+# 손명현의 포트폴리오
 
 <!--author-->
 
 ## About Me
+
+이름, 나이, 학력
+전화번호, 메일
 
 ### 1. ~~ 한 사람 # 리더십과 인간관계, 공부의욕
 {:.lead}
@@ -36,6 +39,20 @@ redirect_from:
 ## Skils
 
 ### 1. Python(numpy, pandas, scikit-learn)
+{:.lead}
+
+### 2. SQL(MySQL)
+{:.lead}
+
+### 3. Python(tensorflow, pytorch)
+{:.lead}
+
+### 4. R
+{:.lead}
+
+### 5. tableau
+{:.lead}
+
 
 
 ## Websites
@@ -49,11 +66,12 @@ redirect_from:
 {:.lead}
 데이터 분석 관련된 지식들 중 헷갈리거나 공부한 것들을 기록하려는 목적으로 만든 블로그입니다.
 
+
 ## Projects
 ### [스타트업 투자 유치 요인 분석(학부)](machine-learning/_posts/2022-08-03-recommendation.md)
 
 
-### 코로나 팬데믹 이후 품목별 소비 예측(학부)
+### [코로나 팬데믹 이후 품목별 소비 예측(학부)]
 
 
 ### LG 인턴십 - TV시청기록 데이터를 활용한 INSIGHT 발굴(인턴)
