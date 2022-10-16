@@ -111,18 +111,18 @@ __Python(tensorflow, pytorch)__
 
 ## Projects
 
-__스타트업 투자 유치 요인 분석(학부)__ [&rarr;Detail](machine-learning/_posts/2022-08-03-recommendation.md)
+__스타트업 투자 유치 요인 분석__ [&rarr; Detail](machine-learning/_posts/2022-08-03-recommendation.md)
 {:.lead}
 
 
-__코로나 팬데믹 이후 품목별 소비 예측(학부)__ [&rarr;Detail]
+__코로나 팬데믹 이후 품목별 소비 예측__ [&rarr; Detail]
 {:.lead}
 
 
-### LG 인턴십 - TV시청기록 데이터를 활용한 INSIGHT 발굴(인턴)
+__LG 인턴십 - TV시청기록 데이터를 활용한 INSIGHT 발굴__ [&rarr; Detail]
 
 
-### 비트코인 선물 거래 자동 트레이딩 머신 개발(개인)
+__가상화폐 자동 트레이딩 머신__ [&rarr; Detail]
 
 
 
