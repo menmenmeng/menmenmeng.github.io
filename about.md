@@ -93,10 +93,10 @@ __R__
 {:.lead}
 - <학부:투자공학> 수업으로 R 사용방법을 학습했습니다.
 
-__Python(tensorflow, pytorch)__
+__Python(tensorflow)__
 {:.lead}
 - <학부:딥러닝과응용> 수업으로 tensorflow 및 기초 Vision 지식을 학습했습니다.
-- [\<딥러닝과 자연어 처리\>](https://wikidocs.net/book/2155)를 독학하며 pytorch 와 기초 NLP 지식을 학습했습니다.
+- [\<딥러닝을 이용한 자연어 처리 입문\>](https://wikidocs.net/book/2155)를 독학하며 기초 NLP 지식을 학습했습니다.
 
 
 
