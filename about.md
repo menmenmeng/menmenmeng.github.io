@@ -9,9 +9,25 @@ redirect_from:
   - /download/
 ---
 
-# About
+# Portfolio
 
 <!--author-->
+
+## [스타트업 투자 유치 요인 분석(학부)](machine-learning/_posts/2022-08-03-recommendation.md)
+
+
+## 코로나 팬데믹 이후 품목별 소비 예측(학부)
+
+
+## LG 인턴십 - TV시청기록 데이터를 활용한 INSIGHT 발굴(인턴)
+
+
+## 비트코인 선물 거래 자동 트레이딩 머신 개발(개인)
+
+
+
+
+
 
 ## Hydejack
 
