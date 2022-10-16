@@ -13,6 +13,9 @@ redirect_from:
 
 <!--author-->
 
+0. Table of Contents
+{:toc}
+
 ## Profile
 
 __Name__
@@ -120,9 +123,11 @@ __코로나 팬데믹 이후 품목별 소비 예측__ [&rarr; Detail]
 
 
 __LG 인턴십 - TV시청기록 데이터를 활용한 INSIGHT 발굴__ [&rarr; Detail]
+{:.lead}
 
 
 __가상화폐 자동 트레이딩 머신__ [&rarr; Detail]
+{:.lead}
 
 
 
@@ -136,9 +141,9 @@ __가상화폐 자동 트레이딩 머신__ [&rarr; Detail]
 
 A boutique Jekyll theme for hackers, nerds, and academics.  
 {:.lead}
-
+<!-- 
 1. this list will be replaced by the toc
-{:toc .large-only}
+{:toc .large-only} -->
 
 ![Screenshot](/assets/img/myown/og-image.jpg){:.lead width="1920" height="1080" loading="lazy"}
 
