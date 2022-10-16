@@ -15,18 +15,18 @@ redirect_from:
 
 ## About Me
 
-1. ~~ 한 사람 # 리더십과 인간관계, 공부의욕
+### 1. ~~ 한 사람 # 리더십과 인간관계, 공부의욕
 {:.lead}
 학교에서 동아리 회장 했던 일들.
 동아리 회장으로서 맡았던 공연 경험들
 
-2. ~~ 한 개발자
+### 2. ~~ 한 개발자
 {:.lead}
 데이터 분석에 흥미를 가지고 했던 a, b, c 프로젝트
 직접 서비스를 만들고 싶어서 시작한 d 프로젝트(자동 트레이더)
 지금 하고 싶은 건 c와 같은 데이터의 인사이트 도출, d의 개선, e(합주표 짜는 프로그램)의 개발
 
-3. ~~ 한 음악가
+### 3. ~~ 한 음악가
 {:.lead}
 <!-- [사진](음악 관련된 사진) -->
 기타와 밴드를 좋아하는 음악가
@@ -35,31 +35,31 @@ redirect_from:
 
 ## Skils
 
-1. Python(numpy, pandas, scikit-learn)
+### 1. Python(numpy, pandas, scikit-learn)
 
 
 ## Websites
 
-[Github](https://github.com/menmenmeng)
+### [Github](https://github.com/menmenmeng)
 {:.lead}
 데이터 분석 및 코딩에 관심을 가지게 된 학부 때부터 코드를 저장 및 공유할 목적으로 사용한 깃허브 페이지입니다.
 
 
-[Blog](https://menmenmeng.github.io)
+### [Blog](https://menmenmeng.github.io)
 {:.lead}
 데이터 분석 관련된 지식들 중 헷갈리거나 공부한 것들을 기록하려는 목적으로 만든 블로그입니다.
 
 ## Projects
-## [스타트업 투자 유치 요인 분석(학부)](machine-learning/_posts/2022-08-03-recommendation.md)
+### [스타트업 투자 유치 요인 분석(학부)](machine-learning/_posts/2022-08-03-recommendation.md)
 
 
-## 코로나 팬데믹 이후 품목별 소비 예측(학부)
+### 코로나 팬데믹 이후 품목별 소비 예측(학부)
 
 
-## LG 인턴십 - TV시청기록 데이터를 활용한 INSIGHT 발굴(인턴)
+### LG 인턴십 - TV시청기록 데이터를 활용한 INSIGHT 발굴(인턴)
 
 
-## 비트코인 선물 거래 자동 트레이딩 머신 개발(개인)
+### 비트코인 선물 거래 자동 트레이딩 머신 개발(개인)
 
 
 
