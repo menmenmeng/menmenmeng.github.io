@@ -13,7 +13,7 @@ redirect_from:
 
 <!--author-->
 
-## 1. Profile
+## Profile
 
 __Name__
 {:.lead}
@@ -46,7 +46,7 @@ __E-mail__
 - franksmh0409@naver.com
 
 
-## 2. About Me
+## About Me
 
 __~~ 한 사람 # 리더십과 인간관계, 공부의욕__
 {:.lead}
@@ -67,7 +67,7 @@ __~~ 한 음악가__
 밴드공연 수 십회(사진들 + 유튜브 링크)
 
 
-## 3. Skils
+## Skils
 
 __Python(numpy, pandas, scikit-learn)__
 {:.lead}
@@ -99,22 +99,24 @@ __Python(tensorflow, pytorch)__
 
 ## Websites
 
-### [Github](https://github.com/menmenmeng)
+[__Github__](https://github.com/menmenmeng)
 {:.lead}
 데이터 분석 및 코딩에 관심을 가지게 된 학부 때부터 코드를 저장 및 공유할 목적으로 사용한 깃허브 페이지입니다.
 
 
-### [Blog](https://menmenmeng.github.io)
+[__Blog__](https://menmenmeng.github.io)
 {:.lead}
 데이터 분석 관련된 지식들과 취미생활을 공유하기 위해 만든 블로그 페이지입니다.
 
 
 ## Projects
 
-### [스타트업 투자 유치 요인 분석(학부)](machine-learning/_posts/2022-08-03-recommendation.md)
+__스타트업 투자 유치 요인 분석(학부)__[Detail](machine-learning/_posts/2022-08-03-recommendation.md)
+{:.lead}
 
 
-### [코로나 팬데믹 이후 품목별 소비 예측(학부)]
+__코로나 팬데믹 이후 품목별 소비 예측(학부)__[Detail]
+{:.lead}
 
 
 ### LG 인턴십 - TV시청기록 데이터를 활용한 INSIGHT 발굴(인턴)
@@ -124,6 +126,9 @@ __Python(tensorflow, pytorch)__
 
 
 
+## Life
+
+기타 치는 영상들 몇 개
 
 
 
