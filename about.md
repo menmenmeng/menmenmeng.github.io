@@ -9,7 +9,7 @@ redirect_from:
   - /download/
 ---
 
-# Myeonghyeon Son
+# Myeong Hyeon Son
 
 <!--author-->
 
