@@ -56,8 +56,8 @@ menu:
     url:               /machine-learning/
   - title:             Deep Learning
     url:               /deep-learning/
-  - title:             Life
-    url:               /life/
+  # - title:             Life
+  #   url:               /life/
   # - title:             Example
   #   url:               /example/
   # - title:             Documentation
