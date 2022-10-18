@@ -9,7 +9,7 @@ redirect_from:
   - /download/
 ---
 
-# 데이터 분석가, 손명현 Myeonghyeon Son
+# Myeonghyeon Son
 
 <!--author-->
 
