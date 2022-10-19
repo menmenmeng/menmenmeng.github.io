@@ -94,25 +94,45 @@ __Python(tensorflow)__
 
 ## Projects
 
-__스타트업 투자 유치 요인 분석__ [&rarr; Detail](projects/project-startup-investment.md)
+__스타트업 투자 유치 요인 분석__
 {:.lead}
 
 2019년 학부 수업 중 <데이터마이닝이론및응용> 수업에서 빅데이터와 데이터 분석 및 머신러닝의 구체적인 방법론을 공부한 후 프로젝트를 진행했습니다. 파이썬을 이용한 웹 스크래핑으로 스타트업 채용 정보 사이트(로켓펀치)에서 각 스타트업의 관련 정보를 수집하고, 수집된 정보를 SAS를 이용해 군집화, MBR, 로지스틱 회귀를 적용하여 스타트업이 일정 금액 이상의 투자금을 유치할 확률이 얼마나 되는지를 예측하였습니다.
 
-__코로나 팬데믹 이후 품목별 소비 예측__ [&rarr; Detail](projects/project-forecast-after-covid.md)
+Continue to read [detail](projects/project-startup-investment.md){:.heading.flip-title}
+{:.read-more}
+
+
+
+__코로나 팬데믹 이후 품목별 소비 예측__
 {:.lead}
 
 빅데이터 캠퍼스의 데이터 및 공공 데이터를 기반으로 사회 문제를 해결하고 비즈니스 모델을 구성하는 공모전에 참여하여 프로젝트를 수행하였습니다. 빅데이터캠퍼스의 데이터베이스에 존재하는 카드 소비 데이터들을 불러와 이를 통일된 형식으로 재정립하는 전처리 과정을 수행하였고, 과거 데이터를 X 변수로 추가한 RandomForest 기법, 그리고 Prophet을 사용한 시계열 분석으로 팬데믹 이후 소비 패턴의 변화를 관찰하였습니다.
 
-__TV 시청 로그 데이터를 활용한 INSIGHT 발굴__ [&rarr; Detail](projects/project-uptv-log.md)
+Continue to read [detail](projects/project-forecast-after-covid.md){:.heading.flip-title}
+{:.read-more}
+
+
+
+__TV 시청 로그 데이터를 활용한 INSIGHT 발굴__
 {:.lead}
 
 LG CNS의 인턴십 동안 LG U+, LG 스포츠, LG 라이프케어 등 LG 계열사의 데이터 풀에서 원하는 데이터를 탐색하고 Insight를 발굴하는 과제를 수행하였습니다. 많은 데이터 중 LG U+ 데이터의 U+ TV 시청 로그를 탐색하며, 시청시간을 시청횟수로 나누어 평균 시청 지속 기간이라는 지표를 만들어 Insight를 찾아냈습니다. 이를 토대로 심층적 탐색을 진행하였고, 얻어낸 결론을 tableau를 정리하고 프레젠테이션하였습니다.
 
-__가상화폐 자동 트레이딩 머신__ [&rarr; Detail](projects/project-binance-auto-trader.md)
+Continue to read [detail](projects/project-uptv-log.md){:.heading.flip-title}
+{:.read-more}
+
+
+
+__가상화폐 자동 트레이딩 머신__
 {:.lead}
 
 Binance(외국의 가상화폐 거래소)의 API를 활용하여 비트코인 선물 매매에 사용될 수 있는 여러 전략을 테스트하고, 가장 좋은 수익 전략을 찾아내어 자동적인 트레이딩이 가능하게끔 하려는 개인 프로젝트입니다. 과거 데이터의 로딩과 전략 구성을 작은 라이브러리의 형태로 구현하고 있으며, 이를 통해 코딩을 잘 모르는 사람도 쉽게 매매 전략을 구성할 수 있도록 하는 것이 목표입니다. 현재는 가장 많이 알려진 기술적 지표(이동평균, 볼린저 밴드)를 활용한 두 가지 전략을 테스트하고 있으며 두 전략에 들어갈 최적의 하이퍼파라미터를 RandomSearch를 통해 찾고 있습니다. 전략에 따라 수익이 나는 달이 확연히 차이나는 경우가 있어, 향후에는 각 월별 데이터에 어떤 다른 점이 있는지를 탐색하고 머신러닝, 딥러닝을 활용하여 전략을 구현할 방법을 고민하려 합니다.
+
+Continue to read [detail](projects/project-binance-auto-trader.md){:.heading.flip-title}
+{:.read-more}
+
+<!-- __가상화폐 자동 트레이딩 머신__ [&rarr; Detail](projects/project-binance-auto-trader.md) -->
 
 
 ## Website
