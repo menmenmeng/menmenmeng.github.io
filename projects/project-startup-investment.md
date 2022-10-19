@@ -2,7 +2,7 @@
 layout: page
 title: "스타트업 투자 유치 요인 분석"
 description: >
-  2019\.03 ~ 2019\.07\
+  2019\.03 ~ 2019\.07  
   스타트업 리크루팅 사이트의 데이터를 바탕으로 투자 유치 요인을 분석한 팀 프로젝트입니다.
 hide_description: false
 sitemap: false
@@ -22,9 +22,16 @@ sitemap: false
 
 ### Data Collection
 
-스타트업 위주의 리크루팅 사이트인 [로켓펀치](https://www.rocketpunch.com/)에는 대표자의 학력, 기업 소재지, 대표자 간 네트워크와 기술 스택 등 다양한 스타트업 관련 정보가 있습니다. 이 사이트에서 로켓펀치에 등록된 지 3년 이상이 된 스타트업 200여개를 파이썬을 이용해 웹스크래핑하여 데이터를 수집하였습니다.
+스타트업 위주의 리크루팅 사이트인 [로켓펀치](https://www.rocketpunch.com/companies)에는 대표자의 학력, 기업 소재지, 대표자 간 네트워크와 기술 스택 등 다양한 스타트업 관련 정보가 있습니다. 이 사이트에서 로켓펀치에 등록된 지 3년 이상이 된 스타트업 200여개를 파이썬을 이용해 웹스크래핑하여 데이터를 수집하였습니다.
+
+
+### Modeling Process
 
 
 
 
-## Todo
+
+
+## Skills
+
+Python(beautifulsoup, selenium), SAS
