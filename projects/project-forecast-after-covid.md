@@ -12,5 +12,5 @@ sitemap: false
 
 아아아.
 
-Go back to [About](about.md){:.heading.flip-title}
+Go back to [About](/about.md){:.heading.flip-title}
 {:.read-more}
