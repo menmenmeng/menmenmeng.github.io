@@ -57,13 +57,13 @@ X변수로 대표자의 출신 학부, 대표자의 최종 학력, 대표자의 
 |**X8**|클러스터 결과 : 범주형|
 |**Y**|3년 이내 투자 유치액 : 수치형(천만원)|
 
-X6` "자본 집약 산업 여부" 변수는 기술분야에 따라 투자금의 range가 달라질 가능성을 염두하기 위해 X6에서 파생하였습니다.
+X6` "자본 집약 산업 여부" 변수는 기술분야에 따라 투자금의 range가 달라질 가능성을 고려하기 위해 X6에서 파생하였습니다.
 {:.figure}
 
 
 ### Modeling
 
-기술분야에 따라 투자금의 range가 달라질 것을 염두하여 X6` 변수를 기준으로 스타트업의 산업군을 두 가지 범주로 분류하였습니다. 각 범주에 각각 MBR Regression, MBR Classification, 그리고 Logistic Regression을 수행하였습니다. 분석 프로세스를 다음과 같이 간략하게 그림으로 나타낼 수 있습니다.
+기술분야에 따라 투자금의 range가 달라질 것을 고려하여 X6` 변수를 기준으로 스타트업의 산업군을 두 가지 범주로 분류하였습니다. 각 범주에 각각 MBR Regression, MBR Classification, 그리고 Logistic Regression을 수행하였습니다. 분석 프로세스를 다음과 같이 간략하게 그림으로 나타낼 수 있습니다.
 
 ![startup-process-all](/assets/img/projects/startup-process-all.jpg){:.lead loading="lazy"}
 
