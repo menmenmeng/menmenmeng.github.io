@@ -85,5 +85,5 @@ Odds ratio 분석을 통해 투자 유치 확률이 대표자의 인맥 지표�
 Python(beautifulsoup, selenium), SAS
 
 
-Go back to [About](about.md){:.heading.flip-title}
+Go back to [Myeong Hyeon Son](/about/){:.heading.flip-title}
 {:.read-more}
