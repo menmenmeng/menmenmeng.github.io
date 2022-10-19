@@ -62,7 +62,11 @@ X6` "자본 집약 산업 여부" 변수는 기술분야에 따라 투자금의 
 
 ### Modeling
 
+X6` 변수를 기준으로 산업군을 두 가지 범주로 분류하여, 각 범주에 각각 MBR Regression, MBR Classification, 그리고 Logistic Regression을 수행하였습니다. 분석 프로세스를 다음과 같이 간략하게 그림으로 나타낼 수 있습니다.
 
+<p align="center">
+  <img width="500" src="/assets/img/projects/startup-process-all.jpg">
+</p>
 
 
 
