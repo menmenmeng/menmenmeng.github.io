@@ -3,7 +3,7 @@ layout: about
 image: /assets/img/myown/og-image.jpg
 description: >
   Porfolio of Myeong hyeon Son.
-hide_description: false
+hide_description: true
 redirect_from:
   - /download/
 ---
