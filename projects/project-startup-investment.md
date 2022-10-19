@@ -27,7 +27,8 @@ sitemap: false
 X변수로 대표자의 출신 학부, 대표자의 최종 학력, 대표자의 인맥 지표, 기업의 매력 지표, 산업 분야, 기술 분야, 기업의 소재지 등 7개를 먼저 사용하였고, Y변수는 3년 이내에 받은 투자 액수의 합계로 설정하였습니다. 대표자의 인맥 지표는 로켓펀치에 연결된 다른 대표자의 수로 설정하였으며, 기업의 매력 지표는 팔로우 수를 조회수로 나눈 값을 사용하였습니다. 
 
 또한, 7개의 X변수에 대한 FA 및 Clustering을 통해 기업을 5개의 Cluster로 분류하였으며, 분류 결과를 X변수에 추가하여 분석 데이터로 활용하였습니다.
-![startup-FA](assets/img/projects/startup-FA.jpg){:.tail width="100" height="200" loading="lazy"}
+
+![startup-FA image](assets/img/projects/startup-FA.jpg){:.lead width="100" height="200" loading="lazy"}
 
 
 
