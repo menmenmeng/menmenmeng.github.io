@@ -4,8 +4,8 @@ image: /assets/img/myown/og-image.jpg
 description: >
   Porfolio of Myeong hyeon Son.
 hide_description: true
-permalink: /projects/
 redirect_from:
+  - /projects/
   - /download/
 ---
 
