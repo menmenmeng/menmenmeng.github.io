@@ -30,7 +30,7 @@ X변수로 대표자의 출신 학부, 대표자의 최종 학력, 대표자의 
 
 <!-- ![startup-FA image](/assets/img/projects/startup-FA.jpg){width="100" height="200" loading="lazy"} -->
 <p align="center">
-  <img width="400" src="/assets/img/projects/startup-FA.jpg">
+  <img width="350" src="/assets/img/projects/startup-FA.jpg">
 </p>
 
 
