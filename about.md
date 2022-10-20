@@ -106,6 +106,22 @@ Continue reading [detail](projects/project-uptv-log.md){:.heading}
 
 
 
+__가상화폐 자동 트레이딩 머신(In Progress)__
+{:.lead}
+
+_2022\.08 ~_
+{:.faded}
+
+Binance(외국의 가상화폐 거래소)의 API를 활용하여 비트코인 선물 매매에 사용될 수 있는 여러 전략을 테스트하고, 가장 좋은 수익 전략을 찾아내어 자동적인 트레이딩이 가능하게끔 하려는 개인 프로젝트입니다. 과거 데이터의 로딩과 전략 구성을 작은 라이브러리의 형태로 구현하고 있으며, 이를 통해 코딩을 잘 모르는 사람도 쉽게 매매 전략을 구성할 수 있도록 하는 것이 목표입니다. 현재는 가장 많이 알려진 기술적 지표(이동평균, 볼린저 밴드)를 활용한 두 가지 전략을 테스트하고 있으며 두 전략에 들어갈 최적의 하이퍼파라미터를 RandomSearch를 통해 찾고 있습니다. 전략에 따라 수익이 나는 달이 확연히 차이나는 경우가 있어, 향후에는 각 월별 데이터에 어떤 다른 점이 있는지를 탐색하고 머신러닝, 딥러닝을 활용하여 전략을 구현할 방법을 고민하려 합니다.
+
+Continue reading [detail](projects/project-binance-auto-trader.md){:.heading}
+{:.read-more}
+
+<!-- __가상화폐 자동 트레이딩 머신__ [&rarr; Detail](projects/project-binance-auto-trader.md) 
+{:.heading.flip-title}-->
+
+
+
 __스타트업 투자 유치 요인 분석__
 {:.lead}
 
@@ -132,21 +148,6 @@ Continue reading [detail](projects/project-forecast-after-covid.md){:.heading}
 
 
 
-__가상화폐 자동 트레이딩 머신(In Progress)__
-{:.lead}
-
-_2022\.08 ~_
-{:.faded}
-
-Binance(외국의 가상화폐 거래소)의 API를 활용하여 비트코인 선물 매매에 사용될 수 있는 여러 전략을 테스트하고, 가장 좋은 수익 전략을 찾아내어 자동적인 트레이딩이 가능하게끔 하려는 개인 프로젝트입니다. 과거 데이터의 로딩과 전략 구성을 작은 라이브러리의 형태로 구현하고 있으며, 이를 통해 코딩을 잘 모르는 사람도 쉽게 매매 전략을 구성할 수 있도록 하는 것이 목표입니다. 현재는 가장 많이 알려진 기술적 지표(이동평균, 볼린저 밴드)를 활용한 두 가지 전략을 테스트하고 있으며 두 전략에 들어갈 최적의 하이퍼파라미터를 RandomSearch를 통해 찾고 있습니다. 전략에 따라 수익이 나는 달이 확연히 차이나는 경우가 있어, 향후에는 각 월별 데이터에 어떤 다른 점이 있는지를 탐색하고 머신러닝, 딥러닝을 활용하여 전략을 구현할 방법을 고민하려 합니다.
-
-Continue reading [detail](projects/project-binance-auto-trader.md){:.heading}
-{:.read-more}
-
-<!-- __가상화폐 자동 트레이딩 머신__ [&rarr; Detail](projects/project-binance-auto-trader.md) 
-{:.heading.flip-title}-->
-
-
 ## Website
 
 [__Github__](https://github.com/menmenmeng)
@@ -158,36 +159,3 @@ Continue reading [detail](projects/project-binance-auto-trader.md){:.heading}
 {:.lead}
 데이터 분석 관련된 지식들과 취미생활을 공유하기 위해 만든 블로그 페이지입니다.
 이거 hydejack 예시 파일들 아직 남아있음, 이거 지워주기. -->
-
-
-[blog]: /
-[portfolio]: https://hydejack.com/examples/
-[resume]: https://hydejack.com/resume/
-[download]: https://hydejack.com/download/
-[welcome]: https://hydejack.com/
-[forms]: https://hydejack.com/forms-by-example/
-
-[features]: #features
-[news]: #build-an-audience
-[syntax]: syntax-highlighting
-[latex]: #beautiful-math
-[dark]: https://hydejack.com/blog/hydejack/2018-09-01-introducing-dark-mode/
-[search]: https://hydejack.com/#_search-input
-[grid]: https://hydejack.com/blog/hydejack/
-
-[lic]: LICENSE.md
-[pro]: licenses/PRO.md
-[docs]: docs/README.md
-[ofln]: docs/advanced.md#enabling-offline-support
-[math]: docs/writing.md#adding-math
-
-[kit]: https://github.com/hydecorp/hydejack-starter-kit/releases
-[src]: https://github.com/hydecorp/hydejack
-[gem]: https://rubygems.org/gems/jekyll-theme-hydejack
-[buy]: https://gum.co/nuOluY
-
-[gpss]: https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fhydejack.com%2Fdocs%2F
-[rouge]: http://rouge.jneen.net
-[katex]: https://khan.github.io/KaTeX/
-[mathjax]: https://www.mathjax.org/
-[tinyletter]: https://tinyletter.com/

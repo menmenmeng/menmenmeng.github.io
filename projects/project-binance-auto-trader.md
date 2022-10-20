@@ -10,7 +10,17 @@ sitemap: false
 0. Table of Contents
 {:toc}
 
-아아아.
+## Background
+
+
+
+## Process
+
+
+## Meaning
+
+
+## Skills
 
 Go back to [Myeong Hyeon Son](/about/){:.heading.flip-title}
 {:.read-more}
