@@ -2,7 +2,7 @@
 layout: page
 title: "TV 시청 로그 데이터를 활용한 INSIGHT 발굴"
 description: |
-  2022\.05 ~ 2022\.06
+  2022\.05 ~ 2022\.06  
   인턴십 기간 동안 계열사의 데이터를 탐색하고 Insight를 발굴하여 tableau로 프레젠테이션하였습니다.
 hide_description: false
 sitemap: false
