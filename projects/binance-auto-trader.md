@@ -11,6 +11,9 @@ sitemap: false
 0. Table of Contents
 {:toc}
 
+Go back to [Myeong Hyeon Son](/about/){:.heading.flip-title}
+{:.read-more}
+
 ## Background
 
 

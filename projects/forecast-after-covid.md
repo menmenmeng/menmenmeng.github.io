@@ -11,6 +11,9 @@ sitemap: false
 0. Table of Contents
 {:toc}
 
+Go back to [Myeong Hyeon Son](/about/){:.heading.flip-title}
+{:.read-more}
+
 ## Background
 
 2021년 데이터 분석 학회에 가입하여 머신러닝 전반에 필요한 데이터 분석 코딩 스킬들을 익히고, 이를 활용해 보기 위해 진행했던 프로젝트입니다. 공공 데이터를 기반으로 사회 문제를 해결하고 비즈니스 모델을 구성하는 빅데이터 캠퍼스의 공모전이었으며, 4명의 팀으로 참여하여 프로젝트를 수행하였습니다. 
