@@ -11,8 +11,6 @@ sitemap: false
 0. Table of Contents
 {:toc}
 
-Go back to [Myeong Hyeon Son](/about/){:.heading.flip-title}
-{:.read-more}
 
 회사 내규에 따라 자세한 내용은 생략하였습니다.
 {:.faded}
