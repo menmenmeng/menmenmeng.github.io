@@ -3,7 +3,7 @@
 # Change `author1` to your shortname.
 author1:
   name:              Meng Son
-  email:             <franksmh0409@naver.com>
+  email:             <franksmh0409@gmail.com>
 
   # Used at the bottom of each page and at the top of the `about` layout
   # Markdown enabled, can use multiple paragraphs (enabled by `|`)
@@ -29,7 +29,7 @@ author1:
   social:
     # twitter:         <username>
     github:          menmenmeng
-    email:           <franksmh0409@naver.com>
+    email:           <franksmh0409@gmail.com>
     # rss:             https://<url>/feed.xml
     # facebook:        <username>
     # google:          <number>

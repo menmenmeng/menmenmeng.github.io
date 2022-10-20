@@ -59,7 +59,6 @@ __Tel__
 
 __E-mail__
 {:.lead}
-- franksmh0409@naver.com
 - franksmh0409@gmail.com
 
 
