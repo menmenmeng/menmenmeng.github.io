@@ -12,6 +12,7 @@ sitemap: false
 {:toc}
 
 회사 내규에 따라 자세한 내용은 생략하였습니다.
+{:.faded}
 
 ## Background
 
