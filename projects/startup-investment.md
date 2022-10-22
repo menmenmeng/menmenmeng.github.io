@@ -8,8 +8,8 @@ hide_description: false
 sitemap: false
 ---
 
-0. Table of Contents
-{:toc}
+<!-- 0. Table of Contents
+{:toc} -->
 
 
 ## Background
@@ -86,5 +86,5 @@ Odds ratio 분석을 통해 투자 유치 확률이 대표자의 인맥 지표�
 Python(beautifulsoup, selenium), SAS
 
 
-Go back to [Myeong Hyeon Son](/about/){:.heading.flip-title}
-{:.read-more}
+<!-- Go back to [Myeong Hyeon Son](/about/){:.heading.flip-title}
+{:.read-more} -->

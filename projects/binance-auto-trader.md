@@ -8,15 +8,15 @@ hide_description: false
 sitemap: false
 ---
 
-0. Table of Contents
-{:toc}
+<!-- 0. Table of Contents
+{:toc} -->
 
 
 ## Background
 
 기업의 가치를 보고 투자할 수 있는 주식과는 다르게, 가상화폐에는 특수한 것을 제외하고는 실제 가치라고 부를 만한 것이 없습니다. 그렇기에 제게 가상화폐 투자는 투자라기보단 투기의 이미지가 강해서 굳이 흥미를 가지지 않았습니다. 그러나 매체에서 보이던 "가상화폐 자동 트레이딩으로 선거자금을 벌었다"는 정치인, 그리고 주변인들의 가상화폐 자동 트레이딩 실 사례들을 듣고 가상화폐의 가치가 아니라 가상화폐 매매자들의 움직임만으로 상승/하락을 예측할 수도 있지 않을까, 하는 궁금증이 생겼습니다.
 
-데이터 분석을 활용한 가상화폐 매매 전략 도출이 가능할지 확인해 보고 싶어 프로젝트를 시작했으며, 현재는 API 통신의 기본적 지식 공부 및 파이썬 프로그래밍 실력 향상(+ 잘 되면 작은 용돈 벌이까지) 등도 겸하기 위해 작은 라이브러리처럼 매매 프로그램을 만들어가고 있습니다.
+데이터 분석을 활용한 가상화폐 매매 전략 도출이 가능할지 확인해 보고 싶어 프로젝트를 시작했으며, 현재는 API 통신의 기본적 지식 공부 및 파이썬 프로그래밍 실력 향상 및 작은 용돈 벌이까지 겸하기 위해 작은 라이브러리처럼 매매 프로그램을 만들어가고 있습니다.
 
 
 ## Process
@@ -59,8 +59,8 @@ BackDataLoader는 과거의 가상화폐 가격 데이터를 원하는 기간 �
 
 기본적으로 제공하는 Binance의 API에는 max로 가져올 수 있는 row의 개수가 1500개로 정해져 있으며 이 개수를 초과한 데이터 요청은 받지 않습니다. BackDataLoader는 가져오고 싶은 데이터의 start Time과 end Time, 그리고 interval을 입력받으면 그에 따른 row의 개수를 체크하고 1500개가 넘는다면 여러 번의 데이터 요청을 통해 데이터를 가져오고 이를 하나의 DataFrame으로 묶어서 리턴합니다.
 
-[codes](https://github.com/menmenmeng/TIL/blob/main/AutoTrader/BinanceTrader/backTester/BackDataLoader.py){:.heading}
-{:.read-more}
+<!-- [codes](https://github.com/menmenmeng/TIL/blob/main/AutoTrader/BinanceTrader/backTester/BackDataLoader.py){:.heading}
+{:.read-more} -->
 
 
 ####  ConditionGenerator
@@ -112,8 +112,8 @@ cc.add_Condition('clear') # or-condition 2
 
 위처럼 만든 조건은 현재는 T/F 조건으로서의 역할을 하지 못하는 pseudo-condition들이며, 이는 BackTester 모듈에서 실제 T/F조건으로 변환되어 사용됩니다.
 
-[codes](https://github.com/menmenmeng/TIL/blob/main/AutoTrader/BinanceTrader/conditionGenerator/ConditionGenerator.py){:.heading}
-{:.read-more}
+<!-- [codes](https://github.com/menmenmeng/TIL/blob/main/AutoTrader/BinanceTrader/conditionGenerator/ConditionGenerator.py){:.heading}
+{:.read-more} -->
 
 
 ####  BackTester
@@ -134,13 +134,13 @@ ConditionGenerator에서 만들어진 조건들을 가지고 실제 백테스팅
   과거 데이터를 처음부터 끝까지 탐색해 가며 조건을 확인하고, 조건에 따라 long, short포지션을 취하거나 포지션을 청산(clear)하며 최종적인 수익률을 리턴함. set_long(), set_short(), set_clear()라는 매매 메소드, 그리고 _make_conditions()라는 T/F 확인 함수로 이루어져 있음
 
 
-[codes](https://github.com/menmenmeng/TIL/blob/main/AutoTrader/BinanceTrader/backTester/BackTester.py){:.heading}
-{:.read-more}
+<!-- [codes](https://github.com/menmenmeng/TIL/blob/main/AutoTrader/BinanceTrader/backTester/BackTester.py){:.heading}
+{:.read-more} -->
 
 
-### Real-Time Trading (To do)
+<!-- ### Real-Time Trading (To do)
 
-진행 예정
+진행 예정 -->
 
 ### Data Analysis & Strategy (To do)
 
@@ -160,5 +160,5 @@ ConditionGenerator에서 만들어진 조건들을 가지고 실제 백테스팅
 
 Python
 
-Go back to [Myeong Hyeon Son](/about/){:.heading.flip-title}
-{:.read-more}
+<!-- Go back to [Myeong Hyeon Son](/about/){:.heading.flip-title}
+{:.read-more} -->
