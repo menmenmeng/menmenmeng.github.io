@@ -17,11 +17,11 @@ author1:
 
   # This photo will be used in the about section
   picture:
-    path:            /assets/img/myown/son01_256x256.jpg  #https://via.placeholder.com/128x128
+    path:            /assets/img/myown/sonnyPicture1080x1080.jpg # /assets/img/myown/son01_256x256.jpg  #https://via.placeholder.com/128x128
     # srcset is optional, but can be used to provide higher res versions for retina displays
     srcset:
       1x:            /assets/img/myown/son01.jpg  #https://via.placeholder.com/128x128
-      2x:            /assets/img/myown/son01_256x256.jpg  #https://via.placeholder.com/256x256 # change this..
+      2x:            /assets/img/myown/sonnyPicture1080x1080.jpg  #https://via.placeholder.com/256x256 # change this..
 
   # Social media icons in sidebar
   # Comment/uncommet to show/hide
