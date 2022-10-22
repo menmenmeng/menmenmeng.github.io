@@ -84,7 +84,8 @@ __tableau__
 __Python(tensorflow)__
 {:.lead}
 - \<딥러닝과 응용\> 수업으로 tensorflow 및 기초 Vision 지식을 학습했습니다.
-- [\<딥러닝을 이용한 자연어 처리 입문\>](https://wikidocs.net/book/2155)를 독학하며 기초 NLP 지식을 학습했습니다.
+- [\<딥러닝을 이용한 자연어 처리 입문\>](https://wikidocs.net/book/2155)를 독학하며 기초 NLP 지식을 학습 중입니다.
+- [\<PyTorch로 시작하는 딥러닝 입문\>](https://wikidocs.net/book/2788)를 독학하며 PyTorch 활용법을 학습 중입니다.
 
 __R__
 {:.lead}
