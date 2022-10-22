@@ -35,7 +35,7 @@ sitemap: false
 
 백테스팅은 다음과 같은 프로세스로 수행합니다. binance API 통신을 지원하는 공식 라이브러리인 binance futures connector와 커스텀 모듈 3개(BackDataLoader, ConditionGenerator, BackTester)를 이용합니다.
 
-
+![binance-backtest-process](/assets/img/projects/binance-backtest-process.jpg){:.lead loadings="lazy"}
 
 ### API Communication
 
