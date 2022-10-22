@@ -35,19 +35,13 @@ API 통신은 바이낸스에서 공식적으로 제공하는 binance futures co
 
 백테스팅을 위해 세 가지 모듈을 구성하였습니다.
 
-> 1. BackDataLoader
-
-  과거의 가상화폐 가격 및 거래량 데이터를 원하는 기간, 원하는 interval로 가져옴
+> 1. BackDataLoader : 과거의 가상화폐 가격 및 거래량 데이터 로딩 모듈
 
 
-> 2. ConditionGenerator
-
-  가상화폐 매매 전략을 프로그래밍 없이 구현하도록 함
+> 2. ConditionGenerator : 가상화폐 매매 전략 구현 모듈
 
 
-> 3. BackTester
-
-  가져온 과거 가상화폐 데이터 및 구성한 가상화폐 매매 전략을 사용해 전략이 실제로 수익이 날지 테스트함
+> 3. BackTester : 구성된 과거 데이터 및 매매 전략을 이용하여 전략을 테스트하는 모듈
 
 
 ####  BackDataLoader
