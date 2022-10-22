@@ -23,6 +23,10 @@ sitemap: false
 
 2022년 10월 기준 Binance API를 활용하여 과거 데이터를 로드하고 가상화폐를 매매해 보았으며, 과거 데이터를 로딩하고 백테스팅하는 모듈을 프로그래밍하였습니다. 데이터 분석을 활용한 매매 전략을 도출하는 데에는 좀 더 시간이 걸릴 것 같습니다. 현재는 손해도 이익도 크지 않을 안전한 전략을 바탕으로 백테스팅 모듈 및 웹소켓을 이용한 실시간 트레이딩 봇을 먼저 개발하고, 그 이후 데이터 분석을 통한 매매 전략을 도출해보려 합니다.
 
+현재까지는 백테스팅 모듈을 거의 완성한 시점이며, 다음과 같은 프로세스로 백테스팅을 수행합니다. binance API 통신을 지원하는 공식 라이브러리인 binance futures connector와 커스텀 모듈 3개(BackDataLoader, ConditionGenerator, BackTester)를 이용합니다.
+
+
+
 
 ### API Communication
 
@@ -37,15 +41,17 @@ API 통신은 바이낸스에서 공식적으로 제공하는 binance futures co
 > 2. ConditionGenerator
 > 3. BackTester
 
-####  BackDataLoader [codes](https://github.com/menmenmeng/TIL/blob/main/AutoTrader/BinanceTrader/backTester/BackDataLoader.py)
+####  BackDataLoader
 
 BackDataLoader는 과거의 가상화폐 가격 데이터를 원하는 기간 동안, 원하는 interval에 맞게 가져와주는 모듈입니다. 
 
 기본적으로 제공하는 Binance의 API에는 max로 가져올 수 있는 row의 개수가 1500개로 정해져 있으며 이 개수를 초과한 데이터 요청은 받지 않습니다. BackDataLoader는 가져오고 싶은 데이터의 start Time과 end Time, 그리고 interval을 입력받으면 그에 따른 row의 개수를 체크하고 1500개가 넘는다면 여러 번의 데이터 요청을 통해 데이터를 가져오고 이를 하나의 DataFrame으로 묶어서 리턴합니다.
 
+[codes](https://github.com/menmenmeng/TIL/blob/main/AutoTrader/BinanceTrader/backTester/BackDataLoader.py)
+{:.read-more}
 
 
-####  ConditionGenerator [codes](https://github.com/menmenmeng/TIL/blob/main/AutoTrader/BinanceTrader/conditionGenerator/ConditionGenerator.py)
+####  ConditionGenerator
 
 ConditionGenerator는 벡테스팅에 활용할 전략을 구성할 때, 특별한 코딩 없이 _포지션 구성 조건을 추가_ 하는 두 가지 메소드로 long 포지션, short 포지션, 그리고 포지션을 청산하는 조건을 만들도록 한 모듈입니다.
 
@@ -94,8 +100,11 @@ cc.add_Condition('clear') # or-condition 2
 
 위처럼 만든 조건은 현재는 T/F 조건으로서의 역할을 하지 못하는 pseudo-condition들이며, 이는 BackTester 모듈에서 실제 T/F조건으로 변환되어 사용됩니다.
 
+[codes](https://github.com/menmenmeng/TIL/blob/main/AutoTrader/BinanceTrader/conditionGenerator/ConditionGenerator.py)
+{:.read-more}
 
-####  BackTester [codes](https://github.com/menmenmeng/TIL/blob/main/AutoTrader/BinanceTrader/backTester/BackTester.py)
+
+####  BackTester
 
 ConditionGenerator에서 만들어진 조건들을 가지고 실제 백테스팅을 해주는 모듈입니다. ConditionGenerator를 통해 만든 pseudo-condition들을 실제 T/F 조건으로 변환하는 메소드, 그리고 과거 데이터를 입력받아 최종 수익률을 return하는 메소드가 주요 메소드입니다.
 
@@ -124,22 +133,31 @@ ConditionGenerator에서 만들어진 조건들을 가지고 실제 백테스팅
 
     포지션을 청산함
 
+[codes](https://github.com/menmenmeng/TIL/blob/main/AutoTrader/BinanceTrader/backTester/BackTester.py)
+{:.read-more}
+
 
 ### RealTime Trading (To do)
 
 진행 예정
 
-### Data Analysis (To do)
+### Data Analysis & Strategy (To do)
 
-진행 예정
+가장 기본적이라고 할 수 있는 이동평균 돌파 전략, 그리고 볼린저 밴드를 활용한 전략을 사용하여 백테스팅 중입니다. parameter를 여러 쌍 정해 두고 RandomSearch를 이용하여 가장 좋은 결과를 내는 파라미터를 찾고 있습니다. 위 전략을 사용해 실시간 트레이더를 작성해본 후, 마지막으로 데이터 분석 기법을 통한 전략 구성을 고민하려 합니다.
+
+전략에 따라 수익이 나는 달이 확연히 차이나는 경우가 있어, 향후에는 각 월별 데이터에 어떤 다른 점이 있는지를 탐색하고자 합니다.
+
 
 ## Meaning
 
-파이썬은 객체지향 언어라는 특성이 있지만, 이를 제대로 활용해본 적은 없었습니다. 이 프로젝트를 통해 파이썬의 class를 이용한 프로그래밍에 조금씩 익숙해져 가고 있는 것 같습니다. 지금까지 파이썬 개발 자체에는 크게 관심을 두지 않았어서 부족한 부분이 많습니다. condition을 저장하는 모듈이 특히, 난잡하고 투박하다는 생각이 많이 들어 이 부분을 들어내고 새롭게 개발할까 고민 중입니다.
+파이썬은 객체지향 언어라는 특성이 있지만, 이를 제대로 활용해본 적은 없었습니다. 이 프로젝트를 통해 파이썬의 class를 이용한 프로그래밍에 조금씩 익숙해져 가고 있는 것 같습니다. 지금까지 파이썬 개발 자체에는 크게 관심을 두지 않았어서 부족한 부분이 많습니다. condition을 저장하는 모듈이 특히, 난잡하고 투박하다는 생각이 들어 이 부분을 들어내고 새롭게 개발할까 고민 중입니다.
+
+
 
 
 ## Skills
 
+Python
 
 Go back to [Myeong Hyeon Son](/about/){:.heading.flip-title}
 {:.read-more}

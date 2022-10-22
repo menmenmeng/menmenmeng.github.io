@@ -93,6 +93,20 @@ __R__
 
 ## Projects
 
+
+__TV 시청 로그 데이터를 활용한 INSIGHT 발굴__
+{:.lead}
+
+_2022\.06 ~ 2022\.07_
+{:.faded}
+
+LG CNS의 인턴십 동안 LG U+, LG 스포츠, LG 라이프케어 등 LG 계열사의 데이터 풀에서 원하는 데이터를 탐색하고 Insight를 발굴하는 과제를 수행하였습니다. 많은 데이터 중 LG U+ 데이터의 U+ TV 시청 로그를 탐색하며, 시청시간을 시청횟수로 나누어 평균 시청 지속 기간이라는 지표를 만들어 Insight를 찾아냈습니다. 이를 토대로 심층적 탐색을 진행하였고, 얻어낸 결론을 tableau를 정리하고 프레젠테이션하였습니다.
+
+Continue reading [detail](projects/uptv-log.md){:.heading}
+{:.read-more}
+
+
+
 __가상화폐 자동 트레이딩 머신(In Progress)__
 {:.lead}
 
@@ -111,17 +125,17 @@ Continue reading [detail](projects/binance-auto-trader.md){:.heading}
 
 
 
-
-__TV 시청 로그 데이터를 활용한 INSIGHT 발굴__
+__스타트업 투자 유치 요인 분석__
 {:.lead}
 
-_2022\.06 ~ 2022\.07_
+_2019\.03 ~ 2019\.07_
 {:.faded}
 
-LG CNS의 인턴십 동안 LG U+, LG 스포츠, LG 라이프케어 등 LG 계열사의 데이터 풀에서 원하는 데이터를 탐색하고 Insight를 발굴하는 과제를 수행하였습니다. 많은 데이터 중 LG U+ 데이터의 U+ TV 시청 로그를 탐색하며, 시청시간을 시청횟수로 나누어 평균 시청 지속 기간이라는 지표를 만들어 Insight를 찾아냈습니다. 이를 토대로 심층적 탐색을 진행하였고, 얻어낸 결론을 tableau를 정리하고 프레젠테이션하였습니다.
+2019년 학부 수업 중 <데이터마이닝이론및응용> 수업에서 빅데이터와 데이터 분석 및 머신러닝의 구체적인 방법론을 공부한 후 프로젝트를 진행했습니다. 파이썬을 이용한 웹 스크래핑으로 스타트업 채용 정보 사이트(로켓펀치)에서 각 스타트업의 관련 정보를 수집하고, 수집된 정보를 SAS를 이용해 군집화, MBR, 로지스틱 회귀를 적용하여 스타트업이 일정 금액 이상의 투자금을 유치할 확률이 얼마나 되는지를 예측하였습니다.
 
-Continue reading [detail](projects/uptv-log.md){:.heading}
+Continue reading [detail](projects/startup-investment.md){:.heading}
 {:.read-more}
+
 
 
 
@@ -139,16 +153,6 @@ Continue reading [detail](projects/forecast-after-covid.md){:.heading}
 
 
 
-__스타트업 투자 유치 요인 분석__
-{:.lead}
-
-_2019\.03 ~ 2019\.07_
-{:.faded}
-
-2019년 학부 수업 중 <데이터마이닝이론및응용> 수업에서 빅데이터와 데이터 분석 및 머신러닝의 구체적인 방법론을 공부한 후 프로젝트를 진행했습니다. 파이썬을 이용한 웹 스크래핑으로 스타트업 채용 정보 사이트(로켓펀치)에서 각 스타트업의 관련 정보를 수집하고, 수집된 정보를 SAS를 이용해 군집화, MBR, 로지스틱 회귀를 적용하여 스타트업이 일정 금액 이상의 투자금을 유치할 확률이 얼마나 되는지를 예측하였습니다.
-
-Continue reading [detail](projects/startup-investment.md){:.heading}
-{:.read-more}
 
 
 
