@@ -52,11 +52,11 @@ ConditionGenerator는 벡테스팅에 활용할 전략을 구성할 때, 특별�
 
 - add_andCondition()
 
-  tmp_conditions라는 인스턴스 변수에 AND로 묶이는 condition을 추가해 주는 메소드입니다. 추가된 조건들은 아래의 add_condition() 메소드를 통해 최종적으로 포지션 구성 조건으로 저장됩니다.
+  tmp_conditions라는 인스턴스 변수에 AND로 묶이는 condition을 추가해 주는 메소드. 추가된 조건들은 아래의 add_condition() 메소드를 통해 최종적으로 포지션 구성 조건으로 저장됨.
 
 - add_condition()
 
-  위의 add_andCondition() 메소드를 통해 AND로 묶이는 condition들이 tmp_conditions에 담기면, 이를 실제 condition을 나타내는 인스턴스 변수(long_conditions, short_conditions, clear_conditions)에 담는 역할을 합니다. 이번에 담기는 조건들은 OR로 묶이게 됩니다.
+  위의 add_andCondition() 메소드를 통해 AND로 묶이는 condition들이 tmp_conditions에 담기면, 이를 실제 condition을 나타내는 인스턴스 변수(long_conditions, short_conditions, clear_conditions)에 담는 역할을 함. 이번에 담기는 조건들은 OR로 묶이게 됨.
 
 
 ~~~python
@@ -93,16 +93,39 @@ cc.add_Condition('clear') # or-condition 2
 > clear_conditions : (AC1 and AC2 and AC3 and AC4 and AC5) OR (AC6 and AC7 and AC8 and AC9 and AC10)
 
 
-위처럼 만든 조건은 현재는 코드로서의 역할을 하지 못하는 pseudo-condition들이며, 이는 BackTester 모듈에서 실제 T/F조건으로 변환되어 사용됩니다.
+위처럼 만든 조건은 현재는 T/F 조건으로서의 역할을 하지 못하는 pseudo-condition들이며, 이는 BackTester 모듈에서 실제 T/F조건으로 변환되어 사용됩니다.
 
 [ConditionGenerator 코드](https://github.com/menmenmeng/TIL/blob/main/AutoTrader/BinanceTrader/conditionGenerator/ConditionGenerator.py)
 
 
 ####  BackTester
 
-ConditionGenerator에서 만들어진 조건들을 가지고 실제 백테스팅을 해주는 모듈입니다.
+ConditionGenerator에서 만들어진 조건들을 가지고 실제 백테스팅을 해주는 모듈입니다. ConditionGenerator를 통해 만든 pseudo-condition들을 실제 T/F 조건으로 변환하는 메소드, 그리고 과거 데이터를 입력받아 최종 수익률을 return하는 메소드가 주요 메소드입니다.
 
+- _make_real_condition()
 
+  ConditionGenerator에 저장된 AND로 묶이는 조건들 각각의 실제 True/False 여부를 확인하고 리턴.
+
+- _make_conditions()
+
+  ConditionGenerator에 저장된 OR로 묶이는 조건들 각각의 실제 True/False 여부를 확인하고 리턴.
+  메소드 내부에서 _make_real_condition()을 불러와서 AND 조건들의 T/F를 리턴받고, 이를 다시 OR로 묶은 컨디션의 T/F를 리턴.
+
+- backtest_tmp()
+
+  과거 데이터를 처음부터 끝까지 탐색해 가며 조건을 확인하고, 조건에 따라 long, short포지션을 취하거나 포지션을 청산(clear)하며 최종적인 수익률을 리턴함. set_long(), set_short(), set_clear()라는 매매 메소드, 그리고 _make_conditions()라는 T/F 확인 함수로 이루어져 있음
+
+  - set_long()
+
+    long 포지션을 취함
+
+  - set_short()
+
+    short 포지션을 취함
+
+  - set_clear()
+
+    포지션을 청산함
 
 
 [BackTester 코드](https://github.com/menmenmeng/TIL/blob/main/AutoTrader/BinanceTrader/backTester/BackTester.py)
