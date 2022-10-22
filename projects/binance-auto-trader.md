@@ -61,30 +61,36 @@ cc.add_condition('long') # or-condition 1
 
 add_andCondition()은 AND로 묶이는 condition을 계속해서 추가합니다. add_andCondition(condition1), add_andCondition(condition2)를 순차적으로 실행하면 ConditionGenerator 인스턴스 변수인 tmp_conditions에 condition1 & condition2 의 정보가 담깁니다.
 
-> 위의 코드를 실행하면, 현재 시점을 n이라고 가정했을 경우,  
- {(MA1[n-3] < MA2[n-3]) and  
-  (MA1[n-2]*0.9999 > MA2[n-2]) and   
-  (MA1[n-1]*0.9998 > MA2[n-1]) and  
-  (MA1[n]*0.9997 > MA2[n])}  
-  처럼 각 조건이 AND로 묶인 조건이 tmp_conditions에 담깁니다.
+add_condition('long')이라는 메소드를 실행하면, 현재까지 tmp_conditions에 담겼던, AND로 묶인 조건이 long_conditions에 최종적으로 담깁니다. 
 
-add_condition('long')이라는 메소드를 실행하면, 현재까지 tmp_conditions에 담겼던, AND로 묶인 조건이 long_conditions에 최종적으로 담깁니다. add_condition() 메소드는 tmp_conditions를 실제 포지션 조건에 담을 때, 담는 조건들이 OR로 묶이게 합니다. OR로 묶이는 condition을 여러 개 만들고 싶다면, 다음과 같이 add_condition을 두 번 사용합니다.
+> 위의 add_andCondition() 4줄의 코드를 실행하면 현재 시점을 n이라고 가정했을 경우,  
+  1. (MA1[n-3] < MA2[n-3]) 
+  2. (MA1[n-2]*0.9999 > MA2[n-2]) 
+  3. (MA1[n-1]*0.9998 > MA2[n-1]) 
+  4. (MA1[n]*0.9997 > MA2[n])
+  위 4가지 조건이 AND로 묶여 tmp_conditions에 담기고,
+  add_condition('long')이라는 메소드를 실행하면 tmp_conditions에 담겼던 조건들이
+  인스턴스 변수인 long_conditions에 담깁니다.
+
+add_condition() 메소드는 tmp_conditions를 실제 포지션 조건(long_conditions, short_conditions, clear_conditions)에 담을 때, 담는 조건들이 OR로 묶이게 합니다. OR로 묶이는 condition을 여러 개 만들고 싶다면, 다음과 같이 add_condition을 두 번 사용합니다.
 
 ~~~python
-cc.add_andCondition('MA1', 'MA2', '<', 3)                           # and-condition 1
-cc.add_andCondition('MA1', 'MA2', '>', 2, func1=lambda x:x*0.9999)  # and-condition 2
-cc.add_andCondition('MA1', 'MA2', '>', 1, func1=lambda x:x*0.9998)  # and-condition 3
-cc.add_andCondition('MA1', 'MA2', '>', 0, func1=lambda x:x*0.9997)  # and-condition 4
+cc.add_andCondition('MA1', 'MA2', '<', 3)                           # and-condition 1 (AC1)
+cc.add_andCondition('MA1', 'MA2', '>', 2, func1=lambda x:x*0.9999)  # and-condition 2 (AC2)
+cc.add_andCondition('MA1', 'MA2', '>', 1, func1=lambda x:x*0.9998)  # and-condition 3 (AC3)
+cc.add_andCondition('MA1', 'MA2', '>', 0, func1=lambda x:x*0.9997)  # and-condition 4 (AC4)
 cc.add_andCondition('_short_amount', 0, '>', 0)
 cc.add_Condition('clear') # or-condition 1
 
-cc.add_andCondition('MA1', 'MA2', '>', 3)                           # and-condition 5
-cc.add_andCondition('MA1', 'MA2', '<', 2, func1=lambda x:x*1.0001)  # and-condition 6
-cc.add_andCondition('MA1', 'MA2', '<', 1, func1=lambda x:x*1.0002)  # and-condition 7
-cc.add_andCondition('MA1', 'MA2', '<', 0, func1=lambda x:x*1.0003)  # and-condition 8
+cc.add_andCondition('MA1', 'MA2', '>', 3)                           # and-condition 5 (AC5)
+cc.add_andCondition('MA1', 'MA2', '<', 2, func1=lambda x:x*1.0001)  # and-condition 6 (AC6)
+cc.add_andCondition('MA1', 'MA2', '<', 1, func1=lambda x:x*1.0002)  # and-condition 7 (AC7)
+cc.add_andCondition('MA1', 'MA2', '<', 0, func1=lambda x:x*1.0003)  # and-condition 8 (AC8)
 cc.add_andCondition('_long_amount', 0, '>', 0)
 cc.add_Condition('clear') # or-condition 2
 ~~~
+
+> (AC1 and AC2 and AC3 and AC4) OR (AC5 and AC6 and AC7 and AC8) 이 최종적인 clear_conditions가 됩니다.
 
 위처럼 만든 조건은 현재는 코드로서의 역할을 하지 못하는 pseudo-condition들이며, 이는 BackTester 모듈에서 실제 T/F조건으로 변환되어 사용됩니다.
 
