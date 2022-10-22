@@ -26,8 +26,6 @@ sitemap: false
 현재까지는 백테스팅 모듈을 거의 완성한 시점이며, 다음과 같은 프로세스로 백테스팅을 수행합니다. binance API 통신을 지원하는 공식 라이브러리인 binance futures connector와 커스텀 모듈 3개(BackDataLoader, ConditionGenerator, BackTester)를 이용합니다.
 
 
-
-
 ### API Communication
 
 API 통신은 바이낸스에서 공식적으로 제공하는 binance futures connector 라이브러리를 사용하고 있습니다. 처음에는 바이낸스에서 제공하는 라이브러리 없이 파이썬의 requests 모듈만 활용하여 매매하려 하였으나, 실제 트레이딩과는 큰 관계가 없지만 기능 구현을 위해 꼭 필요한 복잡한 작업들(ex. get, put에 들어갈 parameter를 받을 때, 필수가 아닌 파라미터를 빼고 함수를 실행시켜도 동작하게 하는 등)을 잘 구현해 놓았기에 활용하였습니다.
@@ -38,8 +36,19 @@ API 통신은 바이낸스에서 공식적으로 제공하는 binance futures co
 백테스팅을 위해 세 가지 모듈을 구성하였습니다.
 
 > 1. BackDataLoader
+
+  과거의 가상화폐 가격 및 거래량 데이터를 원하는 기간, 원하는 interval로 가져옴
+
+
 > 2. ConditionGenerator
+
+  가상화폐 매매 전략을 프로그래밍 없이 구현하도록 함
+
+
 > 3. BackTester
+
+  가져온 과거 가상화폐 데이터 및 구성한 가상화폐 매매 전략을 사용해 전략이 실제로 수익이 날지 테스트함
+
 
 ####  BackDataLoader
 
@@ -120,7 +129,7 @@ ConditionGenerator에서 만들어진 조건들을 가지고 실제 백테스팅
 - backtest_tmp()
 
   과거 데이터를 처음부터 끝까지 탐색해 가며 조건을 확인하고, 조건에 따라 long, short포지션을 취하거나 포지션을 청산(clear)하며 최종적인 수익률을 리턴함. set_long(), set_short(), set_clear()라는 매매 메소드, 그리고 _make_conditions()라는 T/F 확인 함수로 이루어져 있음
-  
+
 
 [codes](https://github.com/menmenmeng/TIL/blob/main/AutoTrader/BinanceTrader/backTester/BackTester.py){:.heading}
 {:.read-more}
