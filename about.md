@@ -47,7 +47,7 @@ OOO University
 _Industrial Engineering_
 - Bachelor of Science
 - 2014.03 ~ 2022.08
-- Cumulative GPA 3.79/4.3
+- Cumulative GPA 3.73/4.3
 
 
 __Tel__
