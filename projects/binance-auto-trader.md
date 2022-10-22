@@ -120,18 +120,7 @@ ConditionGenerator에서 만들어진 조건들을 가지고 실제 백테스팅
 - backtest_tmp()
 
   과거 데이터를 처음부터 끝까지 탐색해 가며 조건을 확인하고, 조건에 따라 long, short포지션을 취하거나 포지션을 청산(clear)하며 최종적인 수익률을 리턴함. set_long(), set_short(), set_clear()라는 매매 메소드, 그리고 _make_conditions()라는 T/F 확인 함수로 이루어져 있음
-
-  - set_long()
-
-    long 포지션을 취함
-
-  - set_short()
-
-    short 포지션을 취함
-
-  - set_clear()
-
-    포지션을 청산함
+  
 
 [codes](https://github.com/menmenmeng/TIL/blob/main/AutoTrader/BinanceTrader/backTester/BackTester.py){:.heading}
 {:.read-more}
