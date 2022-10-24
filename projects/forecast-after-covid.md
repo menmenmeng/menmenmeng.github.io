@@ -7,9 +7,9 @@ description: |
 hide_description: false
 sitemap: false
 ---
-<!-- 
+
 0. Table of Contents
-{:toc} -->
+{:toc}
 
 
 ## Background
@@ -66,5 +66,5 @@ sitemap: false
 Python(numpy, pandas, scikit-learn)
 
 
-<!-- Go back to [Myeong Hyeon Son](/about/){:.heading.flip-title}
-{:.read-more} -->
+Go back to [Myeong Hyeon Son](/about/){:.heading.flip-title}
+{:.read-more}
