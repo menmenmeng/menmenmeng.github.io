@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[Data] Basic numpy, pandas skills"
+title: "Basic numpy, pandas skills"
 description: >
   Basic data processing methods and attributes of numpy and pandas library.
 sitemap: false

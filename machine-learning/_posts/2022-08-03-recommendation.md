@@ -1,6 +1,6 @@
 ---
 layout: post
-title : "[ML] Recommendation System"
+title : "Recommendation System"
 description: >
     Basic knowledge of recommendation system.
 sitemap: false
