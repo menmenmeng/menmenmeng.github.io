@@ -18,7 +18,7 @@ hide_last_modified: true
 
 이진 트리(binary tree) 기반의 최소 힙(min heap) 자료구조 제공.
 
-### 사용법
+## 사용법
 
 주의 : heap이라는 자료구조가 따로 있는 것이 아님! 우선순위 힙의 삽입/삭제 방식대로 list에 삽입/삭제를 하는 것일 뿐이다.
 
@@ -28,7 +28,7 @@ hide_last_modified: true
 - heapq.heapify
 
 
-#### heapq.heappush
+### heapq.heappush
 
 list에 우선순위 큐 방식대로 요소를 삽입함
 
@@ -49,7 +49,7 @@ print(heap)
 [1, 3, 7, 4]
 ~~~
 
-#### heapq.heappop
+### heapq.heappop
 
 list에 우선순위 큐 방식대로 요소를 제거
 
@@ -67,7 +67,7 @@ heapq.heappop(heap) # heap으로 사용되는 list에서 가장 우선순위가 
 1
 ~~~
 
-#### heapq.heapify
+### heapq.heapify
 
 heap과 관련없는 list를 heap 구조를 가지도록 바꿔 줌. heappush를 여러 번 해서 heap으로 만드는 것보다 더 효율성 좋다.
 
@@ -89,7 +89,7 @@ print(heap)
 ~~~
 
 
-#### (번외) Max heap을 만드는 방법
+### (번외) Max heap을 만드는 방법
 
 파이썬은 최소 힙, 즉 최솟값을 가지는 요소가 가장 우선순위가 높은 힙만 만들 줄 안다.
 최대 힙을 만들기 위해서는 편법을 사용해야 함.
@@ -114,10 +114,10 @@ print(heap)
 ~~~
 
 
-### 이진 트리
 
-각각의 노드가 최대 2개의 자식 노드를 가지는 트리 자료 구조.
 
+
+## 개념
 
 ### 우선순위 큐
 
@@ -133,6 +133,10 @@ print(heap)
 {:.figure}
 
 우선순위 큐는 배열, 연결 리스트, 힙으로 구현 가능한데 힙으로 구현하는 것이 가장 효율적이라고 한다.
+
+### 이진 트리
+
+각각의 노드가 최대 2개의 자식 노드를 가지는 트리 자료 구조.
 
 ### 힙
 
@@ -172,5 +176,5 @@ print(heap)
 
 1. 비어 있는 힙에 요소를 차례대로 insert연산을 수행함. 계산복잡도 - O(nlog(n))
 
-2. 
+2. O(n)의 방법 --> 다시 확인...
 
