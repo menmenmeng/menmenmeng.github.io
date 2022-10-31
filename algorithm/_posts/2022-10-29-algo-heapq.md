@@ -128,7 +128,7 @@ print(heap)
 |**스택(Stack)**|가장 최근에 들어온 데이터|
 |**큐(Queue)**|가장 먼저 들어온 데이터|
 |**우선순위 큐(Priority Queue)**|가장 우선순위가 높은 데이터|
-
+{:.stretch-table}
 각 자료구조의 정의
 {:.figure}
 
