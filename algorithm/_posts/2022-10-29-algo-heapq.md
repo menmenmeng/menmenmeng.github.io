@@ -28,7 +28,7 @@ hide_last_modified: true
 - heapq.heapify
 
 
-1. heapq.heappush
+#### heapq.heappush
 
 list에 우선순위 큐 방식대로 요소를 삽입함
 
@@ -49,7 +49,7 @@ print(heap)
 [1, 3, 7, 4]
 ~~~
 
-2. heapq.heappop
+#### heapq.heappop
 
 list에 우선순위 큐 방식대로 요소를 제거
 
@@ -67,7 +67,7 @@ heapq.heappop(heap) # heap으로 사용되는 list에서 가장 우선순위가 
 1
 ~~~
 
-3. heapq.heapify
+#### heapq.heapify
 
 heap과 관련없는 list를 heap 구조를 가지도록 바꿔 줌. heappush를 여러 번 해서 heap으로 만드는 것보다 더 효율성 좋다.
 
@@ -89,7 +89,7 @@ print(heap)
 ~~~
 
 
-4. (번외) Max heap을 만드는 방법
+#### (번외) Max heap을 만드는 방법
 
 파이썬은 최소 힙, 즉 최솟값을 가지는 요소가 가장 우선순위가 높은 힙만 만들 줄 안다.
 최대 힙을 만들기 위해서는 편법을 사용해야 함.
