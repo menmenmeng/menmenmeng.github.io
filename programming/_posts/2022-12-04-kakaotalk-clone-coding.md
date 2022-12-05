@@ -90,7 +90,7 @@ __tag는 전부 기억할 필요가 없다. tag가 엄청 많으니까.. 대신 
 
 
 ### 자주 사용하는 tag들.
-![home.html]home.html(C:\TIL\Web\kokoa-clone\home.html)
+[home.html](C:\TIL\Web\kokoa-clone\home.html)
 
 - h1, h2, h3, h4, h5, h6
   - header. 제목을 나타낸다.
