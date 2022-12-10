@@ -13,8 +13,8 @@ redirect_from:
 
 <!--author-->
 
-0. Table of Contents
-{:toc}
+<!-- 0. Table of Contents
+{:toc} -->
 
 ## About Me
 
