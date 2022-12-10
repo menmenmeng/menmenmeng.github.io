@@ -152,12 +152,12 @@ _2021\.09 ~ 2021\.11_
 
 
 
+<!-- 
+## Websites -->
 
-## Websites
-
-[__Github__](https://github.com/menmenmeng)
+<!-- [__Github__](https://github.com/menmenmeng)
 {:.lead}
-데이터 분석 및 코딩에 관심을 가지게 된 후로 코드를 저장 및 공유할 목적으로 사용하는 깃허브 페이지입니다. 
+데이터 분석 및 코딩에 관심을 가지게 된 후로 코드를 저장 및 공유할 목적으로 사용하는 깃허브 페이지입니다.  -->
 
 
 <!-- [__Blog__](https://menmenmeng.github.io)
