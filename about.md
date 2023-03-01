@@ -120,16 +120,14 @@ Binance(외국의 가상화폐 거래소)의 API를 활용하여 비트코인 �
 의 세 개 과정을 거치며 트레이딩 머신을 만드려 하고 있습니다.  
 
 <p style="text-align:right">
-백테스터 (2022\.08 ~ 2022\.10)
-</p>
-
+<i>백테스터 (2022.08 ~ 2022.10)</i>
+</p><br>
 Continue reading [detail](projects/binance-auto-trader-backtester.md){:.heading}
 {:.read-more}
 
 <p style="text-align:right">
-실시간 트레이더 (2022\.11 ~ 2023\.02)
-</p>
-
+<i>실시간 트레이더 (2022.11 ~ 2023.02)</i>
+</p><br>
 Continue reading [detail](projects/binance-auto-trader-realtime.md){:.heading}
 {:.read-more}
 
