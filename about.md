@@ -121,10 +121,9 @@ Binance(외국의 가상화폐 거래소)의 API를 활용하여 비트코인 �
 
 
 _백테스터 (2022\.08 ~ 2022\.10)_{:.faded} Continue reading [detail](projects/binance-auto-trader-backtester.md){:.heading}
-{:.read-more}
-
+{:.read-more}  
 _실시간 트레이더 (2022\.11 ~ 2023\.02)_{:.faded} Continue reading [detail](projects/binance-auto-trader-realtime.md){:.heading}
-{:.read-more}
+{:.read-more}  
 
 
 
