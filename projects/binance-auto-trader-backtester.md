@@ -141,7 +141,7 @@ ConditionGenerator에서 만들어진 조건들을 가지고 실제 백테스팅
 
 ### Real-Time Trading (To do)
 
-[Real-Time Trader](projects/binance-auto-trader-realtime.md){:.heading}
+[Real-Time Trader](../binance-auto-trader-realtime.md){:.heading}
 
 ### Data Analysis & Strategy (To do)
 
