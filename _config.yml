@@ -50,13 +50,13 @@ author:
 # Add links to the sidebar.
 menu:
   - title:             Data Processing
-    url:               /data-processing/
+    url:               /post-data-processing/
   - title:             Machine Learning
-    url:               /machine-learning/
+    url:               /post-machine-learning/
   - title:             Deep Learning
-    url:               /deep-learning/
+    url:               /post-deep-learning/
   - title:             Algorithm
-    url:               /algorithm/
+    url:               /post-algorithm/
   # - title:             Life
   #   url:               /life/
   # - title:             Example
