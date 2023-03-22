@@ -55,7 +55,7 @@ API 통신은 바이낸스에서 공식적으로 제공하는 binance futures co
 
 ### Backtesting
 
-[BackTester](projects/binance-auto-trader-backtester.md){:.heading}
+[BackTester](/projects/binance-auto-trader-backtester.md){:.heading}
 
 ### Real-Time Trading (To do)
 
