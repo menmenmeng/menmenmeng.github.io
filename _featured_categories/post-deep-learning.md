@@ -6,7 +6,7 @@ layout: list
 title: Deep Learning
 
 # The name of the tag, used in a post's front matter (e.g. tags: [<slug>]).
-slug: deep-learning
+slug: post-deep-learning
 
 # (Optional) Write a short (~150 characters) description of this featured tag.
 description: >
