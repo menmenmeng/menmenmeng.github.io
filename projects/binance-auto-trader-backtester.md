@@ -60,7 +60,7 @@ BackDataLoader는 과거의 가상화폐 가격 데이터를 원하는 기간 �
 
 기본적으로 제공하는 Binance의 API에는 max로 가져올 수 있는 row의 개수가 1500개로 정해져 있으며 이 개수를 초과한 데이터 요청은 받지 않습니다. BackDataLoader는 가져오고 싶은 데이터의 start Time과 end Time, 그리고 interval을 입력받으면 그에 따른 row의 개수를 체크하고 1500개가 넘는다면 여러 번의 데이터 요청을 통해 데이터를 가져오고 이를 하나의 DataFrame으로 묶어서 리턴합니다.
 
-[codes](https://github.com/menmenmeng/TIL/blob/main/AutoTrader/BinanceTrader/backTester/BackDataLoader.py){:.heading}
+[codes](https://github.com/menmenmeng/TIL/blob/main/AutoTrader/BinanceTrader/binance_trader(backtester)/backTester/BackDataLoader.py){:.heading}
 {:.read-more}
 
 
@@ -113,7 +113,7 @@ cc.add_Condition('clear') # or-condition 2
 
 위처럼 만든 조건은 현재는 T/F 조건으로서의 역할을 하지 못하는 pseudo-condition들이며, 이는 BackTester 모듈에서 실제 T/F조건으로 변환되어 사용됩니다.
 
-[codes](https://github.com/menmenmeng/TIL/blob/main/AutoTrader/BinanceTrader/conditionGenerator/ConditionGenerator.py){:.heading}
+[codes](https://github.com/menmenmeng/TIL/blob/main/AutoTrader/BinanceTrader/binance_trader(backtester)/conditionGenerator/ConditionGenerator.py){:.heading}
 {:.read-more}
 
 
@@ -135,13 +135,13 @@ ConditionGenerator에서 만들어진 조건들을 가지고 실제 백테스팅
   과거 데이터를 처음부터 끝까지 탐색해 가며 조건을 확인하고, 조건에 따라 long, short포지션을 취하거나 포지션을 청산(clear)하며 최종적인 수익률을 리턴함. set_long(), set_short(), set_clear()라는 매매 메소드, 그리고 _make_conditions()라는 T/F 확인 함수로 이루어져 있음
 
 
-[codes](https://github.com/menmenmeng/TIL/blob/main/AutoTrader/BinanceTrader/backTester/BackTester.py){:.heading}
+[codes](https://github.com/menmenmeng/TIL/blob/main/AutoTrader/BinanceTrader/binance_trader(backtester)/backTester/BackTester.py){:.heading}
 {:.read-more}
 
 
 ### Real-Time Trading (To do)
 
-[Real-Time Trader](projects/binance-auto-trader-realtime.md)
+[Real-Time Trader](projects/binance-auto-trader-realtime.md){:.heading}
 
 ### Data Analysis & Strategy (To do)
 
