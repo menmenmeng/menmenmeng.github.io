@@ -38,11 +38,26 @@ sitemap: false
 > - Graphic UI를 도입하여 배포한다.
 
 
-2023년 2월 기준 REST API 및 websocket 통신을 고려한 실시간 트레이더를 구성하였습니다. 실시간 트레이더는 binance API 통신을 지원하는 공식 라이브러리인 binance futures connector와 커스텀 모듈 5개(callback, collector, conditional, decision, prelim)를 활용하며, 아래와 같은 프로세스를 거쳐 작동됩니다.
+### Real-Time Trading Concept
+
+실시간 트레이더는 다음과 같은 과정을 거치면서 작동됩니다.
+
+ 1) 실시간 데이터를 받는 중,  
+ 2) 원하는 조건에 도달했을 경우  
+ 3) 실시간 통신을 끊지 않으면서 가상화폐 거래
+ 4) 1~3의 반복  
+
+1번의 과정을 위해 websocket 통신이 필요하며,  
+2, 3번의 과정을 위해 websocket 통신 중에 수행될 callback 함수가 구성되어야 합니다.
+
+
+### Real-Time Trader
+
+2023년 2월 기준, 위 프로세스를 거쳐 작동하는 실시간 트레이더를 구성하였습니다. 실시간 트레이더는 binance API 통신을 지원하는 공식 라이브러리인 binance futures connector와 커스텀 모듈 5개(prelim, collector, conditional, decision, callback)를 활용하고 있으며, 아래와 같은 구조로 이루어져 있습니다.
 
 ![binance-rt-trader-process](/assets/img/projects/binance-rt-trader-process.jpg){:.lead loadings="lazy"}
 
-
+callback 모듈은 실시간 데이터를 받는 중, 데이터를 예츠
 
 
 ------ 여기부터 계속 수정 필요함. -----
