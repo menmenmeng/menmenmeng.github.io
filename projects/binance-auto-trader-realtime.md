@@ -60,7 +60,7 @@ sitemap: false
 
 ![binance-rt-trader-process](/assets/img/projects/binance-rt-trader-process.jpg){:.lead loadings="lazy"}
 
-callback 모듈은 실시간 데이터를 받는 중, 실시간 통신을 끊지 않으면서 매매 조건 확인 및 매매를 할 수 있도록 하는 callback 함수를 구현한 모듈입니다. prelim, collector, conditional, decision 등 4개의 모듈을 활용하여 구성되어 있으며, trader가 websocket을 통해 "Account Update", "Trade Update", "RealTime Price Data" 중 하나의 데이터를 받으면 callback 함수가 실행되어 아래의 3개 프로세스 중 하나를 실행합니다.
+callback 모듈은 실시간 데이터를 받는 중, 실시간 통신을 끊지 않으면서 매매 조건 확인 및 매매를 할 수 있도록 하는 callback 함수를 구현한 모듈입니다. collector, conditional, decision 등 3개의 모듈을 활용하여 구성되어 있으며, trader가 websocket을 통해 "Account Update", "Trade Update", "RealTime Price Data" 중 하나의 데이터를 받으면 callback 함수가 실행되어 아래의 3개 프로세스 중 하나를 실행합니다.
 
 ![binance-rt-trader-callback-process](/assets/img/projects/binance-rt-trader-callback-process.jpg){:.lead loadings="lazy"}
 
@@ -68,10 +68,25 @@ callback 모듈은 실시간 데이터를 받는 중, 실시간 통신을 끊지
 
 #### Prelim
 
+실시간 트레이더의 동작 전 필요한 동작들을 구현해 놓은 모듈입니다. 현재의 Account Information, 과거 주가 데이터 및 websocket stream을 열기 위한 ListenKey와 stream name 등을 REST API를 통해 받고 처리하는 함수들을 구현하였습니다.
+
 [codes](https://github.com/menmenmeng/TIL/blob/main/AutoTrader/BinanceTrader/rt_trader_v0.2/trade_rules/prelim.py){:.heading}
 {:.read-more}
 
 #### Collector
+
+json 형태의 실시간 데이터를 pandas의 DataFrame 형태로 바꾸어서 저장해 주는 모듈입니다. MarkPriceCollector, RealTimeKlineCollector, KlineCollector, OrderUpdateCollector, AccountUpdateCollector 클래스가 구현되어 있습니다.
+
+- MarkPriceCollector  
+  실시간 통신을 통해 mark Price 데이터를 받고, 이를 dataframe으로 저장합니다.
+
+- RealTimeKlineCollector  
+  실시간 통신을 통해 kline 데이터를 받고, 이를 realtime Kline dataframe으로 저장합니다.
+
+- KlineCollector
+  실시간 통신을 통해 kline 데이터를 받고, 사전에 지정한 시간 단위를 지날 때마다 overall Kline DataFrame에 저장합니다.
+
+- 
 
 [codes](https://github.com/menmenmeng/TIL/blob/main/AutoTrader/BinanceTrader/rt_trader_v0.2/trade_rules/collector.py){:.heading}
 {:.read-more}
