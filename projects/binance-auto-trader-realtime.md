@@ -37,8 +37,11 @@ sitemap: false
 > - (Optional) 고도화된 매매 전략을 발견했다면, 실시간 트레이더에 적용한다.
 > - Graphic UI를 도입하여 배포한다.
 
+### Backtesting
 
-### Real-Time Trading Concept
+[BackTester](/projects/binance-auto-trader-backtester/){:.heading}
+
+### Trading Process
 
 실시간 트레이더는 다음과 같은 과정을 거치면서 작동됩니다.
 
@@ -57,24 +60,23 @@ sitemap: false
 
 ![binance-rt-trader-process](/assets/img/projects/binance-rt-trader-process.jpg){:.lead loadings="lazy"}
 
-callback 모듈은 실시간 데이터를 받는 중, 데이터를 예츠
+callback 모듈은 실시간 데이터를 받는 중, 실시간 통신을 끊지 않으면서 매매 조건 확인 및 매매를 할 수 있도록 하는 callback 함수를 구현한 모듈입니다. trader가 websocket을 통해 "Account Update", "Trade Update", "RealTime Price Data" 중 하나의 데이터를 받으면, callback 함수가 실행되어 아래의 3개 프로세스 중 하나를 트리거합니다.
+
+![binance-rt-trader-callback-process](/assets/img/projects/binance-rt-trader-callback-process.jpg){:.lead loadings="lazy"}
+
+아래는 작성한 5개의 커스텀 모듈에 대한 설명입니다.
+
+#### Prelim
+
+#### Collector
+
+#### Conditional
+
+#### Decision
+
+#### callback
 
 
------- 여기부터 계속 수정 필요함. -----
-
-
-### API Communication
-
-API 통신은 바이낸스에서 공식적으로 제공하는 binance futures connector 라이브러리를 사용하고 있습니다. 실제 트레이딩과는 큰 관계가 없지만 기능 구현을 위해 꼭 필요한 복잡한 작업들(ex. get, put에 들어갈 parameter를 받을 때, 필수가 아닌 파라미터를 빼고 함수를 실행시켜도 동작하게 하는 등)을 잘 구현해 놓았기에 활용하였습니다.
-
-
-### Backtesting
-
-[BackTester](/projects/binance-auto-trader-backtester/){:.heading}
-
-### Real-Time Trading (To do)
-
-진행 예정
 
 ### Data Analysis & Strategy (To do)
 
