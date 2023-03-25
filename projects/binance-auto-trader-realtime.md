@@ -60,7 +60,7 @@ sitemap: false
 
 ![binance-rt-trader-process](/assets/img/projects/binance-rt-trader-process.jpg){:.lead loadings="lazy"}
 
-callback 모듈은 실시간 데이터를 받는 중, 실시간 통신을 끊지 않으면서 매매 조건 확인 및 매매를 할 수 있도록 하는 callback 함수를 구현한 모듈입니다. trader가 websocket을 통해 "Account Update", "Trade Update", "RealTime Price Data" 중 하나의 데이터를 받으면, callback 함수가 실행되어 아래의 3개 프로세스 중 하나를 트리거합니다.
+callback 모듈은 실시간 데이터를 받는 중, 실시간 통신을 끊지 않으면서 매매 조건 확인 및 매매를 할 수 있도록 하는 callback 함수를 구현한 모듈입니다. prelim, collector, conditional, decision 등 4개의 모듈을 활용하여 구성되어 있으며, trader가 websocket을 통해 "Account Update", "Trade Update", "RealTime Price Data" 중 하나의 데이터를 받으면 callback 함수가 실행되어 아래의 3개 프로세스 중 하나를 실행합니다.
 
 ![binance-rt-trader-callback-process](/assets/img/projects/binance-rt-trader-callback-process.jpg){:.lead loadings="lazy"}
 
