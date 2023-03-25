@@ -68,13 +68,28 @@ callback 모듈은 실시간 데이터를 받는 중, 실시간 통신을 끊지
 
 #### Prelim
 
+[codes](https://github.com/menmenmeng/TIL/blob/main/AutoTrader/BinanceTrader/rt_trader_v0.2/trade_rules/prelim.py){:.heading}
+{:.read-more}
+
 #### Collector
+
+[codes](https://github.com/menmenmeng/TIL/blob/main/AutoTrader/BinanceTrader/rt_trader_v0.2/trade_rules/collector.py){:.heading}
+{:.read-more}
 
 #### Conditional
 
+[codes](https://github.com/menmenmeng/TIL/blob/main/AutoTrader/BinanceTrader/rt_trader_v0.2/trade_rules/conditional.py){:.heading}
+{:.read-more}
+
 #### Decision
 
+[codes](https://github.com/menmenmeng/TIL/blob/main/AutoTrader/BinanceTrader/rt_trader_v0.2/trade_rules/decision.py){:.heading}
+{:.read-more}
+
 #### callback
+
+[codes](https://github.com/menmenmeng/TIL/blob/main/AutoTrader/BinanceTrader/rt_trader_v0.2/trade_rules/callback.py){:.heading}
+{:.read-more}
 
 
 
