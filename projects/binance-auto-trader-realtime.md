@@ -1,8 +1,9 @@
 ---
 layout: page
-title: "가상화폐 자동 트레이딩 머신 - 실시간 트레이더"
+title: "실시간 트레이더"
 description: |
   2022\.11 ~ 2023\.02  
+  가상화폐 자동 트레이딩 프로젝트  
   Binance의 비트코인 선물 종목의 매매전략을 테스트하고, 전략에 맞추어 자동으로 트레이딩하는 봇을 만드는 개인 프로젝트입니다.
   가상화폐 거래소의 1분봉 데이터를 받고, 적절한 거래 전략을 거쳐 매매 여부를 결정한 뒤, 지정한 수량을 지정한 가격에 매매하는 트레이딩 봇을 작성하였습니다.
 hide_description: false
@@ -68,7 +69,7 @@ callback 모듈은 실시간 데이터를 받는 중, 실시간 통신을 끊지
 
 #### Prelim
 
-실시간 트레이더의 동작 전 필요한 동작들을 구현해 놓은 모듈입니다. 현재의 Account Information, 과거 주가 데이터 및 websocket stream을 열기 위한 ListenKey와 stream name 등을 REST API를 통해 받고 처리하는 함수들을 구현하였습니다.
+실시간 트레이더의 동작 전 필요한 동작들을 구현해 놓은 모듈입니다. 현재의 Account Information, 과거 주가 데이터 수집, websocket stream을 열기 위한 ListenKey 생성 및 websocket stream의 url을 생성하는 함수 등을 구현하였습니다.
 
 [codes](https://github.com/menmenmeng/TIL/blob/main/AutoTrader/BinanceTrader/rt_trader_v0.2/trade_rules/prelim.py){:.heading}
 {:.read-more}
@@ -86,7 +87,10 @@ json 형태의 실시간 데이터를 pandas의 DataFrame 형태로 바꾸어서
 - KlineCollector
   실시간 통신을 통해 kline 데이터를 받고, 사전에 지정한 시간 단위를 지날 때마다 overall Kline DataFrame에 저장합니다.
 
-- 
+- OrderUpdateCollector
+  order가 websocket 거래 동안 진행된 order의 전체적인 
+
+- AccountUpdateCollector
 
 [codes](https://github.com/menmenmeng/TIL/blob/main/AutoTrader/BinanceTrader/rt_trader_v0.2/trade_rules/collector.py){:.heading}
 {:.read-more}
