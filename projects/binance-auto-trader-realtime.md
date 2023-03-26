@@ -115,6 +115,7 @@ websocket stream에서 json 형태의 실시간 데이터가 들어오면 이를
 자식 클래스인, 각 데이터 스트림의 Collector에는 getRowDictFromMessage 메소드가 구현되었습니다.
 
 > 예시 : RealTimeKlineCollector에서의 getRowDictFromMessage 메소드
+
 ~~~python
 def getRowDictFromMessage(self, message):
     streamKey, eventType = self.getEventType(message)
