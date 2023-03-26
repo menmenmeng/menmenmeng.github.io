@@ -120,14 +120,17 @@ websocket stream에서 json 형태의 실시간 데이터가 들어오면 이를
 
 자식 클래스인, 각 데이터 스트림의 Collector에는 getRowDictFromMessage 메소드가 구현되었습니다.
 
-> 예시 : RealTimeKlineCollector에서의 getRowDictFromMessage 메소드
+(예시 : RealTimeKlineCollector에서의 getRowDictFromMessage 메소드)
 
 ~~~python
 def getRowDictFromMessage(self, message):
     streamKey, eventType = self.getEventType(message)
     data = message['data']
+
+    # json 메시지
     kline = data['k']
 
+    # json 메시지를 dictionary형태로 변환
     row_dict = dict(
         stream = streamKey,
         eventType = eventType,
@@ -143,7 +146,7 @@ def getRowDictFromMessage(self, message):
         volume = float(kline['v'])
     )
 
-
+    # 인스턴스 변수를 업데이트
     self.closeTime = int(kline['t'])
     self.open = float(kline['o'])
     self.close = float(kline['c'])
@@ -159,25 +162,29 @@ def getRowDictFromMessage(self, message):
 [codes](https://github.com/menmenmeng/TIL/blob/main/AutoTrader/BinanceTrader/rt_trader_v0.2/trade_rules/collector.py){:.heading}
 {:.read-more}
 
+
 #### Conditional
 
-Conditional은 Collector가 받아온 DataFrame을 T/F 값을 가지는 bool 형태로 변환하는 모듈입니다. DataFrame의 값을 보고 Volatility의 값이 이전보다 증가했다거나, 현재 주가가 이동평균을 돌파했다거나 등의 정보를 bool 데이터로 변환하여 Decision 모듈로 전달합니다.
+Conditional은 Collector가 받아온 데이터를 T/F 값을 가지는 bool 형태로 변환하는 모듈입니다. 데이터프레임의 값을 보고 Volatility의 값이 이전보다 증가했다거나, 현재 주가가 이동평균을 돌파했다거나 등 매매 조건 판단의 재료가 되는 bool 데이터를 Decision 모듈로 전달합니다.
 
 현재는 기초적인 볼린저 밴드 전략을 활용하고 있기 때문에 BBConditional, RVConditional의 두 개 클래스만 구현되어 있습니다. 각 클래스는 Bollinger Band와 Realized Volatility와 관련된 bool 데이터를 만듭니다.
 
 매매 전략이 다양한 만큼 하드코딩이 필요한 부분이 많습니다. 아래는 BBConditional에서 각 밴드선을 돌파하는지 여부를 bool 데이터로 만드는 코드입니다. 
 
 ~~~python
-## Return values
+# 5분 전까지의 종가 데이터가 upperBand의 위/아래에 있는지 여부
 PASTcloses_gt_upperInter_5t = self.closes[-5:] > self.upperInter[-5:]
 PASTcloses_gt_upperBand_5t = self.closes[-5:] > self.upperBand[-5:]
 
+# 5분 전까지의 종가 데이터가 lowerBand의 위/아래에 있는지 여부
 PASTcloses_lt_lowerInter_5t = self.closes[-5:] < self.lowerInter[-5:]
 PASTcloses_lt_lowerBand_5t = self.closes[-5:] < self.lowerBand[-5:]
 
+# 현재(실시간) 종가 데이터가 upperBand의 위/아래에 있는지 여부
 CURRclose_gt_upperInter = self.rt_close > float(self.upperInter[-1:])
 CURRclose_gt_upperBand = self.rt_close > float(self.upperBand[-1:])
 
+# 현재(실시간) 종가 데이터가 lowerBand의 위/아래에 있는지 여부
 CURRclose_lt_lowerInter = self.rt_close < float(self.lowerInter[-1:])
 CURRclose_lt_lowerBand = self.rt_close < float(self.lowerBand[-1:])
 ~~~
@@ -190,10 +197,40 @@ CURRclose_lt_lowerBand = self.rt_close < float(self.lowerBand[-1:])
 
 #### Decision
 
+Conditional에서 만들어진 bool 데이터를 바탕으로 현재 상태가 매매 조건에 부합하는지 여부를 확인합니다. 매매 조건에 부합한다면 거래 요청을 REST API를 통해 전달합니다.
+
+- trade(currentPrice, **conditions)  
+
+  현재 주가 및 BBConditional, RVConditional에서 만들어진 bool 데이터를 인자로 받아서 매매 조건 부합 여부를 확인합니다.
+
+  매매 조건은 현재 상태가 롱 포지션인지, 숏 포지션인지, 또는 포지션이 없는지에 따라 나뉩니다.
+
+  1. 포지션이 없을 경우  
+    기초적인 볼린저 밴드 전략에 따라 롱/숏 포지션을 취합니다.
+
+  2. 롱 포지션일 경우  
+    주가가 0.16% 상승 시 이득을 취하며 포지션을 청산하고,  
+    주가가 0.11% 하락 시 손해를 보고 포지션을 청산합니다.
+
+  3. 숏 포지션일 경우  
+    위와 반대로,  
+    주가가 0.16% 하락 시 이득을 취하며 포지션을 청산하고,  
+    주가가 0.11% 상승 시 손해를 보고 포지션을 청산합니다.
+
+
+- trade_limit(side, price, amount)  
+  trade 메소드에서 포지션을 취하거나 청산할 때 이 메소드가 사용됩니다. long/short 포지션 및 가격과 양을 정하여 REST API를 통해 거래 요청을 전달합니다.
+
+
+
 [codes](https://github.com/menmenmeng/TIL/blob/main/AutoTrader/BinanceTrader/rt_trader_v0.2/trade_rules/decision.py){:.heading}
 {:.read-more}
 
 #### Callback
+
+하나 남았다
+
+
 
 [codes](https://github.com/menmenmeng/TIL/blob/main/AutoTrader/BinanceTrader/rt_trader_v0.2/trade_rules/callback.py){:.heading}
 {:.read-more}
