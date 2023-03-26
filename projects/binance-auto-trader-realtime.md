@@ -22,9 +22,9 @@ sitemap: false
 > 실시간 트레이더는 코인 시장의 데이터를 받을 때 REST API가 아닌 websocket을 활용합니다. 백테스터를 작성할 당시에는 websocket에 대한 이해가 부족했기에 이에 대한 고려를 거의 하지 않았고, 그렇게 작성한 백테스터는 실시간 트레이더를 작성하려는 시점에서는 websocket 관련 기능을 추가하기에는 어려운 구조가 되어 있었습니다. 특히, 매매 조건을 확인하는 모듈에서 websocket 관련 기능을 추가하기에 매우 어려운 구조였습니다.
 
 2. 코드의 일관성 및 가독성 부족
-> 이전에 작성한 백테스터는 코드에 일관성이 없거나(비슷한 동작을 하는 함수인데도 코딩 방식이 다름) 하드 코딩된 부분이 많았고(데이터 컬럼을 일일이 적어 가며 데이터를 수집), 주석이 많이 달려 있지 않았습니다. 백테스터를 작성할 당시에는 스스로 작성한 기능들을 기억하고 있었지만, 시간이 지난 후 다시 확인해 보았을 땐 코드의 작동 방식을 이해하기 어려워 수정하기 힘들었습니다.
+> 이전에 작성한 백테스터는 비슷한 기능의 함수인데도 다르게 코딩되어 있는 등 일관성이 부족하거나 하드 코딩된 부분이 많았고, 주석이 많이 달려 있지 않았습니다. 백테스터를 작성할 당시에는 작동 방식을 기억했지만 시간이 지난 후 다시 확인해 보았을 땐 작동 방식을 이해할 수 없어 수정이 어려웠습니다.
 
-이러한 이유로 저는 이전에 작성했던 백테스터는 활용하지 않고, 위의 단점들을 개선할 수 있는 새로운 실시간 트레이더를 작성하였습니다.
+이러한 이유로 저는 이전에 작성했던 백테스터를 활용하지 않고, 위의 단점들이 개선되도록 새로운 실시간 트레이더를 작성하였습니다.
 
 
 ## Process
@@ -78,7 +78,8 @@ callback 모듈은 실시간 데이터를 받는 중, 실시간 통신을 끊지
 
 websocket stream에서 json 형태의 실시간 데이터가 들어오면 이를 pandas의 DataFrame 형태로 바꾸어서 저장해 주는 모듈입니다. MarkPriceCollector, RealTimeKlineCollector, KlineCollector, OrderUpdateCollector, AccountUpdateCollector 클래스가 구현되어 있습니다.
 
-* 구현 클래스들  
+* __구현 클래스들__
+
   - Collector  
     아래 클래스들이 상속하는 부모 클래스
 
@@ -98,15 +99,55 @@ websocket stream에서 json 형태의 실시간 데이터가 들어오면 이를
     websocket 통신 동안 거래가 성사될 때마다 들어오는 Account 변화 정보를 현재의 Account status에 업데이트합니다.
 
 
-위의 5개 클래스들은 모두 Collector라는 부모 클래스를 상속받아서 만들어집니다. Collector 클래스에는 대부분의 실시간 데이터 stream에서 공통으로 필요한 데이터 처리 함수들을 구현하였고, 또한 자식 클래스에서 꼭 구현해야 할 함수를 NotImplementedError를 활용하여 표시하였습니다.
+위에서 Collector 클래스를 제외한 나머지 클래스는 모두 Collector 클래스를 상속받아서 만들어지는 클래스입니다. Collector 클래스에는 대부분의 실시간 데이터 stream에서 공통으로 필요한 데이터 처리 함수들을 구현하였고, 또한 자식 클래스에서 꼭 구현해야 할 함수를 NotImplementedError를 활용하여 표시하였습니다.
 
-* Collector 클래스의 함수들
+* __Collector 클래스의 메소드들__
 
   - getEventType(message)  
-    json형태의 message를 받으면, 이 message가 어떤 stream에서 왔는지에 대한 정보를 추출합니다.
+    json 형태의 message를 받으면, 이 message가 어떤 stream에서 왔는지에 대한 정보를 추출합니다.
 
   - getRowDictFromMessage(message)  
-    각 
+    json 형태의 message를 dictionary 형태로 바꾸는 메소드로, 자식 클래스 내에서 꼭 구현되어야 할 메소드이기에 부모 클래스인 Collector에 NotImplementedError를 활용하여 구현해 놓았습니다. 어떤 데이터의 stream이냐에 따라 json의 컬럼명이 다르기 때문에, 이 작업은 각 데이터 스트림 Collector에 구현되는 것이 적절하다고 생각됩니다.
+
+  - getDataFrame(message)
+    json 형태의 message를 기존의 데이터를 가지고 있는 DataFrame에 업데이트하는 메소드입니다.
+
+자식 클래스인, 각 데이터 스트림의 Collector에는 getRowDictFromMessage 메소드가 구현되었습니다.
+
+> 예시 : RealTimeKlineCollector에서의 getRowDictFromMessage 메소드
+~~~python
+def getRowDictFromMessage(self, message):
+    streamKey, eventType = self.getEventType(message)
+    data = message['data']
+    kline = data['k']
+
+    row_dict = dict(
+        stream = streamKey,
+        eventType = eventType,
+
+        eventTime = int(data['E']),
+        startTime = int(kline['t']),
+        closeTime = int(kline['T']),
+        interval = str(kline['i']),
+        open = float(kline['o']),
+        high = float(kline['h']),
+        low = float(kline['l']),
+        close = float(kline['c']),
+        volume = float(kline['v'])
+    )
+
+
+    self.closeTime = int(kline['t'])
+    self.open = float(kline['o'])
+    self.close = float(kline['c'])
+    self.high = float(kline['h'])
+    self.low = float(kline['l'])
+    self.volume = float(kline['v'])
+
+    print(row_dict.values())
+    return row_dict
+~~~
+
 
 [codes](https://github.com/menmenmeng/TIL/blob/main/AutoTrader/BinanceTrader/rt_trader_v0.2/trade_rules/collector.py){:.heading}
 {:.read-more}
