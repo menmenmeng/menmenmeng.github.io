@@ -161,6 +161,30 @@ def getRowDictFromMessage(self, message):
 
 #### Conditional
 
+Conditional은 Collector가 받아온 DataFrame을 T/F 값을 가지는 bool 형태로 변환하는 모듈입니다. DataFrame의 값을 보고 Volatility의 값이 이전보다 증가했다거나, 현재 주가가 이동평균을 돌파했다거나 등의 정보를 bool 데이터로 변환하여 Decision 모듈로 전달합니다.
+
+현재는 기초적인 볼린저 밴드 전략을 활용하고 있기 때문에 BBConditional, RVConditional의 두 개 클래스만 구현되어 있습니다. 각 클래스는 Bollinger Band와 Realized Volatility와 관련된 bool 데이터를 만듭니다.
+
+매매 전략이 다양한 만큼 하드코딩이 필요한 부분이 많습니다. 아래는 BBConditional에서 각 밴드선을 돌파하는지 여부를 bool 데이터로 만드는 코드입니다. 
+
+~~~python
+## Return values
+PASTcloses_gt_upperInter_5t = self.closes[-5:] > self.upperInter[-5:]
+PASTcloses_gt_upperBand_5t = self.closes[-5:] > self.upperBand[-5:]
+
+PASTcloses_lt_lowerInter_5t = self.closes[-5:] < self.lowerInter[-5:]
+PASTcloses_lt_lowerBand_5t = self.closes[-5:] < self.lowerBand[-5:]
+
+CURRclose_gt_upperInter = self.rt_close > float(self.upperInter[-1:])
+CURRclose_gt_upperBand = self.rt_close > float(self.upperBand[-1:])
+
+CURRclose_lt_lowerInter = self.rt_close < float(self.lowerInter[-1:])
+CURRclose_lt_lowerBand = self.rt_close < float(self.lowerBand[-1:])
+~~~
+
+위와 같은 데이터들이 Decision 모듈로 전달됩니다.
+
+
 [codes](https://github.com/menmenmeng/TIL/blob/main/AutoTrader/BinanceTrader/rt_trader_v0.2/trade_rules/conditional.py){:.heading}
 {:.read-more}
 
