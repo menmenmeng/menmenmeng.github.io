@@ -78,6 +78,8 @@ callback 모듈은 실시간 데이터를 받는 중, 실시간 통신을 끊지
 
 websocket stream에서 json 형태의 실시간 데이터가 들어오면 이를 pandas의 DataFrame 형태로 바꾸어서 저장해 주는 모듈입니다. MarkPriceCollector, RealTimeKlineCollector, KlineCollector, OrderUpdateCollector, AccountUpdateCollector 클래스가 구현되어 있습니다.
 
+<br>
+
 * __구현 클래스들__
 
   - Collector  
@@ -101,6 +103,8 @@ websocket stream에서 json 형태의 실시간 데이터가 들어오면 이를
 
 위에서 Collector 클래스를 제외한 나머지 클래스는 모두 Collector 클래스를 상속받아서 만들어지는 클래스입니다. Collector 클래스에는 대부분의 실시간 데이터 stream에서 공통으로 필요한 데이터 처리 함수들을 구현하였고, 또한 자식 클래스에서 꼭 구현해야 할 함수를 NotImplementedError를 활용하여 표시하였습니다.
 
+<br>
+
 * __Collector 클래스의 메소드들__
 
   - getEventType(message)  
@@ -111,6 +115,8 @@ websocket stream에서 json 형태의 실시간 데이터가 들어오면 이를
 
   - getDataFrame(message)
     json 형태의 message를 기존의 데이터를 가지고 있는 DataFrame에 업데이트하는 메소드입니다.
+
+<br>
 
 자식 클래스인, 각 데이터 스트림의 Collector에는 getRowDictFromMessage 메소드가 구현되었습니다.
 
