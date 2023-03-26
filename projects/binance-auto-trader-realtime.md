@@ -76,21 +76,32 @@ callback 모듈은 실시간 데이터를 받는 중, 실시간 통신을 끊지
 
 #### Collector
 
-json 형태의 실시간 데이터를 pandas의 DataFrame 형태로 바꾸어서 저장해 주는 모듈입니다. MarkPriceCollector, RealTimeKlineCollector, KlineCollector, OrderUpdateCollector, AccountUpdateCollector 클래스가 구현되어 있습니다.
+websocket stream에서 json 형태의 실시간 데이터가 들어오면 이를 pandas의 DataFrame 형태로 바꾸어서 저장해 주는 모듈입니다. MarkPriceCollector, RealTimeKlineCollector, KlineCollector, OrderUpdateCollector, AccountUpdateCollector 클래스가 구현되어 있습니다.
 
 - MarkPriceCollector  
-  실시간 통신을 통해 mark Price 데이터를 받고, 이를 dataframe으로 저장합니다.
+  markPrice stream에서 데이터가 들어오면 이를 dataframe으로 저장합니다.
 
 - RealTimeKlineCollector  
-  실시간 통신을 통해 kline 데이터를 받고, 이를 realtime Kline dataframe으로 저장합니다.
+  kline stream에서 데이터가 들어오면, 데이터를 받을 때마다 realtime Kline dataframe으로 저장합니다.
 
 - KlineCollector
-  실시간 통신을 통해 kline 데이터를 받고, 사전에 지정한 시간 단위를 지날 때마다 overall Kline DataFrame에 저장합니다.
+  kline stream에서 데이터가 들어오면, 최신 데이터를 업데이트하다가 사전에 지정된 시간 단위(ex. 1분)를 지날 때마다 overall Kline DataFrame에 저장합니다.
 
 - OrderUpdateCollector
-  order가 websocket 거래 동안 진행된 order의 전체적인 
+  websocket 통신 동안 거래가 성사될 때마다 들어오는 거래 데이터를 DataFrame에 저장합니다.
 
 - AccountUpdateCollector
+  websocket 통신 동안 거래가 성사될 때마다 들어오는 Account 변화 정보를 현재의 Account status에 업데이트합니다.
+
+위의 5개 클래스들은 모두 Collector라는 부모 클래스를 상속받아서 만들어집니다. Collector 클래스에는 대부분의 실시간 데이터 stream에서 공통으로 필요한 데이터 처리 함수들을 구현하였고, 또한 자식 클래스에서 꼭 구현해야 할 함수를 NotImplementedError를 활용하여 표시하였습니다.
+
+> Collector 클래스의 함수들{:.lead}
+
+- getEventType(message)
+  json형태의 message를 받으면, 이 message가 어떤 stream에서 왔는지에 대한 정보를 추출합니다.
+
+- getRowDictFromMessage(message)
+  각 
 
 [codes](https://github.com/menmenmeng/TIL/blob/main/AutoTrader/BinanceTrader/rt_trader_v0.2/trade_rules/collector.py){:.heading}
 {:.read-more}
@@ -105,7 +116,7 @@ json 형태의 실시간 데이터를 pandas의 DataFrame 형태로 바꾸어서
 [codes](https://github.com/menmenmeng/TIL/blob/main/AutoTrader/BinanceTrader/rt_trader_v0.2/trade_rules/decision.py){:.heading}
 {:.read-more}
 
-#### callback
+#### Callback
 
 [codes](https://github.com/menmenmeng/TIL/blob/main/AutoTrader/BinanceTrader/rt_trader_v0.2/trade_rules/callback.py){:.heading}
 {:.read-more}
