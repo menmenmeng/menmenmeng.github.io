@@ -258,5 +258,5 @@ rt_trader에서는 트레이딩을 시작하는 작업 및 KeyboardInterrupt를 
 
 Python
 
-Go back to [Myeong Hyeon Son](/about/){:.heading.flip-title}
+Go back to [Myeong Hyeon Son](/about/#projects){:.heading.flip-title}
 {:.read-more}
