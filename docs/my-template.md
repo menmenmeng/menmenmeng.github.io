@@ -12,25 +12,25 @@ hide_last_modified: true
 0. Table of Contents
 {:toc}
 
-# 개요
+## 개요
 
 1. 왜 이 글을 쓰게 됐는지?
 2. 무엇을 찾아봤는지?
 
-# 배경 지식 (optional)
+## 배경 지식 (optional)
 
 이 글을 쓰기 전에 어떤 것들을 알고 공부했는지.
 
-# 본문
+## 본문
 
 결론적으로 뭘 찾았는지.
 
 
-# 출처 및 참고 자료
+## 출처 및 참고 자료
 
 [~~~ 사이트](https://menmenmeng.github.io/) : ~~에 대한 참고 내용
 
-# (추가) 표, 링크, 이미지 템플릿
+## (추가) 표, 링크, 이미지 등 템플릿
 
 (표)
 
@@ -63,3 +63,12 @@ An optional caption for an image : with only MD.
 
 An optional caption for an image : with MD and HTML.
 {:.figcaption}
+
+
+(노트, 노트블록)
+
+A custom label.
+{:.note title="Attention"}
+
+A custom label.
+{:.note}
