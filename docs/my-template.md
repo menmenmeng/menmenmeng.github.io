@@ -65,7 +65,7 @@ An optional caption for an image : with MD and HTML.
 {:.figcaption}
 
 
-(노트, 노트블록)
+(노트)
 
 A custom label.
 {:.note title="Attention"}
@@ -73,10 +73,20 @@ A custom label.
 A custom label.
 {:.note}
 
+
+(노트블록)
+
 ---
+
 __note__
 
 A custom label.
+
 ___
+
+
+> __note__
+>
+> A custom label.
 
 위처럼 해서 아예 블록을 하나 만들 수도 있음.
