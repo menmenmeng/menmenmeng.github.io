@@ -72,3 +72,11 @@ A custom label.
 
 A custom label.
 {:.note}
+
+---
+__note__
+
+A custom label.
+___
+
+위처럼 해서 아예 블록을 하나 만들 수도 있음.
