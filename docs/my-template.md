@@ -26,7 +26,7 @@ hide_last_modified: true
 결론적으로 뭘 찾았는지.
 
 
-# 참고 내용
+# 출처 및 참고 자료
 
 [~~~ 사이트](https://menmenmeng.github.io/) : ~~에 대한 참고 내용
 
