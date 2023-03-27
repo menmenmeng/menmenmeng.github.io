@@ -79,10 +79,9 @@ Attention과 self-attention의 차이는 query를 디코더 셀의 것을 쓰느
 
 그런데, 여기까지 이해하고 궁금한 게 생겼다. Key랑 Value는 Attention이든, self-attention이든 인코더 셀의 은닉 상태를 활용하니까, 항상 같은 값이다. 그럼 왜 굳이 Attention에서 K랑 V를 구분해 놓은 걸까? Attention의 적용 예시를 찾아봐도 RNN이나 트랜스포머 외의 사용처는 찾지 못했고, RNN 기반 언어 모델과 트랜스포머에서는 모두 Key와 Value를 같은 값을 쓴다.
 
+<br>
 
 궁금증에 대한 나의 답은, attention을 좀더 일반화하면 보인다는 거다.
-
-<br>
 
 > __Attention의 목적 : 가장 문맥적으로 비슷한 단어를 많이 반영해서 번역하고 싶다.__
 > 
@@ -120,4 +119,4 @@ Attention의 Q, K, V에 대해 더 자세히 이해하려고 공부한 거였지
 
 ## 출처 및 참고 자료
 
-[attention\, self attention 관련 지식 및 이미지](https://wikidocs.net/31379) : 딥러닝을 이용한 자연어 처리 입문
+[attention, self attention 관련 지식 및 이미지](https://wikidocs.net/31379) : 딥러닝을 이용한 자연어 처리 입문

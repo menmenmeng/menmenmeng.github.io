@@ -162,5 +162,5 @@ ConditionGenerator에서 만들어진 조건들을 가지고 실제 백테스팅
 
 Python
 
-Go back to [Myeong Hyeon Son](/about/){:.heading.flip-title}
+Go back to [Myeong Hyeon Son](/about/#projects){:.heading.flip-title}
 {:.read-more}

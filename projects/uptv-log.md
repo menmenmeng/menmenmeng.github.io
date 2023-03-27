@@ -57,5 +57,5 @@ U+ TV의 데이터를 탐색해 보면, 각 유저가 하루 동안 얼마나 �
 SQL(DBeaver), tableau
 
 
-Go back to [Myeong Hyeon Son](/about/){:.heading.flip-title}
+Go back to [Myeong Hyeon Son](/about/#projects){:.heading.flip-title}
 {:.read-more}

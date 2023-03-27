@@ -66,5 +66,5 @@ sitemap: false
 Python(numpy, pandas, scikit-learn)
 
 
-Go back to [Myeong Hyeon Son](/about/){:.heading.flip-title}
+Go back to [Myeong Hyeon Son](/about/#projects){:.heading.flip-title}
 {:.read-more}
