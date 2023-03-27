@@ -23,7 +23,9 @@ NLP분야에서 자주 나오는 문제 중 하나를 푸는 방법으로, BERT�
 
 ## Attention 개요
 
-![qkv](/assets/img/myown/qkv.jpg){:.lead loadings="lazy"}
+<p align="center">
+  <img width="500" src="/assets/img/myown/qkv.jpg">
+</p>
 
 Attention 메커니즘의 개요
 {:.figcaption}
