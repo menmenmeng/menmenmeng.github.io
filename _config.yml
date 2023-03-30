@@ -55,6 +55,8 @@ menu:
     url:               /post-machine-learning/
   - title:             Deep Learning
     url:               /post-deep-learning/
+  - title:             Programming
+    url:               /post-programming/
   - title:             Algorithm
     url:               /post-algorithm/
   # - title:             Life
