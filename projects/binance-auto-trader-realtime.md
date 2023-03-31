@@ -251,7 +251,9 @@ rt_trader에서는 트레이딩을 시작하는 작업 및 KeyboardInterrupt를 
 
 위에서 말했듯, 이전의 BackTester에 있는 문제들을 개선하기 위해 여러 노력을 기울였습니다. 결과적으로 많은 부분에서 개선되었고 특히 데이터를 수집하고 처리하는 collector 모듈에서 클래스 상속을 통해 반복 작업을 줄일 수 있었습니다.
 
-다만 기술 지표를 활용한 전략 구현(conditional, decision 모듈)에 있어서는 아직 확실하게 구조화, 모듈화가 되지 못했습니다. 활용하는 전략마다 지표가 다르기 때문에 하드코딩되는 부분이 필연적으로 존재하여 이 부분을 최대한 줄이려고 합니다.
+처음에는 binance futures connector(binance 공식 라이브러리) 없이 requests, asyncio 등 general한 라이브러리를 활용해서 만드려고 했습니다([codes](https://github.com/menmenmeng/TIL/tree/main/AutoTrader/BinanceTrader/rt_trader_noConnector/wss_trader0)). 그러나 websocket stream을 열고 유지하는 과정이 너무 복잡하고 본인이 키우려는 스킬과는 거리가 멀다고 생각해 이후에는 binance futures connector를 활용한 모델로 수정하여 프로그램을 작성했습니다.
+
+기술 지표를 활용한 전략 구현(conditional, decision 모듈)에 있어서는 아직 확실하게 구조화, 모듈화가 되지 못했습니다. 활용하는 전략마다 지표가 다르기 때문에 하드코딩되는 부분이 필연적으로 존재하여 이 부분을 최대한 줄이려고 합니다.
 
 
 ## Skills
