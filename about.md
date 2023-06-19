@@ -82,7 +82,7 @@ __tableau__
 __Python(tensorflow)__
 {:.lead}
 - \<딥러닝과 응용\> 수업으로 tensorflow 및 기초 Vision 지식을 학습했습니다.
-- [\<딥러닝을 이용한 자연어 처리 입문\>](https://wikidocs.net/book/2155)를 독학하며 기초 NLP 지식을 학습 중입니다.
+- [\<딥러닝을 이용한 자연어 처리 입문\>](https://wikidocs.net/book/2155)를 독학하며 기초 NLP 지식을 학습하였습니다.
 - [\<PyTorch로 시작하는 딥러닝 입문\>](https://wikidocs.net/book/2788)를 독학하며 PyTorch 활용법을 학습 중입니다.
 
 __R__
@@ -109,7 +109,7 @@ Continue reading [detail](projects/uptv-log.md){:.heading}
 __가상화폐 자동 트레이딩 머신(In Progress)__
 {:.lead}
 
-_2022\.08 ~_
+_2022\.08 ~ 2023\.02_
 {:.faded}
 
 Binance(외국의 가상화폐 거래소)의 API를 활용하여 비트코인 선물 매매에 사용될 수 있는 여러 전략을 테스트하고, 가장 좋은 수익 전략을 찾아내어 자동적인 트레이딩이 가능하게끔 하려는 개인 프로젝트입니다. 과거 데이터의 로딩과 전략 구성을 작은 라이브러리의 형태로 구현하고 있으며, 이를 통해 코딩을 잘 모르는 사람도 쉽게 매매 전략을 구성할 수 있도록 하는 것이 목표입니다.
@@ -124,6 +124,19 @@ _백테스터 (2022\.08 ~ 2022\.10)_{:.faded} Continue reading [detail](projects
 {:.read-more}  
 _실시간 트레이더 (2022\.11 ~ 2023\.02)_{:.faded} Continue reading [detail](projects/binance-auto-trader-realtime.md){:.heading}
 {:.read-more}  
+
+
+
+__평생교육 플랫폼 학습 컨텐츠 분류 및 추천 방안 설계__
+{:.lead}
+
+_2022\.11 ~ 2023\.01_
+{:.faded}
+
+공공기관 산하에 흩어져 있는 여러 개의 평생교육 플랫폼을 하나로 통합하는 과정에서, 학습 컨텐츠의 카테고리를 자동 분류하는 방안, 그리고 학습 컨텐츠의 속성 및 제목, 설명 데이터를 활용하여 수강자 맞춤형 추천 방안을 설계하였습니다. 카테고리 자동 분류를 위해 BERT를 활용한 임베딩 벡터 및 Active Learning을 활용하여 모델을 설계하였으며, 학습 컨텐츠 추천 관련 분석 과제를 정의하고 키워드 기반 추천 및 학습자 평점 기반 추천 모델을 설계하였습니다.
+
+Continue reading [detail](projects/lifelong-edu-platform.md){:.heading}
+{:.read-more}
 
 
 
