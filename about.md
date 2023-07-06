@@ -85,6 +85,10 @@ __Python(tensorflow)__
 - [\<딥러닝을 이용한 자연어 처리 입문\>](https://wikidocs.net/book/2155)를 독학하며 기초 NLP 지식을 학습하였습니다.
 - [\<PyTorch로 시작하는 딥러닝 입문\>](https://wikidocs.net/book/2788)를 독학하며 PyTorch 활용법을 학습 중입니다.
 
+__PowerPoint__
+{:.lead}
+- LG CNS 제안 작업(평생교육 플랫폼 구축 외 다수) 및 평생교육 플랫폼 구축 프로젝트에서의 분석 과제 도출 및 수행 방안 설계 시 산출물 작성을 위해 활용하였습니다.
+
 __R__
 {:.lead}
 - <투자공학> 수업으로 R 사용방법을 학습했습니다.
