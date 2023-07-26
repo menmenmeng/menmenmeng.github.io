@@ -137,18 +137,21 @@ __분석 방안 설계__
   Uncertainty 전략은 구현하기는 쉽지만 각 단계별로 학습된 모델을 활용해 추론하는 과정이 필요하고, 성능면에서 좋지 않다는 연구 결과가 많았습니다. 반면 Core-set 전략은 구현은 어렵지만 성능 및 수렴 속도면에서 Uncertainty 전략과 비교해 더 좋다는 연구 결과가 많았습니다. 따라서 Core-set 전략을 우선적으로 적용할 쿼리 전략으로 선정하였습니다.
 
   <p align="center">
-    <img width="400" src="https://blog.kakaocdn.net/dn/E71Zx/btqT3sJroJH/4i2LNf0IfGyRpkZ3keHJE0/img.png">
+    <img width="600" src="https://blog.kakaocdn.net/dn/bnRQpo/btqUzv7wMcC/CeWUEv9oYICk1jv13mGDqk/img.png">
+  </p>
+
+  Core-set 전략
+  {:.figcaption}
+
+  <br>
+
+  <p align="center">
+    <img width="350" src="https://blog.kakaocdn.net/dn/E71Zx/btqT3sJroJH/4i2LNf0IfGyRpkZ3keHJE0/img.png">
   </p>
 
   Uncertainty 전략
   {:.figcaption}
 
-  <p align="center">
-    <img width="400" src="https://blog.kakaocdn.net/dn/bnRQpo/btqUzv7wMcC/CeWUEv9oYICk1jv13mGDqk/img.png">
-  </p>
-
-  Core-set 전략
-  {:.figcaption}
 
 
 - 강좌명 및 강좌내용의 벡터 임베딩 모델
