@@ -163,27 +163,27 @@ __분석 방안 설계__
 
   Active Learning에서 주로 활용되는 쿼리 전략을 리서치해 본 결과, Uncertainty 전략과 Core-set 전략의 두 가지 전략이 자주 활용되었습니다.
   
-  1. Uncertainty
+  **1. Uncertainty**
+
+  Uncertainty 전략은 모델이 헷갈리는 데이터를 중요한 데이터로 판단하는 전략으로, 초기 학습된 모델에 unlabeled 데이터를 입력하여 나오는 결과(각 class들의 softmax 확률값)를 봤을 때 균일한 분포의 확률값이 나온다면 이러한 데이터를 중요 데이터로 판단하여 다음에 레이블링할 데이터로 선정합니다.
+
+  <p align="center">
+    <img width="400" src="https://blog.kakaocdn.net/dn/E71Zx/btqT3sJroJH/4i2LNf0IfGyRpkZ3keHJE0/img.png">
+  </p>
+
+  Uncertainty 전략 : A, B가 중요한 데이터
+  {:.figcaption}
   
-    Uncertainty 전략은 모델이 헷갈리는 데이터를 중요한 데이터로 판단하는 전략으로, 초기 학습된 모델에 unlabeled 데이터를 입력하여 나오는 결과(각 class들의 softmax 확률값)를 봤을 때 균일한 분포의 확률값이 나온다면 이러한 데이터를 중요 데이터로 판단하여 다음에 레이블링할 데이터로 선정합니다.
+  **2. Core-set**
 
-    <p align="center">
-      <img width="400" src="https://blog.kakaocdn.net/dn/E71Zx/btqT3sJroJH/4i2LNf0IfGyRpkZ3keHJE0/img.png">
-    </p>
+  Core-set 전략은 데이터 분포를 가장 잘 대표하는 데이터를 중요한 데이터로 판단하는 전략으로, 초기 학습 모델의 추론 결과를 활용하지 않습니다. 얻을 수 있는 unlabeled 데이터의 subset 중, 전체 데이터를 가장 잘 커버하는 subset을 골라 다음에 레이블링할 데이터로 선정합니다. 가장 잘 커버하는 subset을 결정하는 기준은 주로 데이터 간의 거리입니다.
 
-    Uncertainty 전략 : A, B가 중요한 데이터
-    {:.figcaption}
+  <p align="center">
+    <img width="650" src="https://blog.kakaocdn.net/dn/bnRQpo/btqUzv7wMcC/CeWUEv9oYICk1jv13mGDqk/img.png">
+  </p>
 
-  2. Core-set
-
-    Core-set 전략은 데이터 분포를 가장 잘 대표하는 데이터를 중요한 데이터로 판단하는 전략으로, 초기 학습 모델의 추론 결과를 활용하지 않습니다. 얻을 수 있는 unlabeled 데이터의 subset 중, 전체 데이터를 가장 잘 커버하는 subset을 골라 다음에 레이블링할 데이터로 선정합니다. 가장 잘 커버하는 subset을 결정하는 기준은 주로 데이터 간의 거리입니다.
-
-    <p align="center">
-      <img width="650" src="https://blog.kakaocdn.net/dn/bnRQpo/btqUzv7wMcC/CeWUEv9oYICk1jv13mGDqk/img.png">
-    </p>
-
-    Core-set 전략 : 파란색 점이 중요한 데이터
-    {:.figcaption}
+  Core-set 전략 : 파란색 점이 중요한 데이터
+  {:.figcaption}
 
   Uncertainty 전략은 구현하기는 쉽지만 각 단계별로 학습된 모델을 활용해 추론하는 과정이 필요하고, 성능면에서 떨어진다는 연구 결과가 많았습니다. 반면 Core-set 전략은 구현은 어렵지만 성능 및 수렴 속도면에서 Uncertainty 전략과 비교해 더 좋다는 연구 결과가 많았습니다. 리서치 후, Core-set 전략을 우선적으로 적용할 쿼리 전략으로 선정하였습니다.
 
@@ -217,15 +217,15 @@ __분석 방안 설계__
 
   1. 명시적 평점 데이터 활용
     
-    학습 콘텐츠에 대한 평점 데이터가 적게나마 존재하였기에, 이를 활용하여 협업 필터링 모델을 구축합니다. 기본적인 방법이지만, 현 상황에서 활용할 수 있는 데이터가 적고 현재 기록되고 있는 평점 데이터에 대한 신뢰성이 부족하다는 문제가 있습니다.
+  학습 콘텐츠에 대한 평점 데이터가 적게나마 존재하였기에, 이를 활용하여 협업 필터링 모델을 구축합니다. 기본적인 방법이지만, 현 상황에서 활용할 수 있는 데이터가 적고 현재 기록되고 있는 평점 데이터에 대한 신뢰성이 부족하다는 문제가 있습니다.
 
   2. BPR(Bayesian Personalized Ranking)
 
-    학습 콘텐츠를 클릭하였는지 여부를 Implicit Feedback으로 간주하여, 이를 바탕으로 학습자가 가진 학습 콘텐츠의 흥미도의 비교 우위를 맞추도록 협업 필터링 모델을 구축하는 방법입니다. 절대적 수치가 아닌 상대적인 비교 우위를 맞추는 방법이기에 Explicit Feedback이 부족한 이번 과제와 같은 곳에 유용하게 쓰일 수 있습니다.
+  학습 콘텐츠를 클릭하였는지 여부를 Implicit Feedback으로 간주하여, 이를 바탕으로 학습자가 가진 학습 콘텐츠의 흥미도의 비교 우위를 맞추도록 협업 필터링 모델을 구축하는 방법입니다. 절대적 수치가 아닌 상대적인 비교 우위를 맞추는 방법이기에 Explicit Feedback이 부족한 이번 과제와 같은 곳에 유용하게 쓰일 수 있습니다.
 
   3. Feedback을 조합한 Score 산출
 
-    Explicit Feedback과 Implicit Feedback을 적절히 조합하여 pseudo-평점을 만드는 방식입니다. 산출식에 따라 모델 편차가 크겠지만 확장성이 높다는 강점이 있고, Sparsity Problem을 고려해야 하는 비중이 적습니다.
+  Explicit Feedback과 Implicit Feedback을 적절히 조합하여 pseudo-평점을 만드는 방식입니다. 산출식에 따라 모델 편차가 크겠지만 확장성이 높다는 강점이 있고, Sparsity Problem을 고려해야 하는 비중이 적습니다.
 
   세 번째 방법인 Score 산출 방식을 우선적으로 적용하여 모델을 구축하기로 하였으며, 향후 과제 이행 시 데이터 현황을 자세히 파악하여 나머지 두 가지 방법을 유동적으로 활용하기로 하였습니다.
 
@@ -234,22 +234,22 @@ __분석 방안 설계__
 
   1. Matrix Factorization
 
-    가장 기본적인 잠재 요인 협업 필터링 모델로, 학습자의 Feedback 데이터만을 활용하는 방식입니다. 평점이 없는 학습자/학습 콘텐츠의 경우 이 모델을 활용하기 어렵다는 단점이 있습니다(Cold-Start 문제).
+  가장 기본적인 잠재 요인 협업 필터링 모델로, 학습자의 Feedback 데이터만을 활용하는 방식입니다. 평점이 없는 학습자/학습 콘텐츠의 경우 이 모델을 활용하기 어렵다는 단점이 있습니다(Cold-Start 문제).
 
-    ![image](/assets/img/projects/lifelong-edu-MF.png){:.lead loading="lazy"}
+  ![image](/assets/img/projects/lifelong-edu-MF.png){:.lead loading="lazy"}
 
-    Matrix Factorization
-    {:.figcaption}
+  Matrix Factorization
+  {:.figcaption}
 
 
   2. Factorization Machine
 
-    Matrix Factorization에 일반적 회귀 모델(SVM 등)을 결합한 것으로, 학습자의 Feedback 데이터와 함께 학습자 자체 속성 및 학습 콘텐츠 자체 속성을 또 다른 column으로 활용하는 방법입니다. Cold-Start 문제에 강건하다는 장점이 있으나, Feedback 데이터 외 일반 속성으로 무엇을 활용할지에 대해서는 고민이 필요합니다.
+  Matrix Factorization에 일반적 회귀 모델(SVM 등)을 결합한 것으로, 학습자의 Feedback 데이터와 함께 학습자 자체 속성 및 학습 콘텐츠 자체 속성을 또 다른 column으로 활용하는 방법입니다. Cold-Start 문제에 강건하다는 장점이 있으나, Feedback 데이터 외 일반 속성으로 무엇을 활용할지에 대해서는 고민이 필요합니다.
 
-    ![image](/assets/img/projects/lifelong-edu-FM.png){:.lead loading="lazy"}
+  ![image](/assets/img/projects/lifelong-edu-FM.png){:.lead loading="lazy"}
 
-    Factorization Machine
-    {:.figcaption}
+  Factorization Machine
+  {:.figcaption}
 
   리서치를 통해 위와 같은 두 가지 방법론을 활용하기로 하였으며, 이행 시 콘텐츠 기반 필터링 방법론과 함께 사용하여 성능이 높은 모델을 찾도록 하였습니다.
 
