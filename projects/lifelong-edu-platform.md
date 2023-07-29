@@ -246,7 +246,11 @@ __분석 방안 설계__
 
   Matrix Factorization에 일반적 회귀 모델(SVM 등)을 결합한 것으로, 학습자의 Feedback 데이터와 함께 학습자 자체 속성 및 학습 콘텐츠 자체 속성을 또 다른 column으로 활용하는 방법입니다. Cold-Start 문제에 강건하다는 장점이 있으나, Feedback 데이터 외 일반 속성으로 무엇을 활용할지에 대해서는 고민이 필요합니다.
 
-  ![image](/assets/img/projects/lifelong-edu-FM.png){:.lead loading="lazy"}
+  <p align="center">
+    <img width="550" src="/assets/img/projects/lifelong-edu-FM.png">
+  </p>
+
+  <!-- ![image](/assets/img/projects/lifelong-edu-FM.png){:.lead loading="lazy"} -->
 
   Factorization Machine
   {:.figcaption}
