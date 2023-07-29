@@ -137,7 +137,10 @@ Active Learning이라는 학습 기법을 기반으로 자동 레이블링 방�
 
 Active Learning을 학습에 적용한다면 모델을 학습시키기 전에 먼저 학습에 좋은 데이터를 찾아내고, 이 데이터를 사람이 우선적으로 레이블링하여 모델에 입력하여 반복적인 모델 학습을 통해 모델의 성능을 점차 높이는 과정을 거칩니다. 따라서, 학습 데이터 샘플링을 위해 '무엇이 좋은 데이터인가?'를 묻는 **쿼리 전략**을 잘 짜는 것이 중요한 요소입니다.
 
-* Active Learning 프로세스 그림으로 그려주기.......
+![image](/assets/img/projects/lifelong-edu-active-learning-process.png){:.lead loading="lazy"}
+
+Active Learning의 수행 프로세스
+{:.figcaption}
 
 <br>
 
@@ -217,15 +220,52 @@ __분석 방안 설계__
 
   3. Feedback을 조합한 Score 산출
 
-    Explicit Feedback과 Implicit Feedback을 적절히 조합한 Score를 
+    Explicit Feedback과 Implicit Feedback을 적절히 조합하여 pseudo-평점을 만드는 방식입니다. 산출식에 따라 모델 편차가 크겠지만 확장성이 높다는 강점이 있고, Sparsity Problem을 고려해야 하는 비중이 적습니다.
+
+  세 번째 방법인 Score 산출 방식을 우선적으로 적용하여 모델을 구축하기로 하였으며, 향후 과제 이행 시 데이터 현황을 자세히 파악하여 나머지 두 가지 방법을 유동적으로 활용하기로 하였습니다.
 
 
 - **추천 알고리즘**
 
+  1. Matrix Factorization
+
+    가장 기본적인 잠재 요인 협업 필터링 모델로, 학습자의 Feedback 데이터만을 활용하는 방식입니다. 평점이 없는 학습자/학습 콘텐츠의 경우 이 모델을 활용하기 어렵다는 단점이 있습니다(Cold-Start 문제).
+
+    ![image](/assets/img/projects/lifelong-edu-MF.png){:.lead loading="lazy"}
+
+    Matrix Factorization
+    {:.figcaption}
+
+
+  2. Factorization Machine
+
+    Matrix Factorization에 일반적 회귀 모델(SVM 등)을 결합한 것으로, 학습자의 Feedback 데이터와 함께 학습자 자체 속성 및 학습 콘텐츠 자체 속성을 또 다른 column으로 활용하는 방법입니다. Cold-Start 문제에 강건하다는 장점이 있으나, Feedback 데이터 외 일반 속성으로 무엇을 활용할지에 대해서는 고민이 필요합니다.
+
+    ![image](/assets/img/projects/lifelong-edu-FM.png){:.lead loading="lazy"}
+
+    Factorization Machine
+    {:.figcaption}
+
+  리서치를 통해 위와 같은 두 가지 방법론을 활용하기로 하였으며, 이행 시 콘텐츠 기반 필터링 방법론과 함께 사용하여 성능이 높은 모델을 찾도록 하였습니다.
+
 - **추천 모델의 성능 평가 기준**
 
+  추천 모델에 대한 성능 평가는 두 가지 방법을 활용할 수 있습니다. 첫 번째 방법은 평점 예측 오차를 평가하는 것으로, 예측 평점의 정확도를 맞추는 방법입니다. 수식적 관점에서 다루기 편리하지만 평점이 학습자의 의도를 정확히 반영하고 있다는 가정이 필요합니다. 두 번째 방법은 추천 아이템 예측 오차를 평가하는 것으로, 추천되는 콘텐츠와 실제 학습자가 학습한 콘텐츠가 유사한지를 평가합니다. 모델의 궁극적인 의도를 반영하는 방법입니다.
+
+  ![image](/assets/img/projects/lifelong-edu-metrics.png){:.lead loading="lazy"}
+
+  추천 모델의 성능 평가 방법
+  {:.figcaption}
+
+  평점 예측 오차 평가 방식의 경우 모델 학습을 위한 Gradient 계산에 활용하고, 추천 아이템 예측 오차 평가 방식의 경우 최종적인 모델의 아이템 추천 성능을 평가하여 모델을 선택하는 기준으로 활용하도록 하였습니다.
+
+<br>
+
+위와 같이 두 가지 주제에 대한 수행 방안을 설계하고, 이를 PowerPoint를 활용한 산출물로 작성하였습니다.
 
 ## Meaning
+
+
 
 
 
