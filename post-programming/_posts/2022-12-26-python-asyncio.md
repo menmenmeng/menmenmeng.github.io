@@ -15,7 +15,7 @@ hide_last_modified: true
 
 binance API를 활용한 실시간 트레이더를 만들 때, binance에서 공식적으로 제공하고 있는 binance futures connector 등, binance 트레이딩에 최적화된 라이브러리가 아니라 혼자 힘으로 모든 걸 만들어 보고 싶어서 공부했던 것.
 
-결론적으로.. 혼자 힘으로 모든 걸 만드는 건 정말 어려웠다. 포기하고 binance futures connector를 사용했고, 그 과정에서 작게나마 공부한 걸 잊지 않기 위해 작성.
+결론적으로.. 혼자 힘으로 모든 걸 만드는 건 정말 어려웠다. 애초의 목적은 binance 실시간 트레이더를 구축하는 거였는데, 이걸 위해 여기까지 들어가야 하나? 싶었다. 도중에 그만두고 그냥 binance futures connector를 사용했지만, 그 과정에서 작게나마 공부한 걸 잊지 않기 위해 작성한다.
 
 ## 배경 지식
 
