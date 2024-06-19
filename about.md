@@ -50,16 +50,15 @@ __그 외__
 
 ## Profile
 
-__Profile__
+__Name__
 {:.lead}
 손명현 (Myeonghyeon Son), 1995년 4월 9일생
 
 
 __Education__
 {:.lead}
-Yonsei University
+Yonsei University - Industrial Engineering
 
-_Industrial Engineering_
 - Bachelor of Science
 - 2014.03 ~ 2022.08
 - Cumulative GPA 3.73/4.3
@@ -112,7 +111,7 @@ _2024\.05 ~ 2024\.07_
 
 LG CNS 내부 사업인 앱 푸시 광고 시스템에 타겟팅 기능을 추가하여 고도화하였습니다. GCP 내에 대용량 로그 저장 및 ADID를 집계 기준으로 하는 Feature Table을 생성하는 ETL 파이프라인을 구축하고, 앱 푸시 발송 시 해당 테이블을 참조하도록 기존 시스템의 웹 및 배치 소스를 신규 개발/수정하였습니다.
 
-_기술스택 : Java, SQL, GCP(BigQuery, Dataflow)_
+_Skills : Java, SQL, GCP(BigQuery, Dataflow)_
 {:.faded}
 
 
@@ -129,7 +128,7 @@ _2023\.11 ~ 2024\.03_
 
 항공사에서 추진하는 CDP 사업에서 추론지수 개발 및 파이프라인을 구축하였습니다. AWS 환경에서 CDP에 포함될 추론지수를 S3, Athena 및 Sagemaker를 활용하여 개발하고, 개발된 추론지수의 배치 추론 파이프라인을 MWAA(Airflow), Glue, Sagemaker를 활용하여 구축하였습니다.
 
-_기술스택 : Python, SQL, AWS(Sagemaker, S3, Athena, MWAA, Glue)_
+_Skills : Python, SQL, AWS(Sagemaker, S3, Athena, MWAA, Glue)_
 {:.faded}
 
 
@@ -146,7 +145,7 @@ _2023\.07 ~ 2023\.10_
 
 항공사에서 수기로 운영 중이던 머신러닝 모델(라운지 입장객 수 예측 모델)의 배치 추론 및 학습을 자동화하는 MLOps 시스템을 구축하였습니다. AWS 환경에서 S3, Sagemaker를 활용하여 작동되는 MLOps 시스템의 아키텍쳐를 설계 및 개발하였습니다.
 
-_기술스택 : Python, AWS(Sagemaker, S3)_
+_Skills : Python, AWS(Sagemaker, S3)_
 {:.faded}
 
 
@@ -163,7 +162,7 @@ _2022\.11 ~ 2023\.01_
 
 여러 평생교육 플랫폼에 흩어져 있는 평생교육 컨텐츠들을 하나의 플랫폼 내에 통합하는 프로젝트입니다. 해당 프로젝트의 컨설팅 영역을 수행했으며, \<학습 컨텐츠 카테고리 자동 분류\>, \<학습자 맞춤형 학습 컨텐츠 추천\>의 주제로 분석 과제를 도출하고 과제의 수행 방안을 설계하였습니다. \<학습 컨텐츠 카테고리 자동 분류\>에서는 Active Learning을 활용한 텍스트 분류 모델을 설계하였습니다. \<학습자 맞춤형 학습 컨텐츠 추천\>에서 관련 분석 과제를 정의하고, 학습자 평점 기반 추천 모델을 설계하였습니다.
 
-_기술스택_
+_Skills_
 {:.faded}
 
 Continue reading [detail](projects/lifelong-edu-platform.md){:.heading}
@@ -183,7 +182,7 @@ Binance(외국의 가상화폐 거래소)의 API를 활용하여 비트코인 �
 실시간으로 데이터를 받고 거래 전략에 따라 거래하는 __실시간 트레이더__
 의 두 개 과정을 거쳐 트레이딩 머신을 개발하고 테스트하였습니다.
 
-_기술스택 : Python_
+_Skills : Python_
 {:.faded}
 
 
@@ -202,7 +201,7 @@ _2022\.06 ~ 2022\.07_
 
 LG CNS의 인턴십 동안 LG U+, LG 스포츠, LG 라이프케어 등 LG 계열사의 데이터 풀에서 원하는 데이터를 탐색하고 Insight를 발굴하는 과제를 수행하였습니다. 많은 데이터 중 LG U+ 데이터의 U+ TV 시청 로그를 탐색하며, 시청시간을 시청횟수로 나누어 평균 시청 지속 기간이라는 지표를 통해 Insight를 찾아냈습니다. 이를 토대로 심층적 탐색을 진행하였고, 얻어낸 결론을 tableau를 정리하고 프레젠테이션하였습니다.
 
-_기술스택 : SQL, tableau_
+_Skills : SQL, tableau_
 {:.faded}
 
 
@@ -219,7 +218,7 @@ _2021\.09 ~ 2021\.11_
 
 빅데이터 캠퍼스의 데이터 및 공공 데이터를 기반으로 사회 문제를 해결하고 비즈니스 모델을 구성하는 공모전에 참여하여 프로젝트를 수행하였습니다. 빅데이터캠퍼스의 데이터베이스에 존재하는 카드 소비 데이터들을 불러와 이를 통일된 형식으로 변환하는 전처리 과정을 수행하였고, 과거 데이터를 X 변수로 추가하여 RandomForest 기법 활용, 그리고 Prophet을 활용하여 시계열 분석을 통해 소비 패턴 변화를 관찰하였습니다.
 
-_기술스택 : Python_
+_Skills : Python_
 {:.faded}
 
 
@@ -236,7 +235,7 @@ _2019\.03 ~ 2019\.07_
 
 2019년 학부 수업 중 <데이터마이닝이론및응용> 수업에서 빅데이터와 데이터 분석 및 머신러닝의 구체적인 방법론을 공부한 후 프로젝트를 진행했습니다. 파이썬을 이용한 웹 스크래핑으로 스타트업 채용 정보 사이트(로켓펀치)에서 각 스타트업의 관련 정보를 수집하고, SAS를 이용해 군집화, MBR, 로지스틱 회귀를 적용하여 스타트업이 일정 금액 이상의 투자금을 유치할 확률이 얼마나 되는지를 예측하였습니다.
 
-_기술스택 : Python, SAS_
+_Skills : Python, SAS_
 {:.faded}
 
 
