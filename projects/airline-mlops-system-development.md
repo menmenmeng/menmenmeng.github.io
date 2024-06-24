@@ -91,10 +91,10 @@ monitoring step의 1개 step으로 구성되어 있습니다.
 
 preprocessing step, training step으로 구성되어 있습니다. 추론 및 모니터링 파이프라인과 다소 다른 부분이 있습니다.
 
-다른 파이프라인의 경우 하나의 step에서 
-- 인스턴스 생성 > 사용자 스크립트 수행 > 인스턴스 종료  
+> 1. preprocessing step : 각 모델에 input으로 들어갈 데이터를 만들기 위해 raw data를 전처리하는 작업으로, 추론 파이프라인 내 작업과 거의 동일합니다.
+> 2. training step : AutoML 모델 학습, 검증, 모델 레지스트리 등록 등의 로직을 수행합니다.
 
-의 과정을 거칩니다. 학습 파이프라인의 training step의 경우,   
+학습 파이프라인의 training step의 경우, Sagemaker AutoML Ver.2 사용을 위해,
 
 - 인스턴스 생성 > 사용자 스크립트 내에서 sagemaker job API 호출(인스턴스 생성) > 학습 수행 > 인스턴스 종료(1) > 인스턴스 종료(2)
 
