@@ -90,9 +90,9 @@ __AWS(S3, Athena, Glue, Sagemaker, MWAA)__
 - 항공사 CDP 구축 프로젝트에서 S3, Athena를 활용하여 EDA 수행 및 최종 테이블을 설계하였습니다.
 - 항공사 CDP 구축 프로젝트에서 Glue, Sagemaker, MWAA(Airflow)를 활용하여 배치 추론 파이프라인을 구축하였습니다.
 
-__GCP(BigQuery)__
+__GCP(BigQuery, Looker Studio)__
 {:.lead}
-- 앱 푸시 시스템 고도화 프로젝트(타겟팅 시스템 구축)에서 BigQuery를 활용하여 ETL 파이프라인을 구축하였습니다.
+- 앱 푸시 시스템 고도화 프로젝트(타겟팅 시스템 구축)에서 BigQuery를 활용하여 ETL 파이프라인을 구축하였으며 Looker Studio를 활용하여 대시보드를 구축하였습니다.
 
 __tableau__
 {:.lead}
@@ -111,7 +111,7 @@ _2024\.05 ~ 2024\.07_
 
 LG CNS 내부 사업인 앱 푸시 광고 시스템에 타겟팅 기능을 추가하여 고도화하였습니다. GCP 내에 대용량 로그 저장 및 ADID를 집계 기준으로 하는 Feature Table을 생성하는 ETL 파이프라인을 구축하고, 앱 푸시 발송 시 해당 테이블을 참조하도록 기존 시스템의 웹 및 배치 소스를 신규 개발/수정하였습니다.
 
-_Skills : Java, SQL, GCP(BigQuery, Dataflow)_
+_Skills : Java, SQL, GCP(BigQuery, Looker Studio)_
 {:.faded}
 
 

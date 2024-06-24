@@ -15,7 +15,7 @@ sitemap: false
 회사 내규에 따라 자세한 내용은 생략하였습니다.
 {:.faded}
 
-## Background
+## Overview
 
 LG CNS의 데이터 직무 관련 인턴십을 진행하며 3~4주의 기간 동안 수행한 과제입니다. LG CNS에 들어오는 LG U+, LG스포츠, LG라이프케어, 헬로비전 등 다양한 계열사의 유저 행동 로그 및 마스킹된 개인 정보를 제공받고, 데이터를 탐색하여 Insight를 제공하는 프로젝트였습니다. 발굴해낸 Insight는 tableau를 사용하여 대시보드를 구성해 프레젠테이션하였습니다.
 
@@ -54,7 +54,7 @@ U+ TV의 데이터를 탐색해 보면, 각 유저가 하루 동안 얼마나 �
 
 ## Skills
 
-SQL(DBeaver), tableau
+SQL, tableau
 
 
 Go back to [Myeong Hyeon Son](/about/#projects){:.heading.flip-title}
