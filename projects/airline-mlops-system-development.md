@@ -61,16 +61,36 @@ Sagemaker Pipeline은 Sagemaker Step을 통해 파이프라인을 정의하는 p
 > 3. 인스턴스 내의 저장 공간에 script 실행 결과를 저장
 > 4. 인스턴스 내의 저장 공간을 S3에 복사한 후 인스턴스 종료
 
+Sagemaker AutoML Step을 활용하는 경우에는 방식이 조금 달라지는데, 이 방식의 경우 Sagemaker에 AutoML 학습/추론 작업을 생성해달라는 API를 요청하는 방식으로 작동합니다. 따라서 학습/추론 시 추가적인 스크립트를 작성하지 않습니다. AutoML Train/Inference Step을 지정하면, Sagemaker가 학습 작업, 추론 작업을 자동으로 수행합니다.
+
 위의 구성 방법에 따라 추론, 학습 및 모니터링 파이프라인을 구성하였습니다.
 
 #### 추론 파이프라인
 
 preprocessing step, fr inference step, mr inference step, pr inference step, postprocessing step의 5개 step으로 구성되어 있습니다.
 
-> 1. preprocessing step : 각 모델에 input으로 들어갈 데이터를 만들기 위해 raw data를 전처리하는 과정입니다. Preprocess 클래스로 스크립트를 개발하였습니다.
-> 2. fr/mr/pr inference step : 각 라운지의 최신 모델을 받아와서 추론 결과를 내는 과정입니다. Inference 클래스로 스크립트를 개발하였습니다.
-> 3. postprocessing step : 각 모델의 input
+> 1. preprocessing step : 각 모델에 input으로 들어갈 데이터를 만들기 위해 raw data를 전처리하는 작업입니다. 스크립트 내에서 Preprocess 클래스를 활용하며, 시간대 변환, NA값 치환, 피쳐 생성 등의 작업을 수행합니다.
+> 2. fr/mr/pr inference step : 각 라운지의 최신 모델을 받아와서 추론 결과를 내는 작업입니다. 모델은 AutoML을 활용하므로 스크립트를 활용하지 않습니다.
+> 3. postprocessing step : 각 모델의 추론 결과 output을 하나로 모아, 라운지 운영 팀에서 원하는 형태로 변환하는 작업입니다. 스크립트 내에서 Postprocess 클래스를 활용합니다.
 
+#### 모니터링 파이프라인
+
+monitoring step의 1개 step으로 구성되어 있습니다.
+
+> 1. monitoring step : 각 모델의 일주일 간 추론 결과를 통해 성능 지표를 내고, 성능이 기준치 이하로 떨어질 경우 학습 파이프라인을 트리거하는 작업입니다. 스크립트 내에서 Monitoring 클래스를 활용하며, 해당 클래스가 수행하는 작업은 아래와 같습니다.
+>   - 월요일부터 일요일까지의 추론 결과 데이터와 실제 라운지 이용객 수 데이터를 읽어옵니다.
+>   - Rsquare 및 MAE를 계산하고, 성능 지표가 기준치보다 낮다면 학습 파이프라인을 트리거합니다. 이와 같은 방법으로 생성된 학습 모델은 "PendingManualApproval" 상태로 저장되며, 담당자가 직접 승인해야 추론 모델로서 동작합니다.
+
+#### 학습 파이프라인
+
+학습 파이프라인은 preprocessing step, training step으로 구성되어 있습니다. 추론 및 모니터링 파이프라인과 다소 다르게 구성되어 있습니다.
+
+다른 파이프라인의 경우 하나의 step에서 인스턴스 생성->사용자 스크립트 수행->인스턴스 종료의 과정을 거칩니다. 학습 파이프라인의 training step의 경우, 인스턴스 생성->사용자 스크립트 내에서 sagemaker job API 호출(인스턴스 생성)->학습 수행->인스턴스 종료(1)->인스턴스 종료(2)로, 이중으로 인스턴스를 온/오프합니다. 이는 적절하지 않은 아키텍쳐지만, 이와 같은 아키텍쳐를 이용해야 하는 이유가 있었습니다.
+
+1. 고객은 Sagemaker에서 제공하는 AutoML 기능 중, 최근 릴리즈된 AutoML Ver.2를 활용하고 싶어했습니다. AutoML Ver.2는 AutoML Ver.1과 비교하여 비정형 데이터를 다룰 수 있다는 장점이 있습니다.
+2. 문제는 해당 기능은 아직 Sagemaker API Connector, 즉 Sagemaker Step으로는 구현되어 있지 않았고, boto3를 통해서만 호출 가능했습니다. Sagemaker Pipeline 구성은 무조건 Sagemaker Step을 통해 구성되어야 하기 때문에, 저는 Step에서 생성하는 인스턴스 안에서 다시 boto3로 AutoML Ver.2 API를 요청하도록 파이프라인을 개발하였습니다.
+
+아래는 학습 파이프라인의 상세 구조입니다.
 
 
 
