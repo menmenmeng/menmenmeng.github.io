@@ -246,9 +246,9 @@ Continue reading [detail](projects/startup-investment.md){:.heading}
 
 ## Websites
 
-[__블로그 : https://menmenmeng.github.io/about/__](https://menmenmeng.github.io/about/)
-[__깃허브 : https://github.com/menmenmeng__](https://github.com/menmenmeng)
-{:.lead}
+[__블로그__ : https://menmenmeng.github.io/about/](https://menmenmeng.github.io/about/)
+
+[__깃허브__ : https://github.com/menmenmeng](https://github.com/menmenmeng)
 
 
 <!-- [__Blog__](https://menmenmeng.github.io)
