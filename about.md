@@ -126,7 +126,7 @@ __[사내] 항공사 내 추론지수 개발 및 배치 추론 파이프라인 �
 _2023\.11 ~ 2024\.03_
 {:.faded}
 
-항공사에서 추진하는 CDP 사업에서 추론지수 개발 및 파이프라인을 구축하였습니다. AWS 환경에서 CDP에 포함될 추론지수를 S3, Athena 및 Sagemaker를 활용하여 개발하고, 개발된 추론지수의 배치 추론 파이프라인을 MWAA(Airflow), Glue, Sagemaker를 활용하여 구축하였습니다.
+항공사에서 추진하는 CDP 사업에서 추론지수 개발 및 파이프라인을 구축하였습니다. AWS 환경에서 CDP에 포함될 머신러닝 모델 기반의 추론지수(High-Class 선호지수)를 S3, Athena 및 Sagemaker를 활용하여 개발하고, 개발된 추론지수 4개의 배치 추론 파이프라인을 MWAA(Airflow), Glue, Sagemaker를 활용하여 구축하였습니다.
 
 _Skills : Python, SQL, AWS(Sagemaker, S3, Athena, MWAA, Glue)_
 {:.faded}
