@@ -70,6 +70,8 @@ Sagemaker AutoML Step을 활용하는 경우에는 방식이 조금 달라지는
 
 변수 설정 및 preprocessing step, inference step(fr inference step, mr inference step, pr inference step), postprocessing step의 5개 step으로 구성되어 있습니다.
 
+![image](/assets/img/projects/airline-mlops-inference-pipeline.png)
+
 > 1. 파이프라인 실행 날짜(서버 시간) 및 각 라운지별 최신 "Approved" 모델 정보 로드
 > 2. Preprocessing Step (preprocess.py 실행): 각 라운지별 모델의 추론 input 생성을 위해 raw data 전처리
 >   - 각 라운지별 데이터에 전처리 수행(Na값 치환, 범주화 등)
@@ -77,12 +79,12 @@ Sagemaker AutoML Step을 활용하는 경우에는 방식이 조금 달라지는
 >   - AutoML 모델을 사용하므로 스크립트 없이 Sagemaker가 전적으로 수행
 > 4. Postprocessing Step (postprocess.py 실행): 각 모델의 추론 결과 output을 하나로 모아, 라운지 운영 팀에서 요구하는 형태로 변환
 
-![image](/assets/img/projects/airline-mlops-inference-pipeline.png)
-
 
 #### 모니터링 파이프라인
 
 monitoring step의 1개 step으로 구성되어 있습니다.
+
+![image](/assets/img/projects/airline-mlops-monitoring-pipeline.png)
 
 > 1. Monitoring Step (monitoring.py) : 각 모델의 일주일 간 추론 결과를 통해 성능 지표를 내고, 성능이 기준치 이하로 떨어질 경우 학습 파이프라인 트리거
 >   - 월요일부터 일요일까지의 추론 결과 데이터와 실제 라운지 이용객 수 데이터 로드
@@ -90,24 +92,17 @@ monitoring step의 1개 step으로 구성되어 있습니다.
 
 이와 같은 방법으로 생성된 학습 모델은 "PendingManualApproval" 상태로 저장되며, 담당자가 직접 승인해야 추론 모델로서 동작합니다.
 
-![image](/assets/img/projects/airline-mlops-monitoring-pipeline.png)
+
 
 #### 학습 파이프라인
 
 preprocessing step, training step으로 구성되어 있습니다. 추론 및 모니터링 파이프라인과 다소 다르게, 인스턴스 내에서 인스턴스를 다시 실행하는 작업이 있습니다.
 
+![image](/assets/img/projects/airline-mlops-training-pipeline.png)
+
 > 1. Preprocessing Step (preprocess.py) : 각 모델에 input으로 들어갈 데이터를 만들기 위해 raw data를 전처리하는 작업으로, 추론 파이프라인 내 작업과 거의 동일
 > 2. Training Step (train.py) : AutoML 모델 학습, 검증, 모델 레지스트리 등록 등의 작업 수행
 
-학습 파이프라인의 training step의 경우 Sagemaker AutoML Ver.2 사용을 위해,
-
-- 인스턴스(1) 생성 > 사용자 스크립트 내에서 sagemaker job API 호출(인스턴스(2) 생성) > 학습 수행 > 인스턴스(2) 종료 > 인스턴스(1) 종료
-
-의 과정을 수행하며, 이중으로 인스턴스를 온/오프합니다.
-
-아래는 학습 파이프라인의 상세 구조입니다.
-
-![image](/assets/img/projects/airline-mlops-training-pipeline.png)
 
 
 ##### 학습 파이프라인 내 이중 구조
@@ -120,11 +115,11 @@ preprocessing step, training step으로 구성되어 있습니다. 추론 및 �
 
 ## Meaning
 
-### +
+### (+)
 - MLOps(Ops)에 대한 첫 프로젝트이며, 이에 대한 관심 및 이해도가 증대된 프로젝트입니다.
 - 개념적으로만 생각되던 MLOps를 실제 구현하였고, 운영에까지 올리는 성과를 거뒀습니다.
 
-### -
+### (-)
 - 모듈화에 대한 고민이 부족하였습니다. 향후 해당 항공사가 다른 과제로 신규 모델을 생성하고 이를 MLOps 환경에 태우려면 현재의 MLOps 소스코드 중 많은 부분을 바꿔야 할 것으로 생각됩니다.
 - Sagemaker의 최신 AutoML에 대한 니즈와, Sagemaker Pipeline에 대한 고객 니즈가 겹쳐, 학습 파이프라인의 이중 인스턴스 구조처럼 효율적이지 않고 운영에 용이하지 않은 프로세스가 생겼습니다. 프로젝트 수행 시점에 Airflow 등 범용적으로 활용하는 다른 파이프라인/스케줄링 툴을 알고 있었다면 먼저 제안할 수 있었을 텐데, 그러지 못해 아쉽습니다.
 
