@@ -18,7 +18,7 @@ A항공사는 여러 곳의 원천 데이터를 한 데 모아서 고객의 특�
 
 개발한 High-Class 선호지수는, 과거 데이터를 기반으로 향후 6개월 간 해당 고객이 프레스티지/퍼스트 클래스를 구매할지 여부를 예측하는 모델입니다. S3, Athena를 활용하여 기 구축된 Data Lake에서 EDA를 수행하였고, 성별/연령 및 마일리지 정보 등을 바탕으로 XGBoost를 활용한 예측 모델을 개발하였습니다.
 
-추론지수 개발이 완료된 후, 5개 지수에 대해 각각의 배치 추론 파이프라인을 구성하였습니다. 스케줄러 및 파이프라인 코드는 MWAA(Airflow)를 활용하였고, MWAA가 지원하는 SagemakerOperator 및 GlueOperator를 활용하여 해당 서비스를 구동했습니다. Sagemaker Job 내에서 수행될 소스코드는 Python으로 개발하였으며, Load, Preprocess, Train, Inference, Postprocess의 5개 클래스로 구성하였습니다.
+추론지수 개발이 완료된 후, 4개 지수에 대해 각각의 배치 추론 파이프라인을 구성하였습니다. 스케줄러 및 파이프라인 코드는 MWAA(Airflow)를 활용하였고, MWAA가 지원하는 SagemakerOperator 및 GlueOperator를 활용하여 해당 서비스를 구동했습니다. Sagemaker Job 내에서 수행될 소스코드는 Python으로 개발하였으며, Load, Preprocess, Train, Inference, Postprocess의 5개 클래스로 구성하였습니다.
 
 
 ## Process
