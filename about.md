@@ -116,18 +116,20 @@ __tableau__
 
 시간 역순으로 기록하였습니다.
 
-<!-- __[사내] 앱 푸시 시스템 고도화__
+__[사내] 앱 푸시 시스템 고도화 (Ongoing)__
 {:.lead}
 
 _2024\.05 ~ 2024\.07_
 {:.faded}
 
-LG CNS 내부 사업인 앱 푸시 광고 시스템에 타겟팅 기능을 추가하여 고도화하였습니다. GCP BigQuery 내에 대용량 로그 저장 테이블 및 ADID를 집계 기준으로 하는 Feature 테이블을 생성하는 ETL 파이프라인을 구축하고, 앱 푸시 발송 시 해당 테이블을 참조하도록 기존 시스템의 웹 및 배치 소스를 신규 개발/수정하였습니다.
+LG CNS 내부 사업인 "앱 푸시 광고 시스템"에서 조건에 맞는 ADID를 타겟팅하여 광고를 푸시하는 타겟 마케팅 시스템을 구축하는 중입니다. 기존 시스템은 Java 및 Spring 기반의 LG CNS 자체 프레임워크인 Devon을 바탕으로 구축되어 있습니다. DE파트 리딩을 맡아, 운영에 용이하도록 해당 프레임워크를 기반으로 인프라, 테이블 및 ETL 프로세스를 설계/구축하고 있습니다. 
+
+GCP BigQuery 내에 대용량 로그 테이블 및 ADID를 집계 기준으로 하는 Feature 테이블을 생성하는 ETL 파이프라인을 구축하고, 앱 푸시 발송 시 해당 테이블을 참조하도록 기존 시스템의 웹 및 배치 소스를 신규 개발/수정 중에 있습니다.
 
 _Skills : Java, SQL, GCP(BigQuery, Looker Studio)_
 {:.faded}
 
-
+<!-- 
 Continue reading [detail](projects/app-push-targeting-system-development.md)
 {:.read-more} -->
 
@@ -139,7 +141,11 @@ __[사내] 항공사 내 추론지수 개발 및 배치 추론 파이프라인 �
 _2023\.11 ~ 2024\.03_
 {:.faded}
 
-항공사에서 추진하는 CDP 사업에서 추론지수 개발 및 파이프라인을 구축하였습니다. AWS 환경에서 CDP에 포함될 머신러닝 모델 기반의 추론지수(High-Class 선호지수)를 S3, Athena 및 Sagemaker를 활용하여 개발하고, 개발된 추론지수 4개의 배치 추론 파이프라인을 MWAA(Airflow), Glue, Sagemaker를 활용하여 구축하였습니다.
+A항공사는 여러 곳의 원천 데이터를 한 데 모아서 고객의 특성을 표현하는 CDP를 구축하고자 했고, 그 과정에서 로그 집계 기반 집계지수 및 머신러닝 모델 기반의 추론지수를 개발하고자 하였습니다. 해당 사업에서 저는 머신러닝 모델 기반의 추론지수 중 하나(High-Class 선호지수)를 Sagemaker Studio 환경에서 개발하였고, 모든 추론지수 개발이 완료된 후 지수들의 배치 추론 파이프라인을 Sagemaker, Glue, MWAA를 활용하여 구축하였습니다.
+
+개발한 High-Class 선호지수는, 과거 데이터를 기반으로 향후 6개월 간 해당 고객이 프레스티지/퍼스트 클래스를 구매할지 여부를 예측하는 모델입니다. S3, Athena를 활용하여 기 구축된 Data Lake에서 EDA를 수행하였고, 성별/연령 및 마일리지 정보 등을 바탕으로 XGBoost를 활용한 예측 모델을 개발하였습니다.
+
+추론지수 개발이 완료된 후, 4개 지수에 대해 각각의 배치 추론 파이프라인을 구성하였습니다. 스케줄러 및 파이프라인 코드는 MWAA(Airflow)를 활용하였고, MWAA가 지원하는 SagemakerOperator 및 GlueOperator를 활용하여 해당 서비스를 구동했습니다. Sagemaker Job 내에서 수행될 소스코드는 Python으로 개발하였으며, Load, Preprocess, Train, Inference, Postprocess의 5개 클래스로 구성하였습니다.
 
 _Skills : Python, SQL, AWS(Sagemaker, S3, Athena, MWAA, Glue)_
 {:.faded}
@@ -156,7 +162,11 @@ __[사내] 항공사 내 MLOps 시스템 구축__
 _2023\.07 ~ 2023\.10_
 {:.faded}
 
-항공사에서 수기로 운영 중이던 머신러닝 모델(라운지 입장객 수 예측 모델)의 배치 추론 및 학습을 자동화하는 MLOps 시스템을 구축하였습니다. AWS 환경에서 S3, Sagemaker를 활용하여 작동되는 MLOps 시스템의 아키텍쳐를 설계 및 개발하였습니다.
+A항공사는 기존에 수기로 운영 중인 라운지별 이용객 수 예측 모델을 MLOps 환경에 마이그레이션하는 것을 원했으며, 이에 따라 신규로 MLOps 시스템을 구축하고자 하였습니다. 해당 사업에서 저는 ML모델을 최소한의 사람의 손을 거치며 자동 운영 가능한 MLOps 아키텍쳐를 구상하였고, 해당 아키텍쳐를 구성하는 파이프라인 중 학습 관련 파이프라인을 AWS 네이티브 서비스와 Python을 활용하여 개발하였습니다.
+
+MLOps 시스템을 구성하는 파이프라인은 추론, 학습, 모니터링 파이프라인으로 구성되며 Sagemaker Pipeline을 활용하여 구축하였습니다. 파이프라인 내 Sagemaker Step에서 실행되는 소스코드는 Python으로 개발하였으며, Preprocess, Train, Postprocess, Monitoring의 4개 커스텀 클래스로 구성하였습니다.
+
+Sagemaker 외에 파이프라인 스케줄링을 위해 Lambda 및 EventBridge를 활용하였으며, A항공사의 CI/CD 표준인 BitBucket, Jenkins를 활용하여 CI/CD를 구축하였습니다. 또한 학습 파이프라인 트리거 알림 및 모니터링 파이프라인 결과 알림을 위해 AWS SNS를 활용하였습니다.
 
 _Skills : Python, AWS(Sagemaker, S3)_
 {:.faded}
