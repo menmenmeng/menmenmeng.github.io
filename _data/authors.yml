@@ -8,11 +8,7 @@ author1:
   # Used at the bottom of each page and at the top of the `about` layout
   # Markdown enabled, can use multiple paragraphs (enabled by `|`)
   about:             |
-    1995\. 04\. 09\.
-
-    산업공학과 학사
-
-    손명현
+    데이터 분석가이자 MLOps 엔지니어로 성장하고자 하는 손명현입니다.
 
 
   # This photo will be used in the about section
