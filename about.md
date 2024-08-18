@@ -41,11 +41,6 @@ __Contact__
 - (+82)010-8776-9308
 - franksmh0409@gmail.com
 
-<br>
-<br>
-<br>
-<br>
-<br>
 
 ## Skills
 
@@ -75,12 +70,6 @@ __tableau__
 {:.lead}
 - LG CNS 인턴십에서 데이터 탐색 작업 후 도출한 Insight를 프레젠테이션하기 위해 활용하였습니다.
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 
 
 ## Projects
