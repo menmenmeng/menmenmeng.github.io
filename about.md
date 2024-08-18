@@ -122,16 +122,16 @@ __[사내] 앱 푸시 시스템 고도화 (Ongoing)__
 _2024\.05 ~ 2024\.07_
 {:.faded}
 
-LG CNS 내부 사업인 "앱 푸시 광고 시스템"에서 조건에 맞는 ADID를 타겟팅하여 광고를 푸시하는 타겟 마케팅 시스템을 구축하는 중입니다. 기존 시스템은 Java 및 Spring 기반의 LG CNS 자체 프레임워크인 Devon을 바탕으로 구축되어 있습니다. DE파트 리딩을 맡아, 운영에 용이하도록 해당 프레임워크를 기반으로 인프라, 테이블 및 ETL 프로세스를 설계/구축하고 있습니다. 
+- 수행 업무
+  CNS 내부의 "앱 푸시 광고 시스템"에서 타겟 마케팅 시스템을 위한 DW 및 ETL 파이프라인 구축
+  Java 환경의 Web Batch 서버에서 GCP BigQuery로의 데이터 이관 및 집계 파이프라인 구성
 
-GCP BigQuery 내에 대용량 로그 테이블 및 ADID를 집계 기준으로 하는 Feature 테이블을 생성하는 ETL 파이프라인을 구축하고, 앱 푸시 발송 시 해당 테이블을 참조하도록 기존 시스템의 웹 및 배치 소스를 신규 개발/수정 중에 있습니다.
+- 활용 Skill
+  Java, SQL, GCP(BigQuery)
 
-_Skills : Java, SQL, GCP(BigQuery, Looker Studio)_
-{:.faded}
 
-<!-- 
 Continue reading [detail](projects/app-push-targeting-system-development.md)
-{:.read-more} -->
+{:.read-more}
 
 
 
@@ -141,14 +141,12 @@ __[사내] 항공사 내 추론지수 개발 및 배치 추론 파이프라인 �
 _2023\.11 ~ 2024\.03_
 {:.faded}
 
-A항공사는 여러 곳의 원천 데이터를 한 데 모아서 고객의 특성을 표현하는 CDP를 구축하고자 했고, 그 과정에서 로그 집계 기반 집계지수 및 머신러닝 모델 기반의 추론지수를 개발하고자 하였습니다. 해당 사업에서 저는 머신러닝 모델 기반의 추론지수 중 하나(High-Class 선호지수)를 Sagemaker Studio 환경에서 개발하였고, 모든 추론지수 개발이 완료된 후 지수들의 배치 추론 파이프라인을 Sagemaker, Glue, MWAA를 활용하여 구축하였습니다.
+- 수행 업무
+  항공사 CDP에서 ML기반의 지수를 개발하고, 개발한 지수의 배치 추론 파이프라인을 AWS 환경에서 구축
+  프레스티지/퍼스트 클래스 구매 가능성을 지수화하는 High-Class 선호지수를 개발하였고, 해당 지수를 포함한 5개 지수의 주기적 배치 파이프라인을 MWAA를 활용하여 구성
 
-개발한 High-Class 선호지수는, 과거 데이터를 기반으로 향후 6개월 간 해당 고객이 프레스티지/퍼스트 클래스를 구매할지 여부를 예측하는 모델입니다. S3, Athena를 활용하여 기 구축된 Data Lake에서 EDA를 수행하였고, 성별/연령 및 마일리지 정보 등을 바탕으로 XGBoost를 활용한 예측 모델을 개발하였습니다.
-
-추론지수 개발이 완료된 후, 4개 지수에 대해 각각의 배치 추론 파이프라인을 구성하였습니다. 스케줄러 및 파이프라인 코드는 MWAA(Airflow)를 활용하였고, MWAA가 지원하는 SagemakerOperator 및 GlueOperator를 활용하여 해당 서비스를 구동했습니다. Sagemaker Job 내에서 수행될 소스코드는 Python으로 개발하였으며, Load, Preprocess, Train, Inference, Postprocess의 5개 클래스로 구성하였습니다.
-
-_Skills : Python, SQL, AWS(Sagemaker, S3, Athena, MWAA, Glue)_
-{:.faded}
+- 활용 Skill
+  Python, SQL, AWS(Sagemaker, S3, Athena, MWAA, Glue)
 
 
 Continue reading [detail](projects/airline-feature-development.md)
