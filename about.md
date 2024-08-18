@@ -122,11 +122,11 @@ __[사내] 앱 푸시 시스템 고도화 (Ongoing)__
 _2024\.05 ~ 2024\.07_
 {:.faded}
 
-- 수행 업무
-  CNS 내부의 "앱 푸시 광고 시스템"에서 타겟 마케팅 시스템을 위한 DW 및 ETL 파이프라인 구축
+- 수행 업무<br>
+  CNS 내부의 "앱 푸시 광고 시스템"에서 타겟 마케팅 시스템을 위한 DW 및 ETL 파이프라인 구축<br>
   Java 환경의 Web Batch 서버에서 GCP BigQuery로의 데이터 이관 및 집계 파이프라인 구성
 
-- 활용 Skill
+- 활용 Skill<br>
   Java, SQL, GCP(BigQuery)
 
 
